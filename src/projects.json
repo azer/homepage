@@ -1,0 +1,95 @@
+{
+  "recent": [
+    {
+      "title": "Kozmos",
+      "link": "https://getkozmos.com",
+      "description": "A new bookmarking service which simplifies bookmarking into a single heart button in your browser."
+    },
+    {
+      "title": "Happy Hacking Linux",
+      "link": "http://kodfabrik.com/happy-hacking-linux",
+      "description": "A Linux distro made just for pragmatic software developers. It's based on Arch Linux, comes with a new installation wizard made from scratch."
+    },
+    {
+      "title": "Kaktüs",
+      "link": "https://github.com/kaktus/kaktus",
+      "description": "A web browser with drop-down tabbing design."
+    },
+    {
+      "title": "Afrika Radyo",
+      "link": "http://afrikaradyo.com",
+      "description": "Online radio station where I play music, spoken-word, and sometimes my favorite movie dialogs."
+    }
+  ],
+  "opensource": [
+    {
+      "title": "CRUD",
+      "link": "https://github.com/azer/crud",
+      "description": "Relational database library for Go, with simpler and familiar interface."
+    },
+    {
+      "title": "Logger",
+      "link": "https://github.com/azer/logger",
+      "description": "Logging library for Go. It groups logs into packages and levels, includes a neat timer for measuring performance."
+    },
+    {
+      "title": "Prova",
+      "link": "https://github.com/azer/prova",
+      "description": "A feature-rich testing suite for JavaScript libraries & apps."
+    },
+    {
+      "title": "indexeddb",
+      "link": "https://github.com/azer/indexeddb",
+      "description": "Well tested, low-level wrapper for IndexedDB. It can sync your DB with local/remote databases, too."
+    },
+    {
+      "title": "kaktüs/db",
+      "link": "https://github.com/kaktus/db",
+      "description": "Want to create a web browser? Here is a database library for you! It can even sync remotely or locally!"
+    },
+    {
+      "title": "notebook",
+      "link": "https://github.com/azer/notebook",
+      "description": "My personal and public notebook. I organize my knowledge, ideas, and thoughts here."
+    }
+  ],
+  "websites": [
+    {
+      "title": "Nova Togatorop",
+      "link": "http://novatogatorop.com",
+      "description": "My wife's photography portfolio, made using Flickr APIs. Front-end is React, backend is Go."
+    },
+    {
+      "title": "Listen Paradise",
+      "link": "http://listenparadise.org",
+      "description": "I love Radio Paradise, and made many alternative clients for it. This is the last one. Front-end is React, backend is Go."
+    },
+    {
+      "title": "RoadBeats",
+      "link": "http://roadbeats.com",
+      "description": "Me and my wife's personal travel blog. We should add some more stories. Front-end is Choo, backend is Go."
+    }
+  ],
+  "old": [
+    {
+      "title": "Multiplayer Chess",
+      "link": "http://multiplayerchess.com",
+      "description": "I built this app in 2011 and never maintained it. The front-end is made with tiny NPM modules,  backend is Go."
+    },
+    {
+      "title": "Firebug",
+      "link": "http://getfirebug.com",
+      "description": "I worked with the Firebug team in 2008 to create first version of Firebug Lite."
+    },
+    {
+      "title": "Pagos Spreadsheets",
+      "link": "https://www.flickr.com/photos/azer/albums/72157622836745233",
+      "description": "In 2007, we built one of the first real-time, collaborative spreadsheet applications. "
+    },
+    {
+      "title": "rainbow9",
+      "link": "https://vimeo.com/10499321",
+      "description": "A simple web based coding editor with IDE-like features. It was cool for the time I released it, early 2007."
+    }
+  ]
+}

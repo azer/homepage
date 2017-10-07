@@ -1,0 +1,64 @@
+.photography .content {
+  width: 90%;
+}
+
+.photography .content a {
+  border: 0;
+  background: transparent !important;
+}
+
+.photography .photos {
+  margin-top: 50px;
+}
+
+.photography .content .grid {
+
+}
+
+.photography .content .grid .column {
+  float: left;
+  width: 50%;
+}
+
+.photography .content .grid .column:last-child {
+  margin-right: 0;
+}
+
+.photography .content .grid .thumbnail {
+  position: relative;
+  display: block;
+  background: transparent !important;
+  border: 0 !important;
+  padding: 10px !important;
+}
+
+.photography .thumbnail img {
+  width: 100%;
+  height: auto;
+  background: #f2f2f2;
+  cursor: zoom-in;
+}
+
+.photography .thumbnail .caption {
+  position: absolute;
+  width: calc(100% - 20px);
+  height: calc(100% - 22px);
+  background: rgba(0, 0, 0, 0.75) !important;
+  opacity: 0;
+  cursor: zoom-in;
+
+  -webkit-transition: all 0.1s ease-in;
+  -moz-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+.photography .thumbnail .caption h1 {
+  text-align: center;
+  color: #fff;
+  font: 21px 'Apercu regular', "Open Sans", sans-serif;
+}
+
+.photography .thumbnail:hover .caption {
+  opacity: 1;
+}

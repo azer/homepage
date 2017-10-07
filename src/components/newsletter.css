@@ -1,0 +1,49 @@
+.newsletter {
+  display: block;
+  max-width: 500px;
+  margin: 0 auto 50px auto;
+  text-align: center;
+}
+
+.newsletter h1 {
+  text-align: center;
+  font: 100 16px/1.7 "Merriweather";
+  color: #444;
+  margin: 20px 0;
+}
+
+.newsletter input {
+  width: 250px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  font: 100 14px/1.7 "Merriweather";
+  outline: none;
+  color: #333;
+}
+
+.newsletter input:focus {
+  border-color: #999;
+}
+
+.newsletter .button {
+  margin-top: 12px;
+  background: #00c57e;
+  border: 0;
+  cursor: pointer;
+  color: #fff;
+  font: 600 12px/21px "Open Sans", sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  padding: 10px 20px;
+  width: auto;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.newsletter .button:hover {
+  background: #009e65;
+}

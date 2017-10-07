@@ -1,0 +1,47 @@
+.simple-layout {
+  min-height: 100%;
+}
+
+.simple-layout .content {
+  width: 70%;
+  margin: 150px auto;
+}
+
+.simple-layout .content > h1 {
+  font: 400 54px/58px Tiemposheadline, Arial,sans-serif;
+  color: #111;
+  text-align: center;
+  letter-spacing: -.2px;
+  margin-bottom: 20px;
+}
+
+.simple-layout .content > h2, .simple-layout .content > h2 span {
+  font: 16px/28px 'Apercu light', sans-serif;
+  color: #666;
+  text-align: center;
+  max-width: 450px;
+  margin: 0px auto;
+}
+
+@media (max-width: 1224px) {
+  .simple-layout .content {
+    width: 85%;
+  }
+}
+
+@media (max-width: 900px) {
+  .simple-layout .content {
+    margin-top: 75px;
+  }
+
+  .simple-layout .content > h1 {
+    font-size: 48px;
+    line-height: 52px;
+  }
+
+  .simple-layout .content > h2 {
+    font-size: 14px;
+    line-height: 18px;
+    max-width: 300px;
+  }
+}

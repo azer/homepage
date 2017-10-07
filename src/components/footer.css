@@ -1,0 +1,98 @@
+.footer {
+  border-top: 1px solid #eee;
+  margin: 0px 0 0 0;
+  padding: 50px 0;
+}
+
+.footer .inner {
+  margin: 0 auto;
+  width: 70%;
+  max-width: 1000px;
+}
+
+.footer .footer-left {
+  float: left;
+  width: 60%;
+}
+
+.footer .footer-right {
+  float: right;
+  width: 40%;
+  text-align: center;
+  color: #888;
+}
+
+.footer .footer-right .quote {
+  font: 14px/28px "Open Sans", sans-serif;
+  margin: 25px 0;
+}
+
+.footer .menu {
+  position: static;
+  margin: 0;
+}
+
+.footer .heart {
+  color: #ee0000;
+  opacity: 0.8;
+}
+
+.footer .menu a {
+  display: block;
+  text-align: left;
+  font: 600 12px "Open Sans", sans-serif;
+  color: #666;
+  margin: 0;
+  padding: 0;
+}
+
+.footer .menu a:after {
+  content: "";
+  margin: 0;
+}
+
+.footer .menu a:hover {
+  color: #333 !important;
+}
+
+.footer .menu a .emoji {
+  top: 1px;
+  left: -30px;
+}
+
+.footer .menu .logo img {
+  top: -3px;
+  left: -30px;
+}
+
+@media (min-width: 700px) {
+  .footer .menu .links {
+    width: 85%;
+    display: grid;
+    width: 400px;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto;
+    grid-column-gap: 0px;
+    grid-row-gap: 20px;
+    justify-items: stretch;
+    align-items: stretch;
+  }
+}
+
+@media (min-width: 1000px) {
+  .footer .menu .links {
+    grid-column-gap: 30px;
+  }
+}
+
+@media (max-width: 900px) {
+  .footer .footer-right {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer .inner {
+    width: 85%;
+  }
+}

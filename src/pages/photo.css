@@ -1,0 +1,140 @@
+.slideshow {
+  height: 100%;
+}
+
+.slideshow .content {
+  width: 90%;
+  height: calc(100% - 100px);
+  margin-top: 85px;
+  margin-bottom: 50px;
+}
+
+.slideshow .loading {
+  width: 100%;
+  height: calc(100% - 50px);
+  font: 500 16px "PT Mono", sans-serif;
+  color: #111;
+  position: relative;
+  letter-spacing: 1px;
+  background: #f2f2f2;
+}
+
+.slideshow .loading.has-thumbnail {
+  background: transparent;
+}
+
+.slideshow .loading span {
+  text-transform: uppercase;
+  padding: 20px 30px;
+  color: #333;
+  z-index: 9999;
+  animation: blinker 0.5s linear infinite;
+}
+
+.slideshow .loading.has-thumbnail span {
+  text-shadow: 1px 0px rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.slideshow .loading .thumbnail {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: center center no-repeat;
+  background-size: contain;
+  -webkit-filter: blur(1px);
+  -moz-filter: blur(1px);
+  -o-filter: blur(1px);
+  -ms-filter: blur(1px);
+  filter: blur(1px);
+}
+
+.slideshow .photo {
+  width: 100%;
+  height: calc(100% - 50px);
+  text-align: center;
+  overflow: hidden;
+  background: center center no-repeat;
+  background-size: contain;
+}
+
+.slideshow .photo img {
+  width: auto;
+  height: 100%;
+}
+
+.slideshow.vertical .photo img {
+  width: 100%;
+  height: auto;
+}
+
+.slideshow .head {
+  margin-top: 10px;
+}
+
+.slideshow .caption {
+  width: calc(100% - 150px);
+  padding: 10px 0 10px 75px;
+  float: left;
+  font: 16px 'Apercu regular', "Open Sans", sans-serif;
+  color: #333;
+  text-align: center;
+}
+
+.slideshow .buttons {
+  float: right;
+  width: 58px;
+  margin-top: 10px;
+}
+
+.slideshow .buttons .button {
+  float: left;
+  cursor: pointer;
+  opacity: 0.6;
+  border: 0 !important;
+  background: transparent !important;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.slideshow .buttons .button:hover {
+  opacity: 1;
+}
+
+.slideshow .buttons .button svg {
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.slideshow .buttons .prev-button {
+  margin-right: 10px;
+}
+
+.slideshow .buttons .prev-button svg {
+  transform: scaleX(-1);
+
+}
+
+.slideshow .buttons .prev-button:hover svg {
+  transform: scaleX(-1) translate3d(5px, 0, 0);
+}
+
+.slideshow .buttons .next-button:hover svg {
+  transform: translate3d(5px, 0, 0);
+}
+
+.slideshow .buttons .prev-button:after {
+  content: "";
+  width: 1px;
+  height: 30px;
+  transform: rotate(25deg);
+  background: #000;
+  position: absolute;
+  margin: -7px 0 0 4px;
+}

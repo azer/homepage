@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,400italic|Open+Sans:300,400,600,700,800|Merriweather:100,400,900|PT+Mono|PT+Sans");
+@import url("./fonts.css");
+
+html, body, #___gatsby {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background: #fff;
+}
+
+* {
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+.clear {
+  clear: both;
+}
+
+.container {
+  width: 100%;
+  min-height: 100%;
+}
+.zigzag {
+  margin: 7.5% 0;
+  background: #fff;
+  position: relative;
+  height: 16px;
+  z-index: 1;
+}
+.zigzag:before, .zigzag:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+.zigzag:before {
+  height: 12px;
+  top: 110%;
+  background: -webkit-linear-gradient(225deg, #ddd 8px, transparent 0) 0 8px, -webkit-linear-gradient(315deg, #ddd 8px, transparent 0) 0 8px;
+  background: linear-gradient(-135deg, #ddd 8px, transparent 0) 0 8px, linear-gradient(135deg, #ddd 8px, transparent 0) 0 8px;
+  background-position: top left;
+  background-repeat: repeat-x;
+  background-size: 16px 16px;
+}
+.zigzag:after {
+  height: 16px;
+  top: 100%;
+  background: -webkit-linear-gradient(225deg, #fff 8px, transparent 0) 0 8px, -webkit-linear-gradient(315deg, #fff 8px, transparent 0) 0 8px;
+  background: linear-gradient(-135deg, #fff 8px, transparent 0) 0 8px, linear-gradient(135deg, #fff 8px, transparent 0) 0 8px;
+  background-position: top left;
+  background-repeat: repeat-x;
+  background-size: 16px 16px;
+}
+
+@keyframes blinker {
+  50% { opacity: 0.3; }
+}

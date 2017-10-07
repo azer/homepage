@@ -1,0 +1,123 @@
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  padding: 30px 0;
+  display: block;
+  text-align: center;
+}
+
+.menu label {
+  position: absolute;
+  margin-top: -20px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #42ab79;
+  font: 600 12px 'open sans', helvetica, arial;
+  margin-right: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  padding: 2px 4px;
+}
+
+.menu a:after {
+  margin-left: 24px;
+  content: "·";
+  color: #aaa;
+}
+
+.menu a:last-child {
+  margin-right: 0px !important;
+}
+
+.menu a:last-child:after {
+  content: "";
+  margin: 0;
+}
+
+.menu a .emoji {
+  position: absolute;
+  top: 28px;
+  left: calc(50% - 27px);
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+.menu a:last-child .emoji {
+  left: calc(50% - 13px);
+}
+
+.menu a:hover {
+  color: #111;
+}
+
+.menu a:hover .emoji {
+  opacity: 1;
+}
+
+.menu a.selected {
+  color: #999;
+  cursor: default;
+}
+
+.menu a.selected .emoji {
+  display: none;
+}
+
+.menu .footer-link {
+  display: none;
+}
+
+.menu .logo {
+  position: relative;
+  background: transparent !important;
+}
+
+.menu .logo img {
+  height: 23px;
+  position: absolute;
+  border-radius: 3px;
+  top: 27px;
+  left: calc(50% - 25px);
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+.menu .logo:hover img {
+  opacity: 1;
+}
+
+.footer .menu {
+  border: 0;
+}
+
+.footer .menu .footer-link {
+  display: block;
+}
+
+.footer .menu a.selected, .footer .menu a.selected:hover {
+  color: #999 !important;
+  cursor: default;
+}
+
+@media (max-width: 900px) {
+  .menu {
+    display: none;
+  }
+
+  .menu a {
+    margin-right: 5px;
+    font-size: 12px;
+  }
+}

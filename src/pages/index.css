@@ -1,0 +1,95 @@
+.index .columns {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 65% 35%;
+  grid-template-rows: auto auto;
+  grid-column-gap: 30px;
+  justify-items: stretch;
+  align-items: stretch;
+  max-width: 1500px;
+}
+
+.index .left h1 {
+  color: #050505;
+  font: 400 72px Tiemposheadline, 'PT Sans', 'Open Sans', sans-serif;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.index .left h2 {
+  margin-top: 0;
+  font: 300 26px 'Open Sans', sans-serif;
+  color: #000;
+}
+
+.index .right .profile-picture {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.index .center > .right {
+  text-align: center;
+}
+
+.index a.lets-work-together {
+  display: block;
+  width: 160px;
+  margin: 50px auto !important;
+  padding: 25px 30px;
+  border: 1px solid #ddd !important;
+  color: #222 !important;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-align: center;
+  font: 600 12px/21px "Open Sans", sans-serif;
+  -webkit-transition: all 0.1s ease-in;
+  -moz-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+.index a.lets-work-together:hover {
+  background: #00c57e;
+  border-color: #00c57e !important;
+  color: #fff !important;
+}
+
+@media (max-width: 1000px) {
+  .index .columns {
+    grid-template-columns: 75% 25%;
+  }
+}
+
+@media (max-width: 850px) {
+  .index .columns {
+    grid-template-columns: 100%;
+  }
+
+  .index .content {
+    margin-top: 300px;
+  }
+
+  .index .right {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    width: 200px;
+    margin: 20px -100px;
+  }
+
+  .index .left h1 {
+    font-size: 48px;
+    text-align: center;
+  }
+
+  .index .left h2 {
+    font-size: 21px;
+    text-align: center;
+  }
+
+  .index .intro .block {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}

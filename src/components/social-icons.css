@@ -1,0 +1,31 @@
+.social-icons {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.social-icons a {
+  cursor: pointer;
+  border: 0 !important;
+  background: transparent !important;
+  opacity: 0.6;
+  margin-right: 10px;
+}
+
+.social-icons a:hover {
+  opacity: 0.9;
+}
+
+.social-icons img {
+  width: auto;
+  height: 30px;
+}
+
+@media (max-width: 500px) {
+  .footer .menu a {
+    font-size: 16px !important;
+  }
+
+  .footer .social-icons img {
+    height: 25px;
+  }
+}

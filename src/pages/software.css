@@ -1,0 +1,143 @@
+.software .content h3 {
+  margin: 20px 2px;
+  font: 500 14px 'PT Mono', sans-serif;
+  color: #888;
+  text-transform: uppercase;
+}
+
+.software .recent, .software .websites, .software .old {
+  max-width: 700px;
+  margin: 50px auto 30px auto;
+}
+
+.software .recent-project {
+  font: 400 16px/32px "Open Sans", "San Francisco", sans-serif;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.software .recent-project .logo {
+  text-align: center;
+}
+
+.software .recent-project .logo img {
+  height: 100px;
+}
+
+.software .recent-project .screenshot {
+  margin: 50px 0 20px 0;
+}
+
+.software .recent-project .screenshot-img {
+  height: 250px;
+  background: no-repeat center;
+  background-size: contain;
+}
+
+.software .recent-project a {
+  color: #111;
+  font-weight: 600;
+}
+
+.software .opensource {
+  float: left;
+  width: calc(60% - 100px);
+  background: #fffbe5;
+  padding: 25px 50px;
+  margin: 50px 0 0 0px;
+}
+
+.software .opensource a.github {
+  font: 14px "PT Mono", sans-serif;
+  text-transform: uppercase;
+  text-align: right;
+  border: 0;
+  background: transparent;
+  color: #666;
+  width: 150px;
+  display: block;
+  float: right;
+}
+
+.software .opensource a.github:hover {
+  color: #333;
+}
+
+.software .tea {
+  float: left;
+  width: 40%;
+  position: relative;
+}
+
+.software .tea .triangle {
+  position: absolute;
+  left: -95px;
+  top: -50px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 125px 200px 125px;
+  border-color: transparent transparent #00ffd0 transparent;
+  opacity: 0.5;
+  z-index: 9999;
+  transform: rotate(-10deg);
+}
+
+.software .tea .circle {
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  background: #ffef65;
+  opacity: 0.5;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+
+.software .tea .caption {
+  width: 75%;
+  margin: 5px auto;
+  font: 400 14px/21px "Open Sans", "San Francisco", sans-serif;
+  color: #555;
+  text-align: center;
+}
+
+.software .tea img {
+  width: 100%;
+}
+
+.thanks .zigzag {
+  width: 50%;
+  margin: 50px auto 30px auto;
+}
+
+@media (max-width: 1800px) {
+  .software .content {
+    width: 90%;
+  }
+}
+
+@media (max-width: 700px) {
+  .software .opensource {
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    float: none;
+    width: auto;
+  }
+
+  .software .tea {
+    float: none;
+    margin-top: 25px;
+    width: auto;
+  }
+
+  .software .tea .triangle {
+    left: -20px;
+    border-width: 0 75px 125px 75px;
+  }
+
+  .software .tea .circle {
+    right: -20px;
+
+  }
+}

@@ -1,0 +1,31 @@
+.intro {
+  margin-top: 50px;
+}
+
+.intro .block {
+  width: 100%;
+  margin-bottom: 20px;
+  color: #666;
+  font: 400 18px/32px "Open Sans", "San Francisco", sans-serif;
+}
+
+.intro .block:last-child {
+  margin-right: 0;
+}
+
+@media (min-width: 1500px) {
+  .intro .blocks {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: stretch;
+    align-items: stretch;
+  }
+
+  .intro .block {
+    width: 100%;
+  }
+}

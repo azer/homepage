@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "debounce-fn": "github:azer/debounce-fn",
+    "gatsby": "^1.9.42",
+    "gatsby-link": "^1.6.15",
+    "gatsby-plugin-react-helmet": "^1.0.6",
+    "gatsby-source-filesystem": "^1.5.2",
+    "gatsby-transformer-remark": "^1.7.15",
+    "img": "github:npm-dom/img",
+    "react-emojione": "^3.1.10"
+  },
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "cli-qa": "github:azer/cli-qa",
+    "flickr-photoset-info": "github:npm-flickr/flickr-photoset-info",
+    "format-date": "github:azer/format-date",
+    "prettier": "^1.6.1",
+    "to-slug": "github:azer/to-slug"
+  }
+}
