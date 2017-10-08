@@ -8,8 +8,15 @@ import "./index.css"
 export default class Homepage extends Component {
   render() {
     return (
-      <CenteredLayout name="index" location={this.props.location}>
-        <Helmet title={this.props.data.site.siteMetadata.title} />
+      <CenteredLayout name="index" location={this.props.location} newsletter>
+        <Helmet title={this.props.data.site.siteMetadata.title}>
+          <meta property="og:type" content="website" />
+	        <meta property="og:title" content={this.props.data.site.siteMetadata.title} />
+	        <meta property="og:url" content="http://azer.bike" />
+	        <meta property="og:description" content="My name is Azer Koçulu. I build software, also shoot photos." />
+	        <meta property="og:image" content="https://cldup.com/go95bqT7sK.jpg" />
+          <link rel="canonical" href="http://azer.bike" />
+        </Helmet>
         <div className="columns">
           {this.renderIntro()}
           {this.renderPhoto()}

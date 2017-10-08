@@ -11,6 +11,10 @@
   margin-right: 10px;
 }
 
+.social-icons a svg {
+  width: 40px;
+}
+
 .social-icons a:hover {
   opacity: 0.9;
 }

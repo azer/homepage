@@ -6,7 +6,7 @@ import './centered-layout.css'
 export default class CenteredLayout extends Component {
   render() {
     return (
-      <SimpleLayout name={`centered-layout ${this.props.name}`} location={this.props.location}>
+      <SimpleLayout {...this.props} name={`centered-layout ${this.props.name}`}>
         <Center>
           {this.props.children}
         </Center>

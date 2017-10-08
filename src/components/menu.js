@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Emojify from 'react-emojione'
 import Link from 'gatsby-link'
 import links from './menu-links.json'
 import "./menu.css"
@@ -27,22 +26,37 @@ export default class Menu extends Component {
     if (l.className === 'footer-link' && !this.props.footer) return
 
     const className = location === l.to ? `${l.className || ""} selected` : l.className
+    const render = /^\w+:/.test(l.to) ? this.renderGlobalLink : this.renderLocalLink
 
     return ([
-      <Link className={className} to={l.to}>
-        <span className="emoji">
-          <Emojify style={emojiStyle}>{l.emoji}</Emojify>
-        </span>
-        {l.title}
-      </Link>,
+      render(l.to, l.title, className),
       i == 1 && !this.props.footer && location !== '/' ? this.renderLogo() : null
     ])
+  }
+
+  renderLocalLink(to, title, className) {
+    return (
+      <Link className={className} to={to}>
+        <span className="emoji">
+        </span>
+        {title}
+      </Link>
+    )
+  }
+
+  renderGlobalLink(to, title, className) {
+    return (
+      <a className={className} href={to}>
+        <span className="emoji">
+        </span>
+        {title}
+      </a>
+    )
   }
 
   renderLogo(caption) {
     return (
       <a className="logo" href="/">
-        <img src="https://c1.staticflickr.com/5/4353/37319896181_52a796bcc7.jpg" />
         {caption || "Azer Koçulu"}
       </a>
     )

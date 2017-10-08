@@ -7,19 +7,20 @@
 
 .newsletter h1 {
   text-align: center;
-  font: 100 16px/1.7 "Merriweather";
-  color: #444;
+  font: 18px/28px "Apercu light", "Open Sans", sans-serif;
+  color: #555;
   margin: 20px 0;
 }
 
 .newsletter input {
   width: 250px;
   border: 1px solid #ddd;
-  border-radius: 5px;
   padding: 10px;
-  font: 100 14px/1.7 "Merriweather";
+  font: 400 14px "Open Sans", sans-serif;
   outline: none;
   color: #333;
+  -webkit-appearance: none;
+  border-radius: 0;
 }
 
 .newsletter input:focus {
@@ -28,15 +29,14 @@
 
 .newsletter .button {
   margin-top: 12px;
-  background: #00c57e;
+  background: #999;
   border: 0;
   cursor: pointer;
   color: #fff;
-  font: 600 12px/21px "Open Sans", sans-serif;
+  font: 700 12px/21px "Open Sans", sans-serif;
   letter-spacing: 1px;
   text-transform: uppercase;
-  border-radius: 5px;
-  padding: 10px 20px;
+  padding: 13px 25px;
   width: auto;
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;
@@ -45,5 +45,14 @@
 }
 
 .newsletter .button:hover {
-  background: #009e65;
+  background: #666;
+}
+
+.inline-newsletter {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.inline-newsletter .newsletter h1 {
+  font: 16px/28px Apercu light,sans-serif;
 }

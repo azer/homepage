@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Emojify from 'react-emojione'
 import Link from 'gatsby-link'
 import SocialIcons from './social-icons'
 import links from './menu-links.json'

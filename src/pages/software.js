@@ -1,16 +1,26 @@
 import React, { Component } from 'react'
 import SimpleLayout from '../components/simple-layout'
 import Helmet from 'react-helmet'
+import Newsletter from '../components/newsletter'
 import projects from '../projects.json'
 import "./software.css"
 
 export default class Software extends Component {
   render() {
+    const title = `Software Projects - ${this.props.data.site.siteMetadata.title}`
+
     return (
       <SimpleLayout name='software' location={this.props.location}>
-        <Helmet title={`Software Projects - ${this.props.data.site.siteMetadata.title}`} />
+        <Helmet title={title}>
+          <meta property="og:type" content="website" />
+	        <meta property="og:title" content={title} />
+	        <meta property="og:url" content="http://azer.bike/software" />
+	        <meta property="og:description" content="List of my personal projects." />
+	        <meta property="og:image" content="https://cldup.com/go95bqT7sK.jpg" />
+          <link rel="canonical" href="http://azer.bike/software" />
+        </Helmet>
         <h1>Software<br />Projects</h1>
-        <h2>You can see these projects as mirrors of my personal life. I imagined, taught and planned them when I was hiking in a mountain or washing dishes at home. </h2>
+        <h2>The software I make is mirror of my personal life. I imagined, taught and planned them when I was hiking in a mountain or washing dishes at home. </h2>
 
         <div className="recent">
           <h3>
@@ -57,10 +67,10 @@ export default class Software extends Component {
           {projects.old.map(p => this.renderRecentProject(p))}
         </div>
 
-        <h2 className="thanks">
+        <div className="inline-newsletter">
           <div className="zigzag"></div>
-          That's about it, thanks for checking my projects. If you like to get detailed info, you can have a look at my <a href="/resume.pdf">resume</a>.
-        </h2>
+          <Newsletter title="That's about it. You can subscribe my personal newsletter to get updates about my projects." />
+        </div>
       </SimpleLayout>
     )
   }

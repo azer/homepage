@@ -1,8 +1,7 @@
 ---
 title: Introducing Kozmos
 desc: A new bookmarking platform made for everyone.
-image: https://getkozmos.com/public/logos/kozmos-heart-logo-250px.png
-imageHeight: 100px
+image: https://cldup.com/JneyS20LWo.png
 date: "2017-06-02T07:00:00.000Z"
 path: "/journal/introducing-kozmos/"
 ---

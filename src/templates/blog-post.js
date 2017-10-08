@@ -8,10 +8,17 @@ export default class BlogPostTemplate extends Component {
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
+    const title = `${post.frontmatter.title} - ${siteTitle}'s Journal`
 
     return (
       <SimpleLayout name="blog-post" location={this.props.location}>
-        <Helmet title={`${post.frontmatter.title} - ${siteTitle}'s Journal`} />
+        <Helmet title={title}>
+          <meta property="og:type" content="article" />
+	        <meta property="og:title" content={title} />
+	        <meta property="og:url" content={`http://azer.bike/journal${post.frontmatter.path}`} />
+	        <meta property="og:description" content={post.frontmatter.desc} />
+	        <meta property="og:image" content={post.frontmatter.image} />
+        </Helmet>
 
         <h1>{post.frontmatter.title}</h1>
         <h2>
@@ -60,6 +67,7 @@ export const pageQuery = graphql`
         desc
         image
         imageHeight
+        path
         date(formatString: "MMMM DD, YYYY")
       }
     }

@@ -15,9 +15,8 @@ album('72157686569836570', { key: key }, (err, photos) => {
 
 function photo (props) {
   return {
-    id: props.id,
+    path: '/photo/' + props.id,
     title: props.title,
-    desc: props.description,
     sizes: {
       xxlarge: size(props.sizes.large2048),
       xlarge: size(props.sizes.large1600),

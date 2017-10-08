@@ -5,6 +5,7 @@
     "gatsby-link": "^1.6.15",
     "gatsby-plugin-react-helmet": "^1.0.6",
     "gatsby-source-filesystem": "^1.5.2",
+    "gatsby-transformer-json": "^1.0.8",
     "gatsby-transformer-remark": "^1.7.15",
     "img": "github:npm-dom/img",
     "react-emojione": "^3.1.10"

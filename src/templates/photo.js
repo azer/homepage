@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import SimpleLayout from '../components/simple-layout'
-import Link from 'gatsby-link'
+import Link, { navigateTo } from 'gatsby-link'
+import Helmet from 'react-helmet'
 import img from "img"
-import photos from '../photos.json'
 import "./photo.css"
 
 export default class Slideshow extends Component {
@@ -13,17 +13,19 @@ export default class Slideshow extends Component {
 
   componentWillMount() {
     if (typeof document !== 'undefined') {
-      document.body.addEventListener('keydown', this.onKeyPress)
+      window.removeEventListener('keyup', this.onKeyPress)
+      window.addEventListener('keyup', this.onKeyPress, false)
     }
 
-    const match = this.props.location.search.match(/p\=(\w+)/)
-    const id = match ? match[1] : photos[0].id
+    this.select()
+  }
 
-    this.select(id)
+  componentWillReceiveProps() {
+    this.select()
   }
 
   componentWillUnmount() {
-    document.body.removeEventListener('keypress', this.onKeyPress)
+    window.removeEventListener('keyup', this.onKeyPress)
   }
 
   load(photo) {
@@ -58,35 +60,34 @@ export default class Slideshow extends Component {
   }
 
   onKeyPress(event) {
+    console.log('event', event)
+    console.log('navigate to', this.state.previous, this.state.next)
+
     if (event.keyCode === 37) {
-      this.select(this.state.previous.id)
+      navigateTo(this.state.previous)
     } else if (event.keyCode === 39) {
-      this.select(this.state.next.id)
+      navigateTo(this.state.next)
     }
   }
 
   select(id) {
-    let photo
+    const all = this.props.data.allPhotosJson.edges
+    const selected = this.props.data.photosJson
 
-    let i = photos.length
+    let i = all.length
     while (i--) {
-      if (photos[i].id === id) {
-        photo = photos[i]
+      if (all[i].node.path === selected.path) {
         break;
       }
     }
 
     this.setState({
-      previous: photos[i === 0 ? photos.length - 1 : i-1],
-      next: photos[(i+1) % photos.length],
-      photo
+      previous: all[i === 0 ? all.length - 1 : i-1].node.path,
+      next: all[(i+1) % all.length].node.path,
+      photo: selected
     })
 
-    this.load(photo)
-
-    if (typeof history !== 'undefined') {
-      history.pushState({ urlPath: '/photo?p=' + photo.id }, "", '/photo?p=' + photo.id)
-    }
+    this.load(selected)
   }
 
   size() {
@@ -102,11 +103,23 @@ export default class Slideshow extends Component {
   }
 
   render() {
+    const photo = this.props.data.photosJson
+    const title = `${photo.title} - ${this.props.data.site.siteMetadata.title}`
+
     return (
-      <SimpleLayout name="slideshow" location={this.props.location}>
+      <SimpleLayout name="slideshow" location={this.props.location} newsletter>
+        <Helmet title={photo.title}>
+          <meta property="og:type" content="website" />
+	        <meta property="og:title" content={title} />
+	        <meta property="og:url" content={`http://azer.bike/${photo.path}`} />
+	        <meta property="og:description" content="Selection of some photos I shot." />
+	        <meta property="og:image" content={photo.sizes.xlarge.url} />
+          <link rel="canonical" href={`http://azer.bike/${photo.path}`} />
+        </Helmet>
+
         {this.state.loading ? this.renderLoading() : this.renderPhoto() }
         <div className="head">
-          <div className="caption">{this.state.photo.title}</div>
+          <div className="caption">{photo.title}</div>
           {this.renderButtons()}
           <div className="clear"></div>
       </div>
@@ -129,12 +142,12 @@ export default class Slideshow extends Component {
   renderButtons() {
     return (
       <div className="buttons">
-        <div onClick={() => this.select(this.state.previous.id)} className="prev-button button">
+        <Link to={this.state.previous} className="prev-button button">
           <svg width="24px" height="11px"><polygon points="18.4,0.5 17.6,1.2 21.5,5 0.5,5 0.5,6 21.5,6 17.6,9.8 18.4,10.5 23.4,5.5 "></polygon></svg>
-        </div>
-        <div onClick={() => this.select(this.state.next.id)} className="next-button button">
+        </Link>
+        <Link to={this.state.next} className="next-button button">
           <svg width="24px" height="11px"><polygon points="18.4,0.5 17.6,1.2 21.5,5 0.5,5 0.5,6 21.5,6 17.6,9.8 18.4,10.5 23.4,5.5 "></polygon></svg>
-        </div>
+        </Link>
       </div>
     )
   }
@@ -152,3 +165,43 @@ export default class Slideshow extends Component {
     )
   }
 }
+
+export const photoQuery = graphql`
+  query PhotographById($path: String!) {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+
+    photosJson(path: { eq: $path }) {
+      path
+      title
+      sizes {
+        small {
+          url
+        }
+        medium {
+          url
+        }
+        large {
+          url
+        }
+        xlarge {
+          url
+        }
+        xxlarge {
+          url
+        }
+      }
+    }
+
+    allPhotosJson {
+      edges {
+        node {
+          path
+        }
+      }
+    }
+  }
+`

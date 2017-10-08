@@ -15,7 +15,7 @@ export default class SimpleLayout extends Component {
         <div className="content">
           {this.props.children}
         </div>
-        <Footer location={this.props.location} />
+        <Footer {...this.props} />
       </div>
     )
   }

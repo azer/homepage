@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import formatDate from "format-date"
+import Newsletter from '../components/newsletter'
 
 import SimpleLayout from '../components/simple-layout'
 import "./journal.css"
@@ -14,20 +15,29 @@ export default class Journal extends Component {
   render() {
     const featured = this.props.data.allMarkdownRemark.edges[0]
     const posts = this.props.data.allMarkdownRemark.edges.slice(1)
+    const title = `Journal - ${this.props.data.site.siteMetadata.title}`
 
     return (
       <SimpleLayout name="journal" location={this.props.location}>
-        <Helmet title={`Journal - ${this.props.data.site.siteMetadata.title}`} />
+        <Helmet title={title}>
+          <meta property="og:type" content="website" />
+	        <meta property="og:title" content={title} />
+	        <meta property="og:url" content="http://azer.bike/journal" />
+	        <meta property="og:description" content="Azer's personal blog." />
+	        <meta property="og:image" content="https://cldup.com/go95bqT7sK.jpg" />
+          <link rel="canonical" href="http://azer.bike/journal" />
+        </Helmet>
+
         <h1>Journal</h1>
         <h2>Ideas, thoughts, knowledge come and go. I keep some of them in this journal to share with you.</h2>
 
         {this.renderFeatured(featured.node.frontmatter)}
         {this.renderArchive(posts)}
 
-        <h2 className="thanks">
+        <div className="inline-newsletter">
           <div className="zigzag"></div>
-          That's about it, <a href="https://twitter.com/afrikaradyo">follow me on Twitter</a> to get more updates.
-        </h2>
+          <Newsletter title="That's about it. You can subscribe for new posts below." />
+        </div>
       </SimpleLayout>
     )
   }

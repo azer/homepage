@@ -7,9 +7,11 @@ import "./footer.css"
 
 export default class Footer extends Component {
   render() {
+    console.log(this.props)
+
     return (
       <div className="footer">
-        <Newsletter />
+        {this.props.newsletter ? <Newsletter /> : null}
         <div className="inner">
           <div className="footer-left">
             <Menu location={this.props.location} footer />

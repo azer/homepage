@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import SimpleLayout from '../components/simple-layout'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
-import photos from '../photos.json'
+import Newsletter from '../components/newsletter'
 import debounce from 'debounce-fn'
 import "./photography.css"
 
@@ -19,9 +19,8 @@ export default class Photography extends Component {
 
     this.setState({
       selected: null,
-      all: photos,
       thumbnailSize: this.findThumbnailSize(),
-      columns: this.createColumns(photos)
+      columns: this.createColumns()
     })
   }
 
@@ -31,7 +30,8 @@ export default class Photography extends Component {
     }
   }
 
-  createColumns(photos) {
+  createColumns() {
+    const photos = this.props.data.allPhotosJson.edges
     const count = this.findColumnCount()
     const thumbnailSize = this.findThumbnailSize()
     const columns = []
@@ -52,8 +52,9 @@ export default class Photography extends Component {
         if (columns[c].height < column.height) column = columns[c]
       }
 
-      column.photos.push(photos[i])
-      column.height += photos[i].sizes[thumbnailSize].height
+      let p = photos[i].node
+      column.photos.push(p)
+      column.height += p.sizes[thumbnailSize].height
     }
 
     return columns
@@ -81,20 +82,37 @@ export default class Photography extends Component {
   onResize() {
     this.setState({
       selected: null,
-      all: photos,
       thumbnailSize: this.findThumbnailSize(),
-      columns: this.createColumns(photos)
+      columns: this.createColumns()
     })
   }
 
   render() {
+    const title = `Photography - ${this.props.data.site.siteMetadata.title}`
+
     return (
       <SimpleLayout name="photography" location={this.props.location}>
-        <Helmet title={`Photography - ${this.props.data.site.siteMetadata.title}`} />
+        <Helmet title={title}>
+          <meta property="og:type" content="website" />
+	        <meta property="og:title" content={title} />
+	        <meta property="og:url" content="http://azer.bike/photography" />
+	        <meta property="og:description" content="Selection of some photos I shot." />
+	        <meta property="og:image" content="https://cldup.com/qCL_0FsLkP.jpg" />
+          <link rel="canonical" href="http://azer.bike/photography" />
+        </Helmet>
+
         <h1>Photography</h1>
-        <h2>The kind of beauty I seek is incomplete and imperfect. An apple with bird bites or some bug holes excites me; a real, romantic relationship is essential for beauty.</h2>
+        <h2>
+          An apple with bird bites or some bug holes excites me; a real,
+          romantic relationship is beautiful.
+          I've been seeking incomplete and imperfect beauty.
+        </h2>
         <div className="photos">
           {this.renderGrid()}
+        </div>
+        <div className="inline-newsletter">
+          <div className="zigzag"></div>
+          <Newsletter title="This is what I got for now. Join my newsletter to hear when there is new photos." />
         </div>
       </SimpleLayout>
     )
@@ -124,10 +142,10 @@ export default class Photography extends Component {
   renderThumbnail(p) {
     return (
       <div className="thumbnail">
-        <Link className="caption center" to={`/photo?p=${p.id}`}>
+        <Link className="caption center" to={p.path}>
           <h1>{p.title}</h1>
         </Link>
-        <Link to={`/photo?p=${p.id}`}>
+        <Link to={p.path}>
           <img src={p.sizes[this.state.thumbnailSize].url} />
         </Link>
       </div>
@@ -140,6 +158,25 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+      }
+    }
+
+    allPhotosJson {
+      edges {
+        node {
+          path
+          title
+          sizes {
+            small {
+              url
+              height
+            }
+            medium {
+              url
+              height
+            }
+          }
+        }
       }
     }
   }
