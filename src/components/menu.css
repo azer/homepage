@@ -49,6 +49,7 @@
   -moz-transition: all 0.3s ease-in;
   -o-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
+  font-size: 18px;
 }
 
 .menu a:last-child .emoji {

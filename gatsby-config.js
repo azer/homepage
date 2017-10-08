@@ -5,6 +5,8 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    "gatsby-transformer-remark",
+    "gatsby-transformer-json",
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -12,7 +14,11 @@ module.exports = {
         path: `${__dirname}/src/`
       }
     },
-    "gatsby-transformer-remark",
-    "gatsby-transformer-json"
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-64576199-4'
+      }
+    }
   ]
 }

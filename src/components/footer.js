@@ -7,8 +7,6 @@ import "./footer.css"
 
 export default class Footer extends Component {
   render() {
-    console.log(this.props)
-
     return (
       <div className="footer">
         {this.props.newsletter ? <Newsletter /> : null}

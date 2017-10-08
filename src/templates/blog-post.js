@@ -9,15 +9,17 @@ export default class BlogPostTemplate extends Component {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
     const title = `${post.frontmatter.title} - ${siteTitle}'s Journal`
+    const url = `http://azer.bike/journal${post.frontmatter.path}`
 
     return (
       <SimpleLayout name="blog-post" location={this.props.location}>
         <Helmet title={title}>
           <meta property="og:type" content="article" />
 	        <meta property="og:title" content={title} />
-	        <meta property="og:url" content={`http://azer.bike/journal${post.frontmatter.path}`} />
+	        <meta property="og:url" content={url} />
 	        <meta property="og:description" content={post.frontmatter.desc} />
 	        <meta property="og:image" content={post.frontmatter.image} />
+          <link rel="canonical" href={url} />
         </Helmet>
 
         <h1>{post.frontmatter.title}</h1>

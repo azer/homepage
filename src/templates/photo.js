@@ -60,9 +60,6 @@ export default class Slideshow extends Component {
   }
 
   onKeyPress(event) {
-    console.log('event', event)
-    console.log('navigate to', this.state.previous, this.state.next)
-
     if (event.keyCode === 37) {
       navigateTo(this.state.previous)
     } else if (event.keyCode === 39) {
@@ -105,16 +102,17 @@ export default class Slideshow extends Component {
   render() {
     const photo = this.props.data.photosJson
     const title = `${photo.title} - ${this.props.data.site.siteMetadata.title}`
+    const url = `http://azer.bike/${photo.path}`
 
     return (
       <SimpleLayout name="slideshow" location={this.props.location} newsletter>
         <Helmet title={photo.title}>
           <meta property="og:type" content="website" />
 	        <meta property="og:title" content={title} />
-	        <meta property="og:url" content={`http://azer.bike/${photo.path}`} />
+	        <meta property="og:url" content={url} />
 	        <meta property="og:description" content="Selection of some photos I shot." />
 	        <meta property="og:image" content={photo.sizes.xlarge.url} />
-          <link rel="canonical" href={`http://azer.bike/${photo.path}`} />
+          <link rel="canonical" href={url} />
         </Helmet>
 
         {this.state.loading ? this.renderLoading() : this.renderPhoto() }

@@ -3,6 +3,7 @@
     "debounce-fn": "github:azer/debounce-fn",
     "gatsby": "^1.9.42",
     "gatsby-link": "^1.6.15",
+    "gatsby-plugin-google-analytics": "^1.0.8",
     "gatsby-plugin-react-helmet": "^1.0.6",
     "gatsby-source-filesystem": "^1.5.2",
     "gatsby-transformer-json": "^1.0.8",
