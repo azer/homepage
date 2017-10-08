@@ -1,9 +1,9 @@
 [
-  { "to": "/journal", "emoji": ":notebook:", "title": "Journal" },
+  { "to": "/journal", "emoji": "📖", "title": "Journal" },
   { "to": "/software", "emoji": "💻", "title": "Software" },
-  { "to": "/photography", "emoji": ":camera:", "title": "Photography" },
+  { "to": "/photography", "emoji": "📷", "title": "Photography" },
   { "to": "mailto:azer@roadbeats.com", "emoji": "💌", "title": "E-Mail" },
   { "to": "http://afrikaradyo.com", "emoji": "🎵", "className": "footer-link", "title": "Afrika Radyo" },
-  { "to": "http://roadbeats.com", "emoji": ":camping:", "className": "footer-link", "title": "RoadBeats" },
+  { "to": "http://roadbeats.com", "emoji": "🏔", "className": "footer-link", "title": "RoadBeats" },
   { "to": "http://listenparadise.org", "emoji":"🎵", "className": "footer-link", "title": "Listen Paradise" }
 ]
