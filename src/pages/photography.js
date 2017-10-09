@@ -91,15 +91,13 @@ export default class Photography extends Component {
     const title = `Photography - ${this.props.data.site.siteMetadata.title}`
 
     return (
-      <SimpleLayout name="photography" location={this.props.location}>
-        <Helmet title={title}>
-          <meta property="og:type" content="website" />
-	        <meta property="og:title" content={title} />
-	        <meta property="og:url" content="http://azer.bike/photography" />
-	        <meta property="og:description" content="Selection of some photos I shot." />
-	        <meta property="og:image" content="https://cldup.com/qCL_0FsLkP.jpg" />
-          <link rel="canonical" href="http://azer.bike/photography" />
-        </Helmet>
+      <SimpleLayout type="photography"
+                    location={this.props.location}
+                    type="photos"
+                    title={title}
+                    desc="Selection of some photos I shot."
+                    url="http://azer.bike/photography"
+                    image="https://cldup.com/qCL_0FsLkP.jpg">
 
         <h1>Photography</h1>
         <h2>

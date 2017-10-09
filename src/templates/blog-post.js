@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import SimpleLayout from "../components/simple-layout"
-import Helmet from 'react-helmet'
+import Newsletter from '../components/newsletter'
 import Link from 'gatsby-link'
 import "./blog-post.css"
 
@@ -8,20 +8,15 @@ export default class BlogPostTemplate extends Component {
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
-    const title = `${post.frontmatter.title} - ${siteTitle}'s Journal`
-    const url = `http://azer.bike/journal${post.frontmatter.path}`
 
     return (
-      <SimpleLayout name="blog-post" location={this.props.location}>
-        <Helmet title={title}>
-          <meta property="og:type" content="article" />
-	        <meta property="og:title" content={title} />
-	        <meta property="og:url" content={url} />
-	        <meta property="og:description" content={post.frontmatter.desc} />
-	        <meta property="og:image" content={post.frontmatter.image} />
-          <link rel="canonical" href={url} />
-        </Helmet>
-
+      <SimpleLayout name="blog-post"
+                    location={this.props.location}
+                    type="article"
+                    title={`${post.frontmatter.title} - ${siteTitle}'s Journal`}
+                    url={`http://azer.bike/journal${post.frontmatter.path}`}
+                    desc={post.frontmatter.desc}
+                    image={post.frontmatter.image}>
         <h1>{post.frontmatter.title}</h1>
         <h2>
           {post.frontmatter.desc ? <span>{post.frontmatter.desc}</span> : null}
@@ -30,13 +25,18 @@ export default class BlogPostTemplate extends Component {
 
         {this.renderImage()}
         <div className="post" dangerouslySetInnerHTML={{ __html: post.html }} />
+
+        <div className="inline-newsletter">
+          <div className="zigzag"></div>
+          <Newsletter title="Did you like this article? Subscribe for new posts:" />
+        </div>
       </SimpleLayout>
     )
   }
 
   renderImage() {
     const post = this.props.data.markdownRemark.frontmatter
-    if (!post.image) return
+    if (!post.image || post.hideImage) return <div className="post-image-space"></div>
 
     const css = {
       backgroundImage: `url(${post.image})`
@@ -44,6 +44,14 @@ export default class BlogPostTemplate extends Component {
 
     if (post.imageHeight) {
       css.height = post.imageHeight
+    }
+
+    if (post.imageWidth) {
+      css.width = post.imageWidth
+    }
+
+    if (post.imageSize) {
+      css.backgroundSize = post.imageSize
     }
 
     return (
@@ -69,6 +77,7 @@ export const pageQuery = graphql`
         desc
         image
         imageHeight
+        hideImage
         path
         date(formatString: "MMMM DD, YYYY")
       }

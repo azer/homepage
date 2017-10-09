@@ -10,15 +10,12 @@ export default class Software extends Component {
     const title = `Software Projects - ${this.props.data.site.siteMetadata.title}`
 
     return (
-      <SimpleLayout name='software' location={this.props.location}>
-        <Helmet title={title}>
-          <meta property="og:type" content="website" />
-	        <meta property="og:title" content={title} />
-	        <meta property="og:url" content="http://azer.bike/software" />
-	        <meta property="og:description" content="List of my personal projects." />
-	        <meta property="og:image" content="https://cldup.com/go95bqT7sK.jpg" />
-          <link rel="canonical" href="http://azer.bike/software" />
-        </Helmet>
+      <SimpleLayout name='software'
+                    location={this.props.location}
+                    type="website"
+                    title={title}
+                    desc="List of my personal projects."
+                    image="https://c1.staticflickr.com/5/4464/37192502570_f88f06f162_z.jpg">
         <h1>Software<br />Projects</h1>
         <h2>The software I make is mirror of my personal life. I imagined, taught and planned them when I was hiking in a mountain or washing dishes at home. </h2>
 

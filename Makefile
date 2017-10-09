@@ -21,3 +21,4 @@ deploy:
 	@$(MAKE) build
 	@cd public && rm *.map
 	@cd public && tar -cvf build.tar.gz *
+	@scp public/build.tar.gz $(server):$(path)/.

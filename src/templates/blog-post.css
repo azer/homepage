@@ -16,27 +16,31 @@
   height: 250px;
   background: no-repeat center;
   background-size: contain;
-  margin: 20px 0 50px 0;
+  margin: 20px auto 50px auto;
+}
+
+.blog-post .post-image-space {
+  height: 50px;
 }
 
 .blog-post .post {
-  font: 18px "Open Sans", sans-serif;
+  font: 18px "Tiempos text regular", "PT Serif", "Microsoft Sans Serif", serif;
   color: #444;
   max-width: 800px;
   margin: 0 auto;
 }
 
-.blog-post .post:after {
+/*.blog-post .post:after {
   content: "";
   width: 100px;
   height: 3px;
   background: #111;
   position: absolute;
-  margin: 10px 0;
-}
+  margin: 30px 0;
+}*/
 
 .blog-post .post > p {
-  margin: 20px auto;
+  margin: 20px auto 0 auto;
   display: block;
 }
 
@@ -46,11 +50,6 @@
   font-weight: 400;
   color: #333;
 }
-
-.blog-post .post a {
-  font-weight: 600;
-}
-
 
 .blog-post .post ul {
   margin: 20px 0;
@@ -94,6 +93,9 @@
   color: #555;
   background: #f2f2f2;
   padding: 4px 10px;
+  margin: 0;
+  max-width: 100%;
+  word-wrap: break-word;
 }
 
 .blog-post .post blockquote {
@@ -109,13 +111,14 @@
 
 
 .blog-post .post h1 {
-  font: 32px "Apercu medium", "Open Sans", sans-serif;
-  margin: 75px 0 10px 0;
+  font: 36px "Apercu bold", "Open Sans", sans-serif;
+  margin: 50px 0 10px 0;
   color: #050505;
 }
 
 .blog-post .post h2 {
-  font: 26px "Apercu medium", "Open Sans", sans-serif;
+  font: 26px "Apercu med
+ium", "Open Sans", sans-serif;
   margin: 50px 0 20px 0;
   color: #111;
 }
@@ -187,9 +190,9 @@
     margin-left: -100px;
   }
 
-  .blog-post .post .center img {
+  .blog-post .post .center-img img {
     width: auto;
-
+    margin: 0 auto;
   }
 }
 
@@ -197,6 +200,20 @@
   .blog-post .post .wide {
     width: 100%;
     margin: 0;
+  }
+
+  .blog-post .post .left {
+    display: block;
+    float: none;
+    width: 100%;
+  }
+
+  .blog-post .post .left img {
+    max-width: 100%;
+  }
+
+  .blog-post .post-image-space {
+    height: 20px;
   }
 }
 
@@ -217,5 +234,10 @@
 
   .blog-post .post p {
     line-height: 1.7;
+  }
+
+  .blog-post .post .center-img img {
+    width: auto;
+    max-width: 100%;
   }
 }

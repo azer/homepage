@@ -2,9 +2,12 @@
 title: A Pin Factory, and Linux
 desc: Productivity in Old Times and Modern Times
 image: https://cldup.com/XPNLoghSjK.jpg
+hideImage: true
 date: "2017-01-23T08:00:00.000Z"
 path: "/journal/pin-factory/"
 ---
+
+![](https://cldup.com/XPNLoghSjK.jpg)
 
 Imagine you have a pin factory. A very simple business, you have humans and machines working together to produce pins.
 Your goal is to produce as much as you can within a day. Your factory needs the best workspace setup because **the

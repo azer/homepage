@@ -8,15 +8,13 @@ import "./index.css"
 export default class Homepage extends Component {
   render() {
     return (
-      <CenteredLayout name="index" location={this.props.location} newsletter>
-        <Helmet title={this.props.data.site.siteMetadata.title}>
-          <meta property="og:type" content="website" />
-	        <meta property="og:title" content={this.props.data.site.siteMetadata.title} />
-	        <meta property="og:url" content="http://azer.bike" />
-	        <meta property="og:description" content="My name is Azer Koçulu. I build software, also shoot photos." />
-	        <meta property="og:image" content="https://cldup.com/go95bqT7sK.jpg" />
-          <link rel="canonical" href="http://azer.bike" />
-        </Helmet>
+      <CenteredLayout name="index"
+                      location={this.props.location}
+                      title={this.props.data.site.siteMetadata.title}
+                      desc="My name is Azer Koçulu. I build software, also shoot photos."
+                      type="website"
+                      image="https://cldup.com/go95bqT7sK.jpg"
+                      newsletter>
         <div className="columns">
           {this.renderIntro()}
           {this.renderPhoto()}

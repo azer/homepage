@@ -1,4 +1,5 @@
 import React, { Component }  from 'react'
+import Helmet from 'react-helmet'
 import Menu from './menu'
 import Footer from './footer'
 import BurgerMenu from './burger-menu'
@@ -10,6 +11,21 @@ export default class SimpleLayout extends Component {
 
     return (
       <div className={classes.join(' ')}>
+        <Helmet title={this.props.title}>
+          <meta property="og:type" content={this.props.type} />
+	        <meta property="og:title" content={this.props.title} />
+	        <meta property="og:url" content={this.props.url || "http://azer.bike"} />
+	        <meta property="og:description" content={this.props.desc} />
+	        <meta property="og:image" content={this.props.image} />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:site" content="@afrikaradyo" />
+          <meta name="twitter:creator" content="@afrikaradyo" />
+          <meta name="twitter:title" content={this.props.title} />
+          <meta name="twitter:description" content={this.props.desc} />
+          <meta name="twitter:image" content={this.props.image} />
+          <link rel="canonical" href={this.props.url || "http://azer.bike"} />
+        </Helmet>
+
         <BurgerMenu location={this.props.location} />
         <Menu location={this.props.location} />
         <div className="content">

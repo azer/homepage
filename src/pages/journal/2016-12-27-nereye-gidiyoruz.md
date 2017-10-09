@@ -2,10 +2,13 @@
 title: Nereye Gidiyoruz?
 desc: Gidiyor muyuz, kalıyor muyuz? Gidiyorsak eğer, doğduğumuz coğrafyayı bırakıp nereye gidiyoruz?
 image: https://cdn-images-1.medium.com/max/1000/1*uf2RrSHkTSIQLvVYF3FrOw.jpeg
-imageHeight: 400px
+hideImage: true
 date: "2016-12-27T08:00:00.000Z"
 path: "/journal/nereye-gidiyoruz"
 ---
+
+![](https://cdn-images-1.medium.com/max/1000/1*uf2RrSHkTSIQLvVYF3FrOw.jpeg)
+<span class="img-alt">Oakland'dan ayrılmadan bir gün önce, Kamdesh adlı Afgan lokantasına giderken çektiğim bir fotoğraf.</span>
 
 # Yıl 2011, Rota Amerika
 

@@ -15,18 +15,15 @@ export default class Journal extends Component {
   render() {
     const featured = this.props.data.allMarkdownRemark.edges[0]
     const posts = this.props.data.allMarkdownRemark.edges.slice(1)
-    const title = `Journal - ${this.props.data.site.siteMetadata.title}`
 
     return (
-      <SimpleLayout name="journal" location={this.props.location}>
-        <Helmet title={title}>
-          <meta property="og:type" content="website" />
-	        <meta property="og:title" content={title} />
-	        <meta property="og:url" content="http://azer.bike/journal" />
-	        <meta property="og:description" content="Azer's personal blog." />
-	        <meta property="og:image" content="https://cldup.com/go95bqT7sK.jpg" />
-          <link rel="canonical" href="http://azer.bike/journal" />
-        </Helmet>
+      <SimpleLayout name="journal"
+                    location={this.props.location}
+                    type="website"
+                    title={`Journal - ${this.props.data.site.siteMetadata.title}`}
+                    desc="Ideas, thoughts, knowledge come and go. I keep some of them in this journal to share with you."
+                    url="http://azer.bike/journal"
+                    image="https://cldup.com/go95bqT7sK.jpg">
 
         <h1>Journal</h1>
         <h2>Ideas, thoughts, knowledge come and go. I keep some of them in this journal to share with you.</h2>
@@ -36,7 +33,7 @@ export default class Journal extends Component {
 
         <div className="inline-newsletter">
           <div className="zigzag"></div>
-          <Newsletter title="That's about it. You can subscribe for new posts below." />
+          <Newsletter title="That's about it. Would you like to subscribe to new posts?" />
         </div>
       </SimpleLayout>
     )

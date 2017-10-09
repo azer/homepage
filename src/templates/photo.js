@@ -101,19 +101,18 @@ export default class Slideshow extends Component {
 
   render() {
     const photo = this.props.data.photosJson
-    const title = `${photo.title} - ${this.props.data.site.siteMetadata.title}`
+    const title = `${photo.title} - Photography - ${this.props.data.site.siteMetadata.title}`
     const url = `http://azer.bike/${photo.path}`
 
     return (
-      <SimpleLayout name="slideshow" location={this.props.location} newsletter>
-        <Helmet title={photo.title}>
-          <meta property="og:type" content="website" />
-	        <meta property="og:title" content={title} />
-	        <meta property="og:url" content={url} />
-	        <meta property="og:description" content="Selection of some photos I shot." />
-	        <meta property="og:image" content={photo.sizes.xlarge.url} />
-          <link rel="canonical" href={url} />
-        </Helmet>
+        <SimpleLayout name="slideshow"
+                      location={this.props.location}
+                      title={title}
+                      desc="Selection of some photos I shot."
+                      type="photo"
+                      url={url}
+                      image={photo.sizes.xlarge.url}
+                      newsletter>
 
         {this.state.loading ? this.renderLoading() : this.renderPhoto() }
         <div className="head">
