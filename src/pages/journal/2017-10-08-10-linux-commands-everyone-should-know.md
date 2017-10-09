@@ -62,7 +62,7 @@ These three important commands help you control running programs in your system.
 
 You can kill nginx by taking that number and giving to `kill` command:
 
-`kill -USR2 'pidof nginx'`
+`kill -USR2 $(pidof nginx)'`
 
 `pkill` is a shortcut command that kills the process matching pattern:
 
@@ -86,7 +86,7 @@ I'll cover a few simple use cases of it here.
 
 Example 1: List all CSS files (including subdirectories):
 
-`find . -type f -name *.css`
+`find . -type f -name "*.css"`
 
 Example 2: List all CSS or HTML files:
 

@@ -91,7 +91,7 @@ export default class Photography extends Component {
     const title = `Photography - ${this.props.data.site.siteMetadata.title}`
 
     return (
-      <SimpleLayout type="photography"
+      <SimpleLayout name="photography"
                     location={this.props.location}
                     type="photos"
                     title={title}

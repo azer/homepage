@@ -143,6 +143,7 @@ ium", "Open Sans", sans-serif;
 .blog-post .post img {
   margin: 20px auto;
   display: block;
+  max-width: 100%;
 }
 
 .blog-post .post .img-alt {
@@ -179,6 +180,7 @@ ium", "Open Sans", sans-serif;
 @media (min-width: 1200px) {
   .blog-post .post img {
     width: calc(100% + 100px);
+    max-width: none;
     margin-left: -50px;
   }
 
