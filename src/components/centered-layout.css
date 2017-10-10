@@ -9,16 +9,6 @@
   margin: 200px auto 0 auto;
 }
 
-.centered-layout .content a, .simple-layout .content a {
-  color: #111;
-  text-decoration: none;
-  border-bottom: 3px solid #9dffc8;
-}
-
-.centered-layout .content a:hover , .simple-layout .content a:hover {
-  border: none;
-}
-
 @media (max-height: 1000px) {
   .centered-layout .content {
     margin-top: 200px;

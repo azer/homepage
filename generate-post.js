@@ -11,7 +11,7 @@ qa.ask('{bold}{white}Image:{reset}')
 qa.start(answers => {
   const date = new Date(answers.date)
   const slug = slugify(answers.title)
-  const filename = `src/pages/journal/${formatDate('{year}-{month}-{day}', date)}-${slug}.md`
+  const filename = `posts/${formatDate('{year}-{month}-{day}', date)}-${slug}.md`
   const frontmatter = `---
 title: ${answers.title}
 desc: ${answers.description}
