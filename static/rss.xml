@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title><![CDATA[Azer Koçulu]]></title>
+        <title><![CDATA[Azer Koculu's Journal]]></title>
         <description><![CDATA[I build software, also shoot photos.]]></description>
         <link>http://azer.bike</link>
         <image>
             <url>https://cldup.com/go95bqT7sK.jpg</url>
-            <title>Azer Koçulu</title>
+            <title>Azer Koculu&apos;s Journal</title>
             <link>http://azer.bike</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 10 Oct 2017 07:18:45 GMT</lastBuildDate>
-        <atom:link href="http://azer.bike/journal/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Tue, 10 Oct 2017 07:22:41 GMT</lastBuildDate>
+        <atom:link href="http://azer.bike/rss.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[10 Linux Commands Every Developer Should Know]]></title>
             <link>http://azer.bike/journal/10-linux-commands-every-developer-should-know</link>
