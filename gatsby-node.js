@@ -2,7 +2,9 @@ const Promise = require("bluebird")
 const path = require("path")
 const select = require(`unist-util-select`)
 const fs = require(`fs-extra`)
-const photos = require("./src/photos.json")
+const RSS = require("rss")
+const config = require("./config")
+const photos = require(config.photos.list)
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators
@@ -14,11 +16,14 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
     resolve(graphql(`
       {
-        allMarkdownRemark(limit: 1000) {
+        allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 1000) {
           edges {
             node {
               frontmatter {
                 path
+                title
+                desc
+                date(formatString: "DD MMMM, YYYY")
               }
             }
           }
@@ -29,7 +34,10 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           reject(result.errors)
         }
 
-        result.data.allMarkdownRemark.edges.forEach(edge => {
+        const feed = []
+        result.data.allMarkdownRemark.edges.forEach((edge, i) => {
+          if (i < config.journal.feed_size) feed.push(edge.node.frontmatter)
+
           createPage({
             path: edge.node.frontmatter.path,
             component: blogPost,
@@ -37,6 +45,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
               path: edge.node.frontmatter.path
             }
           })
+
         })
 
         photos.forEach(photo => {
@@ -48,7 +57,30 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             }
           })
         })
+
+        saveFeed(feed)
       })
     )
   })
+}
+
+
+function saveFeed (items) {
+  const feed = new RSS({
+    title: config.journal.title,
+    description: config.description,
+    feed_url: config.journal.feed_url,
+    site_url: config.url,
+    image_url: config.journal.image_url
+  })
+
+    items.forEach(i => feed.item({
+    title: i.title,
+    description: i.description,
+    url: "http://azer.bike" + i.path,
+    date: i.date
+  }))
+
+  fs.writeFile('./static/rss.xml', feed.xml({ indent: true }))
+
 }

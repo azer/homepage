@@ -12,6 +12,7 @@ export default class SimpleLayout extends Component {
     return (
       <div className={classes.join(' ')}>
         <Helmet title={this.props.title}>
+          <meta name="description" content={this.props.desc} />
           <meta property="og:type" content={this.props.type} />
 	        <meta property="og:title" content={this.props.title} />
 	        <meta property="og:url" content={this.props.url || "http://azer.bike"} />

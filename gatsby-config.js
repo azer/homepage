@@ -1,23 +1,25 @@
+const config = require("./config")
+
 module.exports = {
   siteMetadata: {
-    title: `Azer Koçulu`,
-    author: `Azer Koçulu`
+    title: config.title,
+    description: config.description
   },
   plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/posts/`
+      }
+    },
     'gatsby-plugin-react-helmet',
     "gatsby-transformer-remark",
     "gatsby-transformer-json",
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `src`,
-        path: `${__dirname}/src/`
-      }
-    },
-    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: 'UA-64576199-4'
+        trackingId: config.analytics
       }
     }
   ]

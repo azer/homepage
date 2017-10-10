@@ -1,0 +1,16 @@
+{
+  "title": "Azer Koçulu",
+  "description": "I build software, also shoot photos.",
+  "url": "http://azer.bike",
+  "journal": {
+    "title": "Azer Koculu's Journal",
+    "image_url": "https://cldup.com/go95bqT7sK.jpg",
+    "site_url": "http://azer.bike/journal",
+    "feed_url": "http://azer.bike/journal/rss.xml",
+    "feed_size": 10
+  },
+  "photos": {
+    "list": "./posts/photos.json"
+  },
+  "analytics": "UA-64576199-4"
+}
