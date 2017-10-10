@@ -36,7 +36,7 @@ export default class BlogPostTemplate extends Component {
 
   renderImage() {
     const post = this.props.data.markdownRemark.frontmatter
-    if (!post.image || post.hideImage) return <div className="post-image-space"></div>
+    if (!post.image || post.hideImage || !post.image.trim()) return <div className="post-image-space"></div>
 
     const css = {
       backgroundImage: `url(${post.image})`

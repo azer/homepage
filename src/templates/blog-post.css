@@ -89,13 +89,19 @@
 }
 
 .blog-post code {
-  font: 16px "PT Mono", sans-serif;
+  font: 14px "PT Mono", sans-serif;
   color: #555;
   background: #f2f2f2;
-  padding: 4px 10px;
+  padding: 4px 6px;
   margin: 0;
   max-width: 100%;
   word-wrap: break-word;
+}
+
+.blog-post pre code {
+  display: block;
+  padding: 20px;
+  overflow-x: scroll;
 }
 
 .blog-post .post blockquote {
@@ -195,6 +201,10 @@ ium", "Open Sans", sans-serif;
   .blog-post .post .center-img img {
     width: auto;
     margin: 0 auto;
+  }
+
+  .blog-post .post .center-img .img-alt {
+    margin-top: 0;
   }
 }
 

@@ -53,7 +53,10 @@ Once the USB stick is ready, keep it plugged and reboot your system. rEFInd shou
 
 The first steps of the installation will ask you to choose a username, and also a Git repo where you keep your dotfiles (make sure it’s public). A part of the installation, your dotfiles will be automatically linked in the home directory.
 
+<div class="center-img">
+
 ![](https://cdn-images-1.medium.com/max/600/1*3W-VElv3S_gcNe1r7TtybQ.png)
+</div>
 
 After that, you’ll be asked to choose Wi-Fi network via `nmtui connect` command. If you don’t see the network you’re looking for in that list,
 press `Quit` button until the network shows up.
@@ -78,10 +81,7 @@ Choose the cat logo in the boot menu, type your username (you specified it in th
 
 Here is the default desktop you’ll see;
 
-<div class="wide">
-
 ![](https://cdn-images-1.medium.com/max/2000/1*nz5N2atA1EAiY_jb5xyHnw.png)
-</div>
 
 # After Installation
 

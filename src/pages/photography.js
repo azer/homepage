@@ -101,9 +101,7 @@ export default class Photography extends Component {
 
         <h1>Photography</h1>
         <h2>
-          An apple with bird bites or some bug holes excites me; a real,
-          romantic relationship is beautiful.
-          I've been seeking incomplete and imperfect beauty.
+          Bird bites and bug holes on apples excites me. I've been seeking incomplete and imperfect beauty. Real and romantic relationships.
         </h2>
         <div className="photos">
           {this.renderGrid()}

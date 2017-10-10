@@ -24,6 +24,7 @@ export default class SimpleLayout extends Component {
           <meta name="twitter:description" content={this.props.desc} />
           <meta name="twitter:image" content={this.props.image} />
           <link rel="canonical" href={this.props.url || "http://azer.bike"} />
+          <link rel="icon" type="image/png" href="https://c1.staticflickr.com/5/4353/37319896181_52a796bcc7_s.jpg" />
         </Helmet>
 
         <BurgerMenu location={this.props.location} />

@@ -26,8 +26,12 @@ Despite how the demographics of the internet users have been changing, our web b
 ## Simplifiying
 The goal of Kozmos is to make bookmarking mainstream; a product everyone can use. I believe this requires combination of both good design and good engineering. This is why it started with simplifying bookmarking into one single button in your web browser.
 
+<div class="center-img">
+
 ![Kozmos' extensions add a heart button to your browser](https://cdn-images-1.medium.com/max/800/1*UG35CvwGjQluBKFvMGvP5g.png)
 <span class="img-alt">Kozmos adds a heart button to your browser</span>
+
+</div>
 
 We already have extensions for three major web browsers; Chrome, Safari and Firefox. After signing up, you can install the extension
 with one click and import all your bookmarks from your browser to Kozmos automatically!
@@ -43,7 +47,7 @@ If you got a huge file with thousands of bookmarks, Kozmos has the best importin
 drag & drop any kind of file that contains some URLs, Kozmos will take it and process it quickly.
 If it’s not that quick, you can leave the page and come back any time to see the upload progress in real time.
 
-<div class="center">
+<div class="center-img">
 
 ![Kozmos importing & processing tool works quite fast, and doesn’t need anything other than just URLs.
 ](https://cdn-images-1.medium.com/max/800/1*Y712vEOZ5uDGadtTb8mXIQ.png)
@@ -51,12 +55,8 @@ If it’s not that quick, you can leave the page and come back any time to see t
 
 After the installation, you can access your bookmarks from anywhere, viewing them in a meaningful way. This is how your homepage will look;
 
-<div class="wide">
-
   ![](https://cldup.com/7GhGLht7_O.png)
-
   <span class="img-alt">You’ll see articles on left, media (photos, music, videos on right)</span>
-</div>
 
 As I mentioned earlier, Kozmos does not require you to fill forms. Instead, it automatically organizes them for you.
 For example, Kozmos knows the type of content you bookmarked, so you can use keywords like “blog” or “music” when you search.
