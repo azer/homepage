@@ -138,3 +138,23 @@
   position: absolute;
   margin: -7px 0 0 4px;
 }
+
+.slideshow a.close-button {
+  position: absolute;
+  top: 23px;
+  right: 65px;
+  font: 28px Arial, "Open Sans", sans-serif;
+  color: #aaa;
+  border: 0;
+}
+
+.slideshow a.close-button:hover {
+  color: #666;
+}
+
+@media (max-width: 900px) {
+  .slideshow a.close-button {
+    top: 60px;
+    right: 24px;
+  }
+}

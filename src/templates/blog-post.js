@@ -4,6 +4,8 @@ import Newsletter from '../components/newsletter'
 import Link from 'gatsby-link'
 import "./blog-post.css"
 
+import "prismjs/themes/prism-solarizedlight.css"
+
 export default class BlogPostTemplate extends Component {
   render() {
     const post = this.props.data.markdownRemark
@@ -76,6 +78,7 @@ export const pageQuery = graphql`
         desc
         image
         imageHeight
+        imageSize
         hideImage
         path
         date(formatString: "MMMM DD, YYYY")

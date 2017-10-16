@@ -22,3 +22,4 @@ deploy:
 	@cd public && rm *.map
 	@cd public && tar -cvf build.tar.gz *
 	@scp public/build.tar.gz $(server):$(path)/.
+	@ssh $(server) "cd $(path) && tar -xvf build.ta"

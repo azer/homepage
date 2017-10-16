@@ -4,10 +4,10 @@ const key = process.env.KEY
 
 if (!key) throw new Error('API Key needed.')
 
-console.log('Generating src/photos.json...')
+console.log('Generating posts/photos.json...')
 album('72157686569836570', { key: key }, (err, photos) => {
   if (err) throw err
-  fs.writeFile('./src/photos.json', JSON.stringify(photos.map(photo)), err => {
+  fs.writeFile('./posts/photos.json', JSON.stringify(photos.map(photo)), err => {
     if (err) throw err
     console.log('Done!')
   })

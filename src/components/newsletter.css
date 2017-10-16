@@ -7,8 +7,8 @@
 
 .newsletter h1 {
   text-align: center;
-  font: 18px/28px "Apercu light", "Open Sans", sans-serif;
-  color: #555;
+  font: 16px/1.7 "Open Sans", sans-serif !important;
+  color: #666 !important;
   margin: 20px 0;
 }
 
@@ -45,14 +45,11 @@
 }
 
 .newsletter .button:hover {
-  background: #666;
+  background: #00c57e;
+  border-color: #00c57e;
 }
 
 .inline-newsletter {
   max-width: 500px;
   margin: 0 auto;
-}
-
-.inline-newsletter .newsletter h1 {
-  font: 16px/28px Apercu light,sans-serif;
 }

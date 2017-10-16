@@ -105,7 +105,7 @@ export default class Slideshow extends Component {
     const url = `http://azer.bike/${photo.path}`
 
     return (
-        <SimpleLayout name="slideshow"
+      <SimpleLayout name="slideshow"
                       location={this.props.location}
                       title={title}
                       desc="Selection of some photos I shot."
@@ -114,12 +114,13 @@ export default class Slideshow extends Component {
                       image={photo.sizes.xlarge.url}
                       newsletter>
 
+        <Link to="/photography" className="close-button">&times;</Link>
         {this.state.loading ? this.renderLoading() : this.renderPhoto() }
         <div className="head">
           <div className="caption">{photo.title}</div>
           {this.renderButtons()}
           <div className="clear"></div>
-      </div>
+        </div>
 
       </SimpleLayout>
     )

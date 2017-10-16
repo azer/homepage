@@ -17,7 +17,7 @@ export default class Software extends Component {
                     desc="List of my personal projects."
                     image="https://c1.staticflickr.com/5/4464/37192502570_f88f06f162_z.jpg">
         <h1>Software<br />Projects</h1>
-        <h2>The software I make is mirror of my personal life. I imagined, taught and planned them when I was hiking in a mountain or washing dishes at home. </h2>
+        <h2>I enjoy building high-performance, user-friendly applications.</h2>
 
         <div className="recent">
           <h3>
@@ -25,6 +25,19 @@ export default class Software extends Component {
           </h3>
 
           {projects.recent.map(p => this.renderRecentProject(p))}
+        </div>
+
+        <div className="clients">
+          <h3>My most recent client was superhuman:</h3>
+          <div className="superhuman">
+            <img src="https://cldup.com/Wj7n50mV13.png" />
+            <span className="quote">&#x201c;</span>
+            <p>
+              Azer is a phenomenal problem solver, and a great asset on any engineering team. He worked with us on a very high risk project, and it's now in production for all of our users.
+              <strong>Conrad Irwin<br />CTO of Superhuman</strong>
+            </p>
+            <div className="clear"></div>
+          </div>
         </div>
 
         <div className="opensource">
@@ -66,7 +79,7 @@ export default class Software extends Component {
 
         <div className="inline-newsletter">
           <div className="zigzag"></div>
-          <Newsletter title="That's about it. You can subscribe my personal newsletter to get updates about my projects." />
+          <Newsletter title="That's about it. You can subscribe my personal newsletter to hear updates on my projects." />
         </div>
       </SimpleLayout>
     )

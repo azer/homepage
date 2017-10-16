@@ -9,8 +9,8 @@ export default class Footer extends Component {
   render() {
     return (
       <div className="footer">
-        {this.props.newsletter ? <Newsletter /> : null}
         <div className="inner">
+          {this.props.newsletter ? <Newsletter /> : null}
           <div className="footer-left">
             <Menu location={this.props.location} footer />
           </div>
@@ -22,6 +22,7 @@ export default class Footer extends Component {
           </div>
           <div className="clear"></div>
         </div>
+
       </div>
     )
   }

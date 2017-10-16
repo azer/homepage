@@ -8,3 +8,4 @@ public/
 yarn-error.log
 yarn.lock
 package-lock.json
+posts/photos.json

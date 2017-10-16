@@ -21,12 +21,12 @@ export default class Journal extends Component {
                     location={this.props.location}
                     type="website"
                     title={`Journal - ${this.props.data.site.siteMetadata.title}`}
-                    desc="Ideas, thoughts, knowledge come and go. I keep some of them in this journal to share with you."
+                    desc="Technology, software engineering and nomadic life."
                     url="http://azer.bike/journal"
                     image="https://cldup.com/go95bqT7sK.jpg">
 
         <h1>Journal</h1>
-        <h2>Ideas, thoughts, knowledge come and go. I keep some of them in this journal to share with you.</h2>
+        <h2>Technology, software engineering and nomadic life.</h2>
 
         {this.renderFeatured(featured.node.frontmatter)}
         {this.renderArchive(posts)}

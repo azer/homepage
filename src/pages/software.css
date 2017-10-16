@@ -5,7 +5,7 @@
   text-transform: uppercase;
 }
 
-.software .recent, .software .websites, .software .old {
+.software .recent, .software .websites, .software .old, .software .clients {
   max-width: 700px;
   margin: 50px auto 30px auto;
 }
@@ -57,6 +57,44 @@
   width: 150px;
   display: block;
   float: right;
+}
+
+.software .clients {
+  color: #333;
+}
+
+.software .clients img {
+  width: 100px;
+  border-radius: 50%;
+  float: left;
+}
+
+.software .clients .superhuman {
+  padding-top: 20px;
+}
+
+.software .clients .quote {
+  position: absolute;
+  margin: -35px 0 0 10px;
+  font: 150px 'Tiempos text regular';
+  color: #22E9AB;
+}
+
+.software .clients p {
+  display: block;
+  float: right;
+  width: calc(100% - 120px);
+  padding-top: 30px;
+  font: 500 16px/1.7 "Open Sans";
+  color: #666;
+}
+
+.software .clients strong {
+  display: block;
+  width: 155px;
+  padding-top: 15px;
+  color: #444;
+  line-height: 1.7;
 }
 
 .software .opensource a.github:hover {

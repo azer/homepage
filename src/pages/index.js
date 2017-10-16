@@ -3,6 +3,8 @@ import Link from 'gatsby-link'
 import Intro from '../components/intro'
 import Helmet from 'react-helmet'
 import CenteredLayout from '../components/centered-layout'
+import Newsletter from "../components/newsletter"
+
 import "./index.css"
 
 export default class Homepage extends Component {
@@ -13,8 +15,7 @@ export default class Homepage extends Component {
                       title={this.props.data.site.siteMetadata.title}
                       desc="My name is Azer Koçulu. I build software, also shoot photos."
                       type="website"
-                      image="https://cldup.com/go95bqT7sK.jpg"
-                      newsletter>
+                      image="https://cldup.com/go95bqT7sK.jpg">
         <div className="columns">
           {this.renderIntro()}
           {this.renderPhoto()}
@@ -33,7 +34,10 @@ export default class Homepage extends Component {
           My name is <strong>Azer Koçulu</strong>. I recently founded <a href="http://getkozmos.com">Kozmos</a>, a better bookmarking service for everyone.
         </h2>
         <Intro />
-        <a href="mailto:azer@roadbeats.com" className="lets-work-together">Let's work together</a>
+        <div className="inline-newsletter">
+          <div className="zigzag"></div>
+          <Newsletter />
+        </div>
       </div>
     )
   }

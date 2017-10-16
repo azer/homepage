@@ -9,14 +9,15 @@
 .blog-post h2 .date {
   display: block;
   margin-bottom: 0;
-  color: #999 !important;
+  color: #aaa !important;
+  font: 16px "Open Sans", sans-serif !important;
 }
 
 .blog-post .post-image {
   height: 250px;
   background: no-repeat center;
   background-size: contain;
-  margin: 20px auto 50px auto;
+  margin: 30px auto 50px auto;
 }
 
 .blog-post .post-image-space {
@@ -89,7 +90,7 @@
 }
 
 .blog-post code {
-  font: 14px "PT Mono", sans-serif;
+  font: 14px/1.6 "PT Mono", sans-serif;
   color: #555;
   background: #f2f2f2;
   padding: 4px 6px;
@@ -100,8 +101,8 @@
 
 .blog-post pre code {
   display: block;
-  padding: 20px;
-  overflow-x: scroll;
+  overflow: auto;
+  background: #FDF6E4;
 }
 
 .blog-post .post blockquote {
@@ -123,8 +124,7 @@
 }
 
 .blog-post .post h2 {
-  font: 26px "Apercu med
-ium", "Open Sans", sans-serif;
+  font: 26px "Apercu medium", "Open Sans", sans-serif;
   margin: 50px 0 20px 0;
   color: #111;
 }
