@@ -4,6 +4,7 @@ desc: A simple Go recipe for getting notified about slow SQL queries, unexpected
 image:  https://c1.staticflickr.com/5/4466/37053205213_2ee912141c_b.jpg
 imageHeight: 400px
 imageSize: cover
+imageCaption: My Slack bot notifying me about a SQL query taking long time to execute. I should fix that soon.
 date: "2017-10-15T07:00:00.000Z"
 path: "/journal/monitoring-slow-sql-queries-via-slack"
 ---
@@ -16,15 +17,18 @@ As Slack has became a central to work, it's changing how we monitor our systems,
 it's nice to have a Slack bot telling us if there is anything going wrong in the system; an SQL query taking too long to finish for example, or fatal errors
 in a specific Go package.
 
-<div class="clear"></div>
+In this blog post, I'll tell how we can achieve this setup by using [a simple logging system](#logger),
+and [an existing database library](#crud) that already supports this feature.
 
+<a name="logger"></a>
 # Using Logger
 
 [logger](https://github.com/azer/logger) is a tiny library designed for both Go libraries and applications.
-It has two important features useful for this case;
+It has three important features useful for this case;
 
 * It provides a simple **timer for measuring performance**.
-* We can **filter logs by package**.
+* Supports **complex output filters**, so you can choose logs from specific packages. For example, you can tell logger to output only from database package, and only the timer logs which took more than 500ms.
+* It has a Slack hook, so you can filter and **stream logs into Slack**.
 
 Let's look at this example program to see how we use timers, later we'll get to filters, as well:
 
@@ -117,6 +121,7 @@ Let's explain what we've done in the above example:
 
 Hope this gave you the general idea. Have a look at [logger](https://github.com/azer/logger)'s documentation if you got more questions.
 
+<a name="crud"></a>
 # A Real-World Example: CRUD
 
 One of the hidden features of [crud](https://github.com/azer/crud) -an ORM-ish database library
