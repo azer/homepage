@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import "./social-icons.css"
 
-const icons = [
+export const icons = [
   // Github
   {
     title: 'Github',
@@ -25,6 +25,11 @@ const icons = [
     title: 'Youtube',
     link: 'https://www.youtube.com/channel/UCPZsk0_jd3GuKjeIPilL4qA/videos',
     svg: '<svg viewBox="0 0 800 800"><path d="M400 224c144 0 201 2 224 25 17 17 26 52.125 26 151s-9 134-26 151c-23 23-80 25-224 25s-201-2-224-25c-17-17-26-52.125-26-151s9-134 26-151c23-23 80-25 224-25zm-52 100v141l135-70z"/></svg>'
+  },
+  // Facebook
+  {
+    title: 'Facebook',
+    svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg>'
   }
 ]
 
@@ -38,6 +43,7 @@ export default class SocialIcons extends Component {
   }
 
   renderIcon(icon) {
+    if (!icon.link) return
     return (
       <a title={icon.title} href={icon.link} target="_blank" dangerouslySetInnerHTML={{ __html: icon.svg }}></a>
     )

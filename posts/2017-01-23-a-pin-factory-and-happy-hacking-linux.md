@@ -20,9 +20,11 @@ Your factory has to compete to survive; how would you produce more pins ? You ca
 * Double the workhours; serve breakfast and dinner.
 
 Now think about yourself as a hacker, how your employer tweaks the productivity in your "factory" ? I worked for bunch of startups in Silicon Valley,
-and observed that lmost all businesses use Apple products,
- hich aren't known for speed or productivity (anymore). And even know they interrupt our work often, we still use
- them as the culture in tech startups shifted from succeeding by building great tools to workaholism.
+and observed that almost all businesses use Apple products,
+ which aren't known for good focus, speed or productivity (anymore).
+ 
+ Despite Apple and Microsoft products are quite buggy and often interrupt our work, we still use
+ them as the culture in tech startups shifted from succeeding by building great tools to: workaholism.
 
 # Consumerism and Productivity
 
@@ -30,8 +32,9 @@ and observed that lmost all businesses use Apple products,
 It's the only tool many engineers use to build things, and it's a kind of machine even its owner can not change some settings.
 
 In 2017, machines themselves decide how productive they want to be, **machines decide how generous they should be on letting you tweak them**. No matter what your title is, as long as
-you are a consumer, machines rule you. Many engineers in these days work 70 hours per week without getting paid, wearing a motivation
-t-shirt “Eat Sleep Work” text on it, hoping Apple will hear their voice and release some tweaks one day.
+you are a consumer, machines rule you. Many engineers in these days work 70 hours per week without getting paid for the extra hours, wearing a motivation
+t-shirt “Eat Sleep Work” text on it. Even in the center of the tech innovation, most engineers tend to hope that Apple will hear tweet and fix their system,
+instead of switching to a system where they can own and tweak unlimitedly.
 
 400 Years ago, philosophers predicted a future where machines do all the work and humans enjoy the life by walking in parks, fishing in nearby lakes.
 We evolved from this optimistic vision to a workaholic culture where everyone is busy the whole time, and our biggest dream is to work remotely
@@ -58,6 +61,6 @@ It’s based on Arch Linux which has a great community, a package system with ov
 
 And you don’t even need a fancy hardware for this. I recycled an old desktop computer and turned into my development workspace within 30 minutes, and already built bunch of stuff in a few days. Even though it’s an old computer, it works faster and I get stuff faster than what I can in an OSX, because it’s tweaked to get the exact job done the most efficient way possible.
 
-You’ll find the programs that comes with default Happy Hacking Linux setup to never get slower. They’ll work like an old-school Casio watch, will last forever and never stop working, because they are not made for turning you to a consumer, they are made for helping you.
+Happy Hacking Linux aims to be long-lasting, it comes with lightweight programs that don't get slower by time. Your computer will work like an old-school Casio watch; it will last for long time and won't stop working randomly because it'll be running a system that aims to help people, not to turn people to consumers.
 
 [Check it out](http://kodfabrik.com/happy-hacking-linux), give it a try, and [let me know how it goes](https://twitter.com/afrikaradyo).

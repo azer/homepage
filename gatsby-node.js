@@ -20,6 +20,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           edges {
             node {
               frontmatter {
+                aliasPath
                 path
                 title
                 desc
@@ -45,6 +46,16 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
               path: edge.node.frontmatter.path
             }
           })
+
+          if (edge.node.frontmatter.aliasPath) {
+            createPage({
+              path: edge.node.frontmatter.aliasPath,
+              component: blogPost,
+              context: {
+                path: edge.node.frontmatter.path
+              }
+            })
+          }
 
         })
 

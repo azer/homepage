@@ -6,8 +6,13 @@
   margin-bottom: 10px;
 }
 
-.blog-post h2 .date {
+.blog-post .content > h2 span {
+  font: 400 18px/1.5 "Open Sans", sans-serif !important;
+}
+
+.blog-post h2 span.date {
   display: block;
+  padding-top: 10px;
   margin-bottom: 0;
   color: #aaa !important;
   font: 16px "Open Sans", sans-serif !important;
@@ -18,17 +23,53 @@
   background: no-repeat center;
   background-size: contain;
   margin: 30px auto 50px auto;
+  position: relative;
 }
 
 .blog-post .post-image-space {
-  height: 50px;
+  height: 0px;
+}
+
+.blog-post .post-image-caption {
+  position: absolute;
+  bottom: -25px;
+  width: 100%;
+  text-align: center;
+  font: 12px "Open Sans", sans-serif;
+  color: #666;
 }
 
 .blog-post .post {
-  font: 18px "Tiempos text regular", "PT Serif", "Microsoft Sans Serif", serif;
+  font: 18px "Tiempos text regular", Times, "PT Serif", "Microsoft Sans Serif", serif;
   color: #444;
   max-width: 800px;
   margin: 0 auto;
+}
+
+.blog-post .post table {
+  margin: 25px 0;
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+  font: 16px "Open Sans", sans-serif;
+}
+
+.blog-post .post table th {
+  font-weight: 700;
+  color: #000;
+}
+
+.blog-post .post table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+.blog-post .post table td, .blog-post .post table th {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  line-height: 1.4;
+}
+
+.blog-post .post center table td {
+  text-align: center;
 }
 
 /*.blog-post .post:after {
@@ -54,14 +95,14 @@
 
 .blog-post .post ul {
   margin: 20px 0;
-  padding-left: 75px;
+  padding-left: 60px;
   list-style: none;
 }
 
 .blog-post .post ul li {
   margin: 10px 0;
   padding: 0;
-  line-height: 1.9;
+  line-height: 1.8;
 }
 
 .blog-post .post ul li::before {
@@ -108,17 +149,28 @@
 .blog-post .post blockquote {
   margin: 20px 0;
   border-left: 5px solid #eee;
-  padding-left: 30px;
-  color: #888;
+  line-height: 1.8;
+  padding: 90px 30px 5px 30px;
+  color: #555;
+  position: relative;
+}
+
+.blog-post .post blockquote:before {
+  content: "“";
+  display: block;
+  font-size: 172px;
+  position: absolute;
+  top: -65px;
+  left: 20px;
+  color: #ddd;
 }
 
 .blog-post .post blockquote p {
-  font: italic 21px/32px 'Merriweather';
+  color: #555;
 }
 
-
 .blog-post .post h1 {
-  font: 36px "Apercu bold", "Open Sans", sans-serif;
+  font: 600 36px "Apercu bold", "Open Sans", sans-serif;
   margin: 50px 0 10px 0;
   color: #050505;
 }
@@ -146,7 +198,7 @@
   font-weight: 600;
 }
 
-.blog-post .post img {
+.blog-post .post img, .blog-post .post video {
   margin: 20px auto;
   display: block;
   max-width: 100%;
@@ -177,14 +229,87 @@
   margin: 0 20px 20px 0;
 }
 
+.blog-post .left.multiple-imgs img {
+  display: block;
+  float: left;
+  width: calc(50% - 10px);
+  margin-left: 5px;
+}
+
 .blog-post .post iframe {
   display: block;
   margin: 50px auto;
   max-width: 100%;
 }
 
+.blog-post .share-buttons {
+  margin: 25px auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+.blog-post .share-buttons a {
+  border: 0;
+  opacity: 0.6;
+  margin-right: 5px;
+}
+
+.blog-post .share-buttons a:hover {
+  opacity: 1;
+}
+
+.blog-post .share-buttons a svg {
+  width: auto;
+  height: 30px;
+}
+
+.blog-post .share-buttons .fb svg {
+  position: absolute;
+  margin-top: 6px;
+  height: 18px;
+}
+
+.blog-post .toc {
+  border: 2px solid #eee;
+  padding: 25px;
+  font: 400 18px/1.5 "Open Sans", sans-serif !important;
+  margin: 15px 0 0 0;
+}
+
+.blog-post .toc h1 {
+  display: inline-block;
+  background: #c9ffe5;
+  margin-top: 0;
+  font: 18px/1.8 "Open Sans", sans-serif !important;
+  padding: 5px 10px;
+  letter-spacing: 0.8px;
+}
+
+.blog-post .toc ul {
+  margin: 0;
+  padding-left: 0px;
+  list-style: none;
+}
+
+.blog-post .toc ul li {
+  margin: 3px 10px;
+}
+
+.blog-post .toc ul li:before {
+  content: ""
+}
+
+.blog-post .toc ul li a {
+  border: 0;
+  color: #444;
+}
+
+.blog-post .toc ul li a:hover {
+  color: #000;
+}
+
 @media (min-width: 1200px) {
-  .blog-post .post img {
+  .blog-post .post img, .blog-post .post video {
     width: calc(100% + 100px);
     max-width: none;
     margin-left: -50px;
@@ -218,6 +343,12 @@
     display: block;
     float: none;
     width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .blog-post .post .left p {
+    margin: 0;
+    padding: 0;
   }
 
   .blog-post .post .left img {
@@ -235,9 +366,23 @@
     line-height: 1.4;
   }
 
+  .blog-post .content p h1 {
+    font-size: 24px;
+    line-height: 1.4;
+  }
+
   .blog-post .post-image {
     margin: 20px 0;
     height: 150px !important;
+  }
+
+  .blog-post .post-image.has-caption {
+    margin-bottom: 50px;
+  }
+
+  .blog-post .post-image.has-caption .post-image-caption {
+    bottom: -35px;
+    color: #aaa;
   }
 
   .blog-post .post {

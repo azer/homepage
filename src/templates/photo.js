@@ -102,7 +102,7 @@ export default class Slideshow extends Component {
   render() {
     const photo = this.props.data.photosJson
     const title = `${photo.title} - Photography - ${this.props.data.site.siteMetadata.title}`
-    const url = `http://azer.bike/${photo.path}`
+    const url = `http://azer.bike${photo.path}`
 
     return (
       <SimpleLayout name="slideshow"

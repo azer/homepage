@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import SimpleLayout from "../components/simple-layout"
 import Newsletter from '../components/newsletter'
 import Link from 'gatsby-link'
+import { icons } from '../components/social-icons'
 import "./blog-post.css"
 
 import "prismjs/themes/prism-solarizedlight.css"
@@ -16,7 +17,7 @@ export default class BlogPostTemplate extends Component {
                     location={this.props.location}
                     type="article"
                     title={`${post.frontmatter.title} - ${siteTitle}'s Journal`}
-                    url={`http://azer.bike/journal${post.frontmatter.path}`}
+                    url={`http://azer.bike${post.frontmatter.path}`}
                     desc={post.frontmatter.desc}
                     image={post.frontmatter.image}>
         <h1>{post.frontmatter.title}</h1>
@@ -27,6 +28,10 @@ export default class BlogPostTemplate extends Component {
 
         {this.renderImage()}
         <div className="post" dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div className="share-buttons">
+          <a title="Share on Twitter" target="_blank" href={`https://twitter.com/intent/tweet?text=${encodeURI(post.frontmatter.title + '\nhttp://azer.bike' + post.frontmatter.path)}`} dangerouslySetInnerHTML={{ __html: icons[2].svg }}></a>
+          <a className="fb" title="Share on Facebook" target="_blank" href={`https://www.facebook.com/sharer/sharer.php?u=${'http://azer.bike' + post.frontmatter.path}`} dangerouslySetInnerHTML={{ __html: icons[4].svg }}></a>
+        </div>
 
         <div className="inline-newsletter">
           <div className="zigzag"></div>
@@ -52,12 +57,17 @@ export default class BlogPostTemplate extends Component {
       css.width = post.imageWidth
     }
 
+    if (post.imageMaxWidth) {
+      css.maxWidth = post.imageMaxWidth
+    }
+
     if (post.imageSize) {
       css.backgroundSize = post.imageSize
     }
 
     return (
-      <div className="post-image" style={css}>
+      <div className={"post-image " + (post.imageCaption ? "has-caption" : "")} style={css}>
+        {post.imageCaption ? <div className="post-image-caption">{post.imageCaption}</div> : null}
       </div>
     )
   }
@@ -79,6 +89,8 @@ export const pageQuery = graphql`
         image
         imageHeight
         imageSize
+        imageCaption
+        imageMaxWidth
         hideImage
         path
         date(formatString: "MMMM DD, YYYY")

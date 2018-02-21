@@ -13,8 +13,8 @@ qa.start(answers => {
   const slug = slugify(answers.title)
   const filename = `posts/${formatDate('{year}-{month}-{day}', date)}-${slug}.md`
   const frontmatter = `---
-title: ${answers.title}
-desc: ${answers.description}
+title: "${answers.title}"
+desc: "${answers.description}"
 image: ${answers.image}
 date: "${date.toISOString()}"
 path: "/journal/${slug}"
