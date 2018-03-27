@@ -150,7 +150,7 @@
   margin: 20px 0;
   border-left: 5px solid #eee;
   line-height: 1.8;
-  padding: 90px 30px 5px 30px;
+  padding: 60px 30px 0 30px;
   color: #555;
   position: relative;
 }
@@ -158,7 +158,7 @@
 .blog-post .post blockquote:before {
   content: "“";
   display: block;
-  font-size: 172px;
+  font-size: 142px;
   position: absolute;
   top: -65px;
   left: 20px;
@@ -306,6 +306,10 @@
 
 .blog-post .toc ul li a:hover {
   color: #000;
+}
+
+.blog-post .post h1 a, .blog-post .post h2 a, .blog-post .post h3 a, .blog-post .post h4 a {
+  border: none !important;
 }
 
 @media (min-width: 1200px) {

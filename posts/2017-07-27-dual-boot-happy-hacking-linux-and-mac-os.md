@@ -146,4 +146,3 @@ and the editor.
 For more information, check out the videos and other documentation
 in the [homepage](http://kodfabrik.com/happy-hacking-linux). If you need help, you can join our
 [Slack channel](https://join.slack.com/t/happyhackinglinux/shared_invite/enQtMjUzNDU3MzQwMTk4LTE5ZjAwNzFiNDg4Yjc5MThhYmQ3MjBmZmExY2E1MjY1NTA2NDQ1ZWJhZjFhMTk5ZGIyN2U0MjcxZTI1ZWY2NGI).
-I’m on [Twitter](https://twitter.com/afrikaradyo), you can send me a message there.

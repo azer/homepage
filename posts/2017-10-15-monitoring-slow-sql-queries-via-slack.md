@@ -228,4 +228,4 @@ also statistical logs like a new user signs up or make payments.
 * [logger](https://github.com/azer/logger)
 * [logger-slack-hook](https://github.com/azer/logger)
 
-[Let me know](https://twitter.com/afrikaradyo) if you have any questions or comments.
+[Let me know](mailto:azer@roadbeats.com) if you have any questions or comments.

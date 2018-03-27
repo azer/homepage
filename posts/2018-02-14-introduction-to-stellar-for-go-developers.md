@@ -314,4 +314,4 @@ func main() {
 
 You can find these examples in [stellar-go-examples repository on Github](https://github.com/azer/stellar-go-examples). I'm planning to write another blog post soon for issuing tokens in Stellar platform, using the Go SDK just like this post.
 
-If you have any questions or thoughts, you can reach me out via [e-mail](mailto:azer@roadbeats.com) or [Twitter](https://twitter.com/afrikaradyo).
+If you have any questions or thoughts, you can reach me out via [e-mail](mailto:azer@roadbeats.com).
