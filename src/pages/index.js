@@ -31,7 +31,7 @@ export default class Homepage extends Component {
           I build software.
         </h1>
         <h2>
-          My name is <strong>Azer Koçulu</strong>. I recently founded <a href="http://getkozmos.com">Kozmos</a>, a better bookmarking service for everyone.
+        My name is <strong>Azer Koçulu</strong>. I live in Berlin, and recently founded <a href="http://getkozmos.com">Kozmos</a>, a better bookmarking service for everyone.
         </h2>
         <Intro />
         <div className="inline-newsletter">

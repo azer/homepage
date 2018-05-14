@@ -55,7 +55,7 @@ export default class Software extends Component {
           <img src="https://c1.staticflickr.com/5/4464/37192502570_f88f06f162_z.jpg" />
           <div className="circle"></div>
           <div className="caption">
-            This is my home-office in Keliki Village near Ubud, where I turn tea into software.
+            This is my home-office in Berlin, where I turn tea into software.
           </div>
         </div>
 

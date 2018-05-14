@@ -9,7 +9,7 @@
             <link>http://azer.bike</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 27 Mar 2018 01:18:58 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 14 May 2018 08:16:06 GMT</lastBuildDate>
         <atom:link href="http://azer.bike/rss.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Inspirational Quotes in My Notebook]]></title>
@@ -48,6 +48,12 @@
             <pubDate>Fri, 24 Nov 2017 16:00:00 GMT</pubDate>
         </item>
         <item>
+            <title><![CDATA[Yazılımcılar Neden Türkiye'yi Terkediyor?]]></title>
+            <link>http://azer.bike/journal/yazilimcilar-neden-turkiyeyi-terkediyor</link>
+            <guid isPermaLink="true">http://azer.bike/journal/yazilimcilar-neden-turkiyeyi-terkediyor</guid>
+            <pubDate>Wed, 15 Nov 2017 16:00:00 GMT</pubDate>
+        </item>
+        <item>
             <title><![CDATA[Monitoring Slow SQL Queries via Slack]]></title>
             <link>http://azer.bike/journal/monitoring-slow-sql-queries-via-slack</link>
             <guid isPermaLink="true">http://azer.bike/journal/monitoring-slow-sql-queries-via-slack</guid>
@@ -64,12 +70,6 @@
             <link>http://azer.bike/journal/dual-boot-happy-hacking-linux</link>
             <guid isPermaLink="true">http://azer.bike/journal/dual-boot-happy-hacking-linux</guid>
             <pubDate>Wed, 26 Jul 2017 16:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Introducing Kozmos]]></title>
-            <link>http://azer.bike/journal/introducing-kozmos/</link>
-            <guid isPermaLink="true">http://azer.bike/journal/introducing-kozmos/</guid>
-            <pubDate>Thu, 01 Jun 2017 16:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
