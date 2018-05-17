@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import "./intro.css"
 
 const blocks = [
-  `I spend most of my time thinking, reading and building <a href="/software">web apps</a>.
+  `I'm currently based in Berlin. I spend most of my time thinking, reading and building <a href="/software">web apps</a>.
    <a href="https://github.com/azer/notebook">My public notebook</a> documents where I find inspiration and information for living.`,
   `Previously, I was working for <a href="/resume.pdf">startups</a> in San Francisco while living in Oakland. This was one of the most important experiences of my life, as I learnt a lot about the tech industry.`,
   `I've been actively contributing to open source projects since 2007. You can see some of my open source work on <a href="https://github.com/azer">Github</a>.

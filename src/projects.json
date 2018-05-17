@@ -16,6 +16,11 @@
       "description": "A web browser with drop-down tabbing design. Built with Electron."
     },
     {
+      "title": "Listen Paradise",
+      "link": "http://listenparadise.org",
+      "description": "I love Radio Paradise, and made many alternative clients for it. This is the last one. Front-end is Elm, backend is Go."
+    },
+    {
       "title": "Afrika Radyo",
       "link": "http://afrikaradyo.com",
       "description": "Online radio station where I play music, spoken-word, and sometimes my favorite movie dialogs."
@@ -58,11 +63,6 @@
       "title": "Nova Togatorop",
       "link": "http://novatogatorop.com",
       "description": "My wife's photography portfolio, made using Flickr APIs. Front-end is React, backend is Go."
-    },
-    {
-      "title": "Listen Paradise",
-      "link": "http://listenparadise.org",
-      "description": "I love Radio Paradise, and made many alternative clients for it. This is the last one. Front-end is React, backend is Go."
     },
     {
       "title": "RoadBeats",
