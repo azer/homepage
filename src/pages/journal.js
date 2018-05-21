@@ -119,6 +119,7 @@ export const query = graphql`
             desc
             image
             imageHeight
+            presentation
           }
         }
       }

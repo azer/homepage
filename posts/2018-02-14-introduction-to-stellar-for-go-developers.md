@@ -1,10 +1,6 @@
 ---
 title: "Introduction to Stellar for Go Developers"
 desc: "Creating Accounts, Sending and Receiving Payments in Stellar Network with Go"
-image: https://c1.staticflickr.com/5/4611/40211591542_9c55bc63e0_h.jpg
-imageSize: contain
-imageHeight: 400px
-imageCaption: Stellar Concencus Protocol's whitepaper in my kitchen table. It was joy to read it.
 date: "2018-02-14T16:00:00.000Z"
 path: "/journal/introduction-to-stellar-for-go-developers"
 ---

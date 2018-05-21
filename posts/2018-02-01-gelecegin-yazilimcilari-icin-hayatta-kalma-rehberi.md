@@ -2,8 +2,8 @@
 title: "Geleceğin Yazılımcıları İçin Hayatta Kalma Rehberi"
 desc: "Yolun Başındaki Yazılım Geliştiricilere Öneriler, En Sık Sorulan Sorulara Yanıtlar"
 image: https://c2.staticflickr.com/6/5586/31260217606_111e30b556_c.jpg
-imageSize: cover
-imageHeight: 430px
+imageSize: contain
+imageHeight: 700px
 imageCaption: Alaska'da Kamp Yaparken Karşımıza Çıkan Berrak Su Birikintisi...
 date: "2018-02-02T16:00:00.000Z"
 path: "/journal/gelecegin-yazilimcilari-icin-hayatta-kalma-rehberi"

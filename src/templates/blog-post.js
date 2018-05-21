@@ -20,12 +20,7 @@ export default class BlogPostTemplate extends Component {
                     url={`http://azer.bike${post.frontmatter.path}`}
                     desc={post.frontmatter.desc}
                     image={post.frontmatter.image}>
-        <h1>{post.frontmatter.title}</h1>
-        <h2>
-          {post.frontmatter.desc ? <span>{post.frontmatter.desc}</span> : null}
-          <span className="date">{post.frontmatter.date}</span>
-        </h2>
-
+        {this.renderTitle()}
         {this.renderImage()}
         <div className="post" dangerouslySetInnerHTML={{ __html: post.html }} />
         <div className="share-buttons">
@@ -41,8 +36,36 @@ export default class BlogPostTemplate extends Component {
     )
   }
 
+  renderTitle() {
+    const post = this.props.data.markdownRemark.frontmatter
+
+    if (post.presentation) {
+      return this.renderPresentationTitle()
+    }
+
+    return [
+      (<h1>{post.title}</h1>),
+      (<h2>{post.desc ? <span>{post.desc}</span> : null} <span className="date">{post.date}</span> </h2>)
+    ]
+  }
+
+  renderPresentationTitle() {
+    const post = this.props.data.markdownRemark.frontmatter
+
+    return (
+      <div className="presentation-title">
+        <section>
+          <h1>{post.title}</h1>
+          <h2><span className="date">Last Update: {post.date}</span> </h2>
+        </section>
+      </div>
+    )
+  }
+
   renderImage() {
     const post = this.props.data.markdownRemark.frontmatter
+
+    if (post.presentation) return null
     if (!post.image || post.hideImage || !post.image.trim()) return <div className="post-image-space"></div>
 
     const css = {
@@ -92,6 +115,7 @@ export const pageQuery = graphql`
         imageCaption
         imageMaxWidth
         hideImage
+        presentation
         path
         date(formatString: "MMMM DD, YYYY")
       }

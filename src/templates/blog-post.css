@@ -35,14 +35,14 @@
   bottom: -25px;
   width: 100%;
   text-align: center;
-  font: 12px "Open Sans", sans-serif;
+  font: 14px "Open Sans", sans-serif;
   color: #666;
 }
 
 .blog-post .post {
   font: 18px "Tiempos text regular", Times, "PT Serif", "Microsoft Sans Serif", serif;
   color: #444;
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -170,19 +170,20 @@
 }
 
 .blog-post .post h1 {
-  font: 600 36px "Apercu bold", "Open Sans", sans-serif;
-  margin: 50px 0 10px 0;
+  font: 600 48px "Apercu bold", "Open Sans", sans-serif;
+  margin: 100px 0 10px 0;
   color: #050505;
 }
 
 .blog-post .post h2 {
-  font: 26px "Apercu medium", "Open Sans", sans-serif;
+  font: 36px "Apercu medium", "Open Sans", sans-serif;
   margin: 50px 0 20px 0;
   color: #111;
 }
 
 .blog-post .post h3 {
-  font: 21px "Apercu regular", "Open Sans", sans-serif;
+  font: 600 21px "Apercu regular", "Open Sans", sans-serif;
+  letter-spacing: 0.7px;
   color: #111;
   margin: 50px 0 20px 0;
 }
@@ -270,17 +271,24 @@
 }
 
 .blog-post .toc {
-  border: 2px solid #eee;
-  padding: 25px;
+  width: 100%;
+  background: #f5f5f5;
+  padding: 100px;
   font: 400 18px/1.5 "Open Sans", sans-serif !important;
-  margin: 15px 0 0 0;
+  margin: 50px 0 0 -100px;
+}
+
+.blog-post .toc .toc-content {
+  column-count: 2;
 }
 
 .blog-post .toc h1 {
   display: inline-block;
-  background: #c9ffe5;
-  margin-top: 0;
+  background: #ebe8e3;
+  margin: 0 0 50px 0;
   font: 18px/1.8 "Open Sans", sans-serif !important;
+  color: #555;
+  text-transform: uppercase;
   padding: 5px 10px;
   letter-spacing: 0.8px;
 }
@@ -288,11 +296,14 @@
 .blog-post .toc ul {
   margin: 0;
   padding-left: 0px;
-  list-style: none;
 }
 
 .blog-post .toc ul li {
   margin: 3px 0px;
+}
+
+.blog-post .toc ul li:before {
+  display: none;
 }
 
 .blog-post .toc ul li ul {
@@ -300,7 +311,8 @@
 }
 
 .blog-post .toc ul li:before {
-  content: ""
+  content: "";
+  display: none;
 }
 
 .blog-post .toc ul li a {
@@ -310,6 +322,10 @@
 
 .blog-post .toc ul li a:hover {
   color: #000;
+}
+
+.blog-post .toc ul li strong a {
+  font-weight: 600;
 }
 
 .blog-post .post h1 a, .blog-post .post h2 a, .blog-post .post h3 a, .blog-post .post h4 a {
@@ -341,7 +357,9 @@
   border-radius: 0;
 }
 
-
+.blog-post em {
+  font-style: italic;
+}
 
 @media (min-width: 1200px) {
   .blog-post .post img, .blog-post .post video {

@@ -17,7 +17,7 @@
   border-color: transparent;
 }
 
-.simple-layout .content > h1 {
+.simple-layout .content > h1, .simple-layout .content .presentation-title h1 {
   font: 400 54px/58px Tiemposheadline, Arial,sans-serif;
   color: #111;
   text-align: center;
@@ -31,6 +31,45 @@
   text-align: center;
   max-width: 450px;
   margin: 0px auto;
+}
+
+.simple-layout .content .slide {
+  height: calc(100vh);
+}
+
+.simple-layout .content .slide .quote {
+  width: 800px;
+  margin: 0 auto;
+  font: 600 28px/1.8 "Open Sans", sans-serif;
+  position: relative;
+  color: #000;
+}
+
+.simple-layout .content .slide .quote label {
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.simple-layout .content .presentation-title {
+  height: calc(100vh - 150px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.simple-layout .content .presentation-title h1 {
+  width: 550px;
+  margin-top: -150px;
+  font-size: 72px;
+  line-height: 1.3;
+}
+
+.simple-layout .content .presentation-title h2 {
+  margin: 0 0 0 0;
+  text-align: center;
 }
 
 @media (max-width: 1224px) {

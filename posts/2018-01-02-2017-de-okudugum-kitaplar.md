@@ -3,7 +3,7 @@ title: "2017'de Okuduğum Kitaplar"
 desc: "Yaptığım Yolculuklar Sırasında Alıp Okuduğum Kitaplar Üzerine..."
 image: https://c1.staticflickr.com/5/4500/37270812816_82831b046c_b.jpg
 imageSize: cover
-imageHeight: 400px
+imageHeight: 600px
 date: "2018-01-01T16:00:00.000Z"
 path: "/journal/2017-de-okudugum-kitaplar"
 ---
