@@ -171,7 +171,7 @@
 
 .blog-post .post h1 {
   font: 600 48px "Apercu bold", "Open Sans", sans-serif;
-  margin: 100px 0 10px 0;
+  margin: 50px 0 10px 0;
   color: #050505;
 }
 
@@ -361,6 +361,62 @@
   font-style: italic;
 }
 
+.blog-post header.chapter {
+  position: relative;
+  background: #fff;
+  margin: 150px 0 0 0;
+  z-index: 999;
+}
+
+.blog-post .chapter-menu {
+  display: block;
+  margin-top: -55px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  z-index: 0;
+  background: #fff;
+  width: 100%;
+  margin-left: -100px;
+
+  display: grid;
+  grid-template-columns: auto 50px;
+  grid-auto-rows: 1fr;
+  justify-items: stretch;
+  align-items: stretch;
+  padding: 20px 100px 20px 100px;
+}
+
+.blog-post .chapter-menu a {
+  font: 16px/2 "PT Mono", sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 0;
+  color: #333;
+}
+
+.blog-post .chapter-menu a:hover {
+  color: #000;
+}
+
+.blog-post .chapter-menu .toc-link  {
+  font: 24px "Open Sans", sans-serif;
+  text-align: center;
+  color: #999;
+}
+
+.blog-post .chapter-menu .toc-link:hover {
+  color: #000;
+}
+
+.blog-post header.chapter h1 {
+  margin: 0;
+}
+
+.blog-post header.chapter h1 a {
+  outline: none;
+}
+
 @media (min-width: 1200px) {
   .blog-post .post img, .blog-post .post video {
     width: calc(100% + 100px);
@@ -413,14 +469,35 @@
   }
 }
 
+@media (max-width: 900px) {
+  .blog-post .chapter-menu {
+    top: 45px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 50px;
+    width: calc(100% + 44px);
+  }
+
+  .blog-post .chapter-menu .toc-link {
+    font-size: 18px;
+    border: 0;
+    text-align: center;
+  }
+}
+
 @media (max-width: 500px) {
   .blog-post .content > h1 {
     font-size: 28px;
     line-height: 1.4;
   }
 
-  .blog-post .content p h1 {
-    font-size: 24px;
+  .blog-post .content .post h1 {
+    font-size: 36px;
+    line-height: 1.4;
+  }
+
+  .blog-post .content .post h2 {
+    font-size: 28px;
     line-height: 1.4;
   }
 
@@ -450,4 +527,10 @@
     width: auto;
     max-width: 100%;
   }
+
+  .blog-post .toc .toc-content {
+    column-count: 1;
+  }
+
+
 }
