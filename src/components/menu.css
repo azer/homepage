@@ -29,6 +29,7 @@
   margin-left: 24px;
   content: "·";
   color: #aaa;
+  z-index: 1;
 }
 
 .menu a:last-child {

@@ -370,11 +370,11 @@
 
 .blog-post .chapter-menu {
   display: block;
-  margin-top: -55px;
+  margin-top: -75px;
   position: -webkit-sticky;
   position: sticky;
   top: 0px;
-  z-index: 0;
+  z-index: 998;
   background: #fff;
   width: 100%;
   margin-left: -100px;
@@ -395,8 +395,18 @@
   color: #333;
 }
 
+.blog-post .chapter-menu .links a:first-child:after {
+  margin-right: 5px;
+  content: "➝";
+  color: #aaa;
+}
+
 .blog-post .chapter-menu a:hover {
   color: #000;
+}
+
+.blog-post .chapter-menu .links a:first-child {
+  color: #999;
 }
 
 .blog-post .chapter-menu .toc-link  {
