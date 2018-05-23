@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import "./newsletter.css"
+import "./rainbow.css"
 
 export default class Newsletter extends Component {
   render() {

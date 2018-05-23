@@ -66,7 +66,7 @@
 }
 
 .newsletter.inline h1 {
-  font: 600 28px/1.8 "Open Sans", sans-serif !important;
+  font: 600 32px/1.8 "Apercu bold", "Open Sans", sans-serif !important;
   margin: 0 !important;
   color: #19A974 !important;
 }
@@ -78,7 +78,7 @@
 
 .newsletter.inline h2 {
   max-width: 450px;
-  font: 18px/1.8 "Open Sans", sans-serif !important;
+  font: 18px/1.6 "Open Sans", sans-serif !important;
   margin: 0 auto !important;
   color: #888 !important;
 }
