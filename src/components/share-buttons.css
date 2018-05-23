@@ -1,0 +1,21 @@
+.share-buttons {
+  margin: 25px auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+
+.share-buttons a {
+  border: 0 !important;
+  color: #888 !important;;
+  margin-bottom: 25px;
+}
+
+.share-buttons a:hover {
+  color: #333;
+}
+
+.share-buttons a svg {
+  width: auto;
+  height: 30px;
+}

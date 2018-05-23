@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import SimpleLayout from "../components/simple-layout"
 import Newsletter from '../components/newsletter'
 import Link from 'gatsby-link'
-import { icons } from '../components/social-icons'
+import ShareButtons from '../components/share-buttons'
 import "./blog-post.css"
 
 import "prismjs/themes/prism-solarizedlight.css"
@@ -23,11 +23,7 @@ export default class BlogPostTemplate extends Component {
         {this.renderTitle()}
         {this.renderImage()}
         <div className="post" dangerouslySetInnerHTML={{ __html: post.html }} />
-        <div className="share-buttons">
-          <a title="Share on Twitter" target="_blank" href={`https://twitter.com/intent/tweet?text=${encodeURI(post.frontmatter.title + '\nhttp://azer.bike' + post.frontmatter.path)}`} dangerouslySetInnerHTML={{ __html: icons[2].svg }}></a>
-          <a className="fb" title="Share on Facebook" target="_blank" href={`https://www.facebook.com/sharer/sharer.php?u=${'http://azer.bike' + post.frontmatter.path}`} dangerouslySetInnerHTML={{ __html: icons[4].svg }}></a>
-        </div>
-
+        <ShareButtons title={post.frontmatter.title} path={post.frontmatter.path} />
         <div className="inline-newsletter">
           <div className="zigzag"></div>
           <Newsletter title="Did you like this article? Subscribe for new posts:" />

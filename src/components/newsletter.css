@@ -44,6 +44,11 @@
   transition: all 0.2s ease-in;
 }
 
+.newsletter .hidden {
+  position: absolute;
+  left: -9999px;
+}
+
 .newsletter .button:hover {
   background: #00c57e;
   border-color: #00c57e;
@@ -52,4 +57,25 @@
 .inline-newsletter {
   max-width: 500px;
   margin: 0 auto;
+}
+
+.newsletter.inline {
+
+}
+
+.newsletter.inline h1 {
+  font: 600 28px/1.8 "Open Sans", sans-serif !important;
+  margin: 0 !important;
+  color: #fd5eca !important;
+}
+
+.newsletter.inline h2 {
+  font: 18px/1.8 "Open Sans", sans-serif !important;
+  margin: 0 !important;
+  color: #333 !important;
+}
+
+
+.newsletter.inline form {
+  margin-top: 25px;
 }
