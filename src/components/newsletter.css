@@ -60,19 +60,27 @@
 }
 
 .newsletter.inline {
-
+  background: #f9f9f9;
+  max-width: none;
+  padding: 50px 0;
 }
 
 .newsletter.inline h1 {
   font: 600 28px/1.8 "Open Sans", sans-serif !important;
   margin: 0 !important;
-  color: #fd5eca !important;
+  color: #19A974 !important;
+}
+
+.newsletter.inline input {
+  border-color: rgba(50, 50, 50, 0.1);
+  padding: 12px 15px;
 }
 
 .newsletter.inline h2 {
+  max-width: 450px;
   font: 18px/1.8 "Open Sans", sans-serif !important;
-  margin: 0 !important;
-  color: #333 !important;
+  margin: 0 auto !important;
+  color: #888 !important;
 }
 
 
