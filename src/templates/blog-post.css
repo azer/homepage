@@ -361,11 +361,15 @@
   font-style: italic;
 }
 
-.blog-post header.chapter {
+.blog-post header.chapter, .blog-post header.subchapter {
   position: relative;
   background: #fff;
   margin: 150px 0 0 0;
   z-index: 999;
+}
+
+.blog-post header.subchapter {
+  margin-top: 50px;
 }
 
 .blog-post .chapter-menu {
