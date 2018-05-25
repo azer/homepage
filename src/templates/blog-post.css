@@ -421,6 +421,25 @@
   outline: none;
 }
 
+.blog-post .warning {
+  margin: 20px 0;
+  padding: 30px;
+  background-color: #FF4136;
+}
+
+.blog-post .warning p {
+  margin: 0;
+  padding: 0;
+  font: 400 16px/1.6 "Open Sans", "San Francisco", sans-serif;
+  color: #FBF1A9;
+}
+
+.blog-post .warning a {
+  color: #fff;
+  font-weight: 600;
+  border-bottom: 1px dotted #fff;
+
+}
 @media (min-width: 1200px) {
   .blog-post .post img, .blog-post .post video {
     width: calc(100% + 100px);
