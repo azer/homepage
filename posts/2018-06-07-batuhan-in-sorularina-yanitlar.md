@@ -81,12 +81,11 @@ en ideal olduğu bir dönem.
 
 ## 5. 40'ından sonra developer olarak kalırsan işin zor diye bir algı var, yaşım ilerledikçe yönetici olamazsam işsiz kalır mıyım veya bu beni sıkıntıya sokar mı?
 
-Hayatın işletim sistemi nasıl çalışıyor? İnsanların talebi olan ama yeterince arz olmayan bir konuda kendini geliştiriyorsun, bir marka yaratıyorsun
-ve doğal olarak insanlar sana aldıkları hizmet karşılığında para vermek istiyorlar. Şu anda gelişmiş ülkelerin pek çok kentinde yazılımcılara ihtiyaç var. Fakat
-değerinin ne kadar olduğu ve aranan kriterler, arz-talep dengesi ile ortaya çıkıyor. Örneğin 40 yaşında bir JavaScript geliştiricisi isen işin zor çünkü
-bugünlerde piyasada fazlasıyla JavaScript geliştirici var, ama az kişinin bildiği ve talebin karşılanmadığı bir alanda uzmansan ve marka yarattıysan
-yaş faktörü o kadar önemli değil. Eğer 30'lu yaşlarda geliştiricilikten başka bir pozisyona geçmek istersen bunun zor olmayacağını düşünüyorum. Dilersen yazılımı
-destekleyen disiplinlerden birinde de (örn. tasarım) başarılı olabilrsin.
+Hayatın işletim sistemi nasıl çalışıyor? Arzın talebe göre yeterli olmadığı bir alanda kendini geliştiriyorsun, takım oyununu öğreniyorsun, marka yaratıyorsun
+ve sonuç olarak şirketler veya insanlar senden hizmet almak istiyorlar. Yazılımın birçok disiplini var, örneğin eğer yazılım geliştirici olarak kabiliyetlerine olan talep
+azaldıysa, yaşından veya başka bir nedenden ötürü, yazılımın yan disiplinlerinde de (örn. tasarım) değerli işler üretebilir, başarılı olabilirsin. Yani kod yazmak ve yöneticilik
+yapmak arasında tercih yapmak zorunda değilsin. Hayat üreten insanı ödüllendirir, bu nedenle esas soru, "ben 40 yaşına geldiğim zaman, başkalarının hayatına hangi yönümle katkıda bulunabilirim?"
+olmalı. Bu konuda yöneticilik yapmak veya kod yazmak dışında oldukça fazla seçenek var, o nedenle kaygılanmamanı öneririm.
 
 ## Son Sözler
 
