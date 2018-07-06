@@ -40,7 +40,7 @@
 }
 
 .blog-post .post {
-  font: 18px "Tiempos text regular", Times, "PT Serif", "Microsoft Sans Serif", serif;
+  font: 18px "Tiempos", Times, "PT Serif", "Microsoft Sans Serif", serif;
   color: #444;
   max-width: 900px;
   margin: 0 auto;
@@ -170,20 +170,26 @@
 }
 
 .blog-post .post h1 {
-  font: 600 48px "Apercu bold", "Open Sans", sans-serif;
+  font: 700 48px "Apercu", "Open Sans", sans-serif;
   margin: 50px 0 10px 0;
   color: #050505;
 }
 
+.blog-post .post h1 * {
+  font-weight: 700;
+}
+
 .blog-post .post h2 {
-  font: 36px "Apercu medium", "Open Sans", sans-serif;
+  font: 600 36px "Apercu", "Open Sans", sans-serif;
+  line-height: 48px;
   margin: 50px 0 20px 0;
   color: #111;
 }
 
 .blog-post .post h3 {
-  font: 600 21px "Apercu regular", "Open Sans", sans-serif;
+  font: 600 21px "Apercu", "Open Sans", sans-serif;
   letter-spacing: 0.7px;
+  line-height: 30px;
   color: #111;
   margin: 50px 0 20px 0;
 }
@@ -430,7 +436,7 @@
 .blog-post .warning p {
   margin: 0;
   padding: 0;
-  font: 400 16px/1.6 "Open Sans", "San Francisco", sans-serif;
+  font: 400 18px/1.6 "Open Sans", "San Francisco", sans-serif;
   color: #FBF1A9;
 }
 
