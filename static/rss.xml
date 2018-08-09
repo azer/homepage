@@ -9,8 +9,14 @@
             <link>http://azer.bike</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 18 Jul 2018 09:16:12 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 09 Aug 2018 12:03:35 GMT</lastBuildDate>
         <atom:link href="http://azer.bike/rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[A Good Makefile for Go]]></title>
+            <link>http://azer.bike/journal/a-good-makefile-for-go</link>
+            <guid isPermaLink="true">http://azer.bike/journal/a-good-makefile-for-go</guid>
+            <pubDate>Wed, 08 Aug 2018 16:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Batuhan'ın Sorularına Yanıtlar]]></title>
             <link>http://azer.bike/journal/batuhan-in-sorularina-yanitlar</link>
@@ -64,12 +70,6 @@
             <link>http://azer.bike/journal/yazilimcilar-neden-turkiyeyi-terkediyor</link>
             <guid isPermaLink="true">http://azer.bike/journal/yazilimcilar-neden-turkiyeyi-terkediyor</guid>
             <pubDate>Wed, 15 Nov 2017 16:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Monitoring Slow SQL Queries via Slack]]></title>
-            <link>http://azer.bike/journal/monitoring-slow-sql-queries-via-slack</link>
-            <guid isPermaLink="true">http://azer.bike/journal/monitoring-slow-sql-queries-via-slack</guid>
-            <pubDate>Sat, 14 Oct 2017 16:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
