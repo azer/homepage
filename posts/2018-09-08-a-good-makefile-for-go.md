@@ -48,7 +48,25 @@ Typing  `make` command in this file structure gives following output:
  clean     Clean build files. Runs `go clean` internally.
 ```
 
-# Step by step
+<div class="toc">
+
+# Index of Contents
+
+* **[1. Step-by-step](#step-by-step)**
+  * [Environment Variables](#environment-variables)
+  * [Compiling](#compiling)
+  * [Start-stop-server](#start-stop-server)
+  * [Watching for Changes](#watching)
+  * [Installing Dependencies](#install)
+  * [Go Commands](#go-commands)
+  * [Help](#help)
+* **[2. Final Version](#final-version)**
+
+</div>
+
+# <a name="step-by-step"></a>1. Step by step
+
+## <a name="environment-variables"></a> Environment Variables
 
 The very first thing we want from our `Makefile` to include the environment variables we define for our project.
 So, here is our line #1:
@@ -98,7 +116,7 @@ Here is the problems above code solves:
 
 In the below sections I'll explain these commands in detail.
 
-## Compiling
+## <a name="compiling"></a> Compiling
 
 `compile` command does more than just calling `go compile` in the background; it cleans up the error
 output and prints the simplified version.
@@ -115,7 +133,7 @@ compile:
 	@cat $(STDERR) | sed -e '1s/.*/\nError:\n/'  | sed 's/make\[.*/ /' | sed "/^/s/^/     /" 1>&2
 ```
 
-## Starting/stopping Server
+## <a name="start-stop-server"></a> Starting/stopping Server
 
 `start-server` basically runs the binary it compiled in background, saving its PID to a temporary file.
 `stop-server` reads the PID and kills the process when needed.
@@ -134,7 +152,7 @@ stop-server:
 restart-server: stop-server start-server
 ```
 
-## Watching for Changes
+## <a name="watching"></a> Watching for Changes
 
 We need a file watcher for watching for changes. I tried many of them and didn't feel satisfied, so ended up creating my own file watcher tool,
 [yolo](https://github.com/azer/yolo). Install it in your system by;
@@ -176,7 +194,7 @@ Then you can open `localhost:9001` in your browser and start seeing results in y
 
 ![](https://camo.githubusercontent.com/3b39472e26f12a9b25c5f9eba6df44db6728fb43/68747470733a2f2f636c6475702e636f6d2f4730566d6d4d574d6e7a2e676966)
 
-## Installing Dependencies
+## <a name="install"></a> Installing Dependencies
 
 As we make changes in the code, we'd like missing dependencies to be downloaded before compiling. `install` command will do that job for us;
 
@@ -184,9 +202,23 @@ As we make changes in the code, we'd like missing dependencies to be downloaded 
 install: go-get
 ```
 
-It's basically an alias to `go-get` command. We'll implement all the internal Go commands in the next section.
+We'll automate calling `install` on file change before compiling, so dependencies will get installed automatically.
+If you'd like to install a dependency manually, you can run;
 
-## Running Go Commands
+```makefile
+make install get="github.com/foo/bar"
+```
+
+Internally, this command will be converted to;
+
+```bash
+$ GOPATH=~/my-web-server GOBIN=~/my-web-server/bin go get github.com/foo/bar
+```
+
+How does it work though ? See the next section where we actually add the Go commands that we use for implementing
+the higher level commands.
+
+## <a name="go-commands"></a> Go Commands
 
 As we want to set the GOPATH to the project directory to simplify dependency management which is still not solved officially in Go ecosystem,
 we need to wrap all Go commands in the Makefile.
@@ -214,19 +246,7 @@ go-clean:
 	@GOPATH=$(GOPATH) GOBIN=$(GOBIN) go clean
 ```
 
-If you'd like to install a dependency manually, you can run:
-
-```bash
-$ make install get=github.com/foo/bar
-```
-
-The makefile will convert that to following:
-
-```bash
-$ GOPATH=~/my-web-server GOBIN=~/my-web-server/bin go get github.com/foo/bar
-```
-
-## Help
+## <a name="help"></a> Help
 
 Finally, we need a help command to see the overview available commands. We can auto-generate nicely formatted
 help output using `sed` and `column` commands. See below:
@@ -265,7 +285,7 @@ We'll get:
  stop      Stop development mode.
 ```
 
-# Final Version
+# <a name="final-version"></a> Final Version
 
 Here is the all combined & final version of what I've shared above. It's the exact copy from a new project that
 I've started this morning:
@@ -361,4 +381,6 @@ help: Makefile
 
 
 That was it! If you have any questions, thoughts or some recommendations to make it better,
-shoot me e-mail! Cheers.
+shoot me [e-mail](mailto:azer@roadbeats.com)!
+
+Cheers.
