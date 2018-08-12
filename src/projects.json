@@ -6,6 +6,11 @@
       "description": "A new bookmarking service which simplifies bookmarking into a single heart button in your browser. Built with Go, Preact and Elastic Search."
     },
     {
+      "title": "The Hitchhiker's Guide to Elm",
+      "link": "http://kodfabrik.com/elm",
+      "description": "A practical guide for Elm Language, its tools and ecosystem."
+    },
+    {
       "title": "Happy Hacking Linux",
       "link": "http://kodfabrik.com/happy-hacking-linux",
       "description": "A Linux distro made just for pragmatic software developers. It's based on Arch Linux, comes with a new installation wizard made from scratch."

@@ -7,17 +7,20 @@ date: "2018-08-09T16:00:00.000Z"
 path: "/journal/a-good-makefile-for-go"
 ---
 
+![](https://cldup.com/4QDe06otkG.gif)
+
 I occasionally tweak my Makefiles to speed up my development process, this morning
 was one of those times and I decided to share the result with others.
 
 To summarize, I use Go for building servers and my expectation from a Makefile is as following:
 
 * Simplicity.
-* High-level, simple commands. Such as; `compile` `start` `stop`, etc.
+* High-level, simple commands. Such as; `compile` `start` `stop` `watch`, etc.
 * Managing project-specific environment variables. It should inclide `.env` file.
 * Development-mode that auto-compiles on change.
 * Development-mode that shows compile error without verbosity around it.
 * Project-specific GOPATH, so I can keep dependencies in `vendor` folder.
+* Simplified file watching that runs given command with local GOPATH. e.g `make watch run="go test ./..."`
 
 And here is the typical directory layout I prefer:
 
@@ -41,10 +44,11 @@ Typing  `make` command in this file structure gives following output:
  start     Start in development mode. Auto-starts when code changes.
  stop      Stop development mode.
  compile   Compile the binary.
+ watch     Run given command when code changes. e.g; make watch run="echo 'hey'"
  clean     Clean build files. Runs `go clean` internally.
 ```
 
-# Makefile; step by step
+# Step by step
 
 The very first thing we want from our `Makefile` to include the environment variables we define for our project.
 So, here is our line #1:
@@ -80,12 +84,19 @@ in your files. It cleans up the background process if developer press `Control-C
 
 ```makefile
 start:
-	bash -c "trap 'make stop' EXIT; $(MAKE) compile start-server watch"
+	bash -c "trap 'make stop' EXIT; $(MAKE) compile start-server watch run='make compile start-server'"
 
 stop: stop-server
 ```
 
-If we look closer, `start` command compiles Go binaries, starts server and launches file-watcher.
+Here is the problems above code solves:
+
+* Compiles and runs server on background.
+* Main process doesn't run on background. So we can interrupt when we want, using Control-C.
+* Stops background processes when the main process is interrupted. We need `trap` mainly for this.
+* Recompiles and restarts the server when code changes.
+
+In the below sections I'll explain these commands in detail.
 
 ## Compiling
 
@@ -135,12 +146,33 @@ $  go get github.com/azer/yolo
 Once it's installed, we can basically start watching changes in the project directory, excluding folders like `vendor` and `bin`. Here it is;
 
 ```makefile
+## watch: Run given command when code changes. e.g; make watch run="echo 'hey'"
 watch:
-	@yolo -i . -e vendor -e bin -c 'make compile restart-server'
+	@yolo -i . -e vendor -e bin -c $(run)
 ```
 
-Yolo has a minimalistic interface that basically takes glob patterns for what to include (`-i`), and exclude (`-e`). If enabled, it can also
-provide a web interface and you can see the build status or compile errors in a nicer screen like in the gif below:
+Now we got a `watch` command that watches for changes recursively in the project directory excluding `vendor` directory.
+We can simply pass any `run` command we want. For example, `start` command basically calls `make compile start-server` when code changes:
+
+```makefile
+make watch run="make compile start-server"
+```
+
+We can use it for running tests, or checking if there is any race condition automatically. Environment variables will be set for the execution,
+so you don't have to worry about GOPATH at all:
+
+```makefile
+make watch run="go test ./..."
+```
+
+A nice thing about Yolo is its web interface. If you enable it, you can see the output of your command in a web interface instantly.
+All you need is to pass `-a` option to enable it:
+
+```bash
+yolo -i . -e vendor -e bin -c "go run foobar.go" -a localhost:9001
+```
+
+Then you can open `localhost:9001` in your browser and start seeing results in your browser instantly:
 
 ![](https://camo.githubusercontent.com/3b39472e26f12a9b25c5f9eba6df44db6728fb43/68747470733a2f2f636c6475702e636f6d2f4730566d6d4d574d6e7a2e676966)
 
@@ -188,7 +220,7 @@ If you'd like to install a dependency manually, you can run:
 $ make install get=github.com/foo/bar
 ```
 
-The makefile will run:
+The makefile will convert that to following:
 
 ```bash
 $ GOPATH=~/my-web-server GOBIN=~/my-web-server/bin go get github.com/foo/bar
@@ -253,21 +285,18 @@ GOFILES=$(wildcard *.go)
 # Redirect error output to a file, so we can show it in development mode.
 STDERR=/tmp/.$(PROJECTNAME)-stderr.txt
 
-# PID files will help us manage process Ids
-PID=/tmp/.$(PROJECTNAME)-api-server.pid
-WATCH_PID=/tmp/.$(PROJECTNAME)-api-watch.pid
+# PID file will keep the process id of the server
+PID=/tmp/.$(PROJECTNAME).pid
 
 # Make is verbose in Linux. Make it silent.
 MAKEFLAGS += --silent
 
-all: help
-
-## install: Install missing dependencies. Runs `go get` internally. e.g: make install get=github.com/foo/bar
+## install: Install missing dependencies. Runs `go get` internally. e.g; make install get=github.com/foo/bar
 install: go-get
 
 ## start: Start in development mode. Auto-starts when code changes.
 start:
-	bash -c "trap 'make stop' EXIT; $(MAKE) compile start-server watch"
+    bash -c "trap 'make stop' EXIT; $(MAKE) compile start-server watch run='make compile start-server'"
 
 ## stop: Stop development mode.
 stop: stop-server
@@ -282,8 +311,9 @@ stop-server:
 	@-kill `cat $(PID)` 2> /dev/null || true
 	@-rm $(PID)
 
+## watch: Run given command when code changes. e.g; make watch run="echo 'hey'"
 watch:
-	@yolo -i . -e vendor -e bin -c 'make compile restart-server'  -a localhost:9001
+	@GOPATH=$(GOPATH) GOBIN=$(GOBIN) yolo -i . -e vendor -e bin -c "$(run)"
 
 restart-server: stop-server start-server
 

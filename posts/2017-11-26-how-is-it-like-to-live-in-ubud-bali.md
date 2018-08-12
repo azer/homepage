@@ -8,7 +8,6 @@ imageSize: cover
 imageCaption: My wife taking a morning walk in a rice field next to our home.
 date: "2017-11-25T16:00:00.000Z"
 path: "/journal/what-is-it-like-to-live-in-ubud-bali"
-aliasPath: "/journal/how-is-it-like-to-live-in-ubud-bali"
 ---
 
 It has been 8 months since I and my wife moved to Ubud, Bali.

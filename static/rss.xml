@@ -9,7 +9,7 @@
             <link>http://azer.bike</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 09 Aug 2018 12:03:35 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 12 Aug 2018 07:14:14 GMT</lastBuildDate>
         <atom:link href="http://azer.bike/rss.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[A Good Makefile for Go]]></title>
