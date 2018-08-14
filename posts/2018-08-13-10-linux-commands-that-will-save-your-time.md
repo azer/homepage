@@ -267,6 +267,7 @@ X=2096
 Y=1353
 ```
 
-Hopefully this post had some commands that you found useful. You can share your feedback with me by [e-mail](mailto:azer@roadbeats.com).
+Hopefully this post had some commands that you found useful. You can share your feedback with me by [e-mail](mailto:azer@roadbeats.com),
+or [send a pull request](https://github.com/azer/homepage) if you think there could be some improvements!
 
 Cheers.
