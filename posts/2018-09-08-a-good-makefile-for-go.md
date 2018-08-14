@@ -12,15 +12,14 @@ path: "/journal/a-good-makefile-for-go"
 I occasionally tweak my Makefiles to speed up my development process, this morning
 was one of those times and I decided to share the result with others.
 
-To summarize, I use Go for building servers and my expectation from a Makefile is as following:
+To summarize, I use Go for building web servers and my expectation from a Makefile is as following:
 
-* Simplicity.
 * High-level, simple commands. Such as; `compile` `start` `stop` `watch`, etc.
 * Managing project-specific environment variables. It should inclide `.env` file.
 * Development-mode that auto-compiles on change.
 * Development-mode that shows compile error without verbosity around it.
 * Project-specific GOPATH, so I can keep dependencies in `vendor` folder.
-* Simplified file watching that runs given command with local GOPATH. e.g `make watch run="go test ./..."`
+* Simplified file watching. e.g `make watch run="go test ./..."`
 
 And here is the typical directory layout I prefer:
 
@@ -44,7 +43,8 @@ Typing  `make` command in this file structure gives following output:
  start     Start in development mode. Auto-starts when code changes.
  stop      Stop development mode.
  compile   Compile the binary.
- watch     Run given command when code changes. e.g; make watch run="echo 'hey'"
+ watch     Run given command when code changes. e.g; make watch run="go test ./..."
+ exec      Run given command, wrapped with custom GOPATH. e.g; make exec run="go test ./..."
  clean     Clean build files. Runs `go clean` internally.
 ```
 
@@ -54,6 +54,7 @@ Typing  `make` command in this file structure gives following output:
 
 * **[1. Step-by-step](#step-by-step)**
   * [Environment Variables](#environment-variables)
+  * [Develoment-mode](#development-mode)
   * [Compiling](#compiling)
   * [Start-stop-server](#start-stop-server)
   * [Watching for Changes](#watching)
@@ -97,8 +98,32 @@ PID=/tmp/.$(PROJECTNAME)-api-server.pid
 MAKEFLAGS += --silent
 ```
 
-Our first command will be `start`; it basically starts running the server on background, and watches for changes
-in your files. It cleans up the background process if developer press `Control-C` to stop the main development mode process:
+In the rest of the Makefile, we'll be using especially GOPATH variable heavily. All our commands should be wrapped
+with the project specific GOPATH, otherwise they won't work. This provides a clear isolation between our
+Go projects, and brings some complexity. To make things easier, we can add an `exec` command that takes
+executes any given command with custom GOPATH defined above.
+
+```makefile
+## exec: Run given command, wrapped with custom GOPATH. e.g; make exec run="go test ./..."
+exec:
+	@GOPATH=$(GOPATH) GOBIN=$(GOBIN) $(run)
+```
+
+This is not high-level enough though. We should cover some common cases with simple commands,
+and only use `exec` if we're doing something not covered by the makefile.
+
+## <a name="development-mode"></a> Development-mode
+
+Development-mode should;
+
+* Clean up the build cache
+* Compile the code
+* Run server on background
+* Repeat the steps above when code changes.
+
+It sounds simple, but gets complicated quickly, as we'll run server and file watcher at same time.
+We need to make sure stopping properly before starting a new process, and also not to break
+common command-line behavior like stopping when Control-C or Control-D is pressed.
 
 ```makefile
 start:
@@ -218,6 +243,24 @@ $ GOPATH=~/my-web-server GOBIN=~/my-web-server/bin go get github.com/foo/bar
 How does it work though ? See the next section where we actually add the Go commands that we use for implementing
 the higher level commands.
 
+
+<div class="zigzag"></div>
+<div class="newsletter inline">
+  <h1 class="rainbow">Finding this post useful?</h1>
+  <h2>You should sign up my newsletter. I occasionally ping the subscribers about this kind of stuff.</h2>
+  <form action="//roadbeats.us14.list-manage.com/subscribe/post?u=9fe3d3623b0c1f52fa42d45f3&amp;id=bdb32a67af" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+          <div id="mc_embed_signup_scroll">
+	          <input type="email" name="EMAIL" class="email" id="mce-EMAIL" placeholder="your@email.com" required />
+            <div class="hidden" aria-hidden="true">
+              <input type="text" name="b_9fe3d3623b0c1f52fa42d45f3_bdb32a67af" tabindex="-1" value="" />
+            </div>
+            <div>
+              <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" />
+            </div>
+          </div>
+  </form>
+</div>
+
 ## <a name="go-commands"></a> Go Commands
 
 As we want to set the GOPATH to the project directory to simplify dependency management which is still not solved officially in Go ecosystem,
@@ -298,7 +341,7 @@ PROJECTNAME=$(shell basename "$(PWD)")
 
 # Go related variables.
 GOBASE=$(shell pwd)
-GOPATH=$(GOBASE)/vendor:$(GOBASE):/home/azer/code/golang # You can remove or change the path after last colon.
+GOPATH="$(GOBASE)/vendor:$(GOBASE)
 GOBIN=$(GOBASE)/bin
 GOFILES=$(wildcard *.go)
 
@@ -343,6 +386,10 @@ compile:
 	@-rm $(STDERR)
 	@-$(MAKE) -s go-compile 2> $(STDERR)
 	@cat $(STDERR) | sed -e '1s/.*/\nError:\n/'  | sed 's/make\[.*/ /' | sed "/^/s/^/     /" 1>&2
+
+## exec: Run given command, wrapped with custom GOPATH. e.g; make exec run="go test ./..."
+exec:
+	@GOPATH=$(GOPATH) GOBIN=$(GOBIN) $(run)
 
 ## clean: Clean build files. Runs `go clean` internally.
 clean:
