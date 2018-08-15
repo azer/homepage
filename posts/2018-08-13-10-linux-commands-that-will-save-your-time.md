@@ -1,6 +1,6 @@
 ---
 title: "10 Linux Commands That Will Save Your Time"
-desc: "Less known, time-saver Linux commands"
+desc: "Selection of Linux commands known for saving time"
 image: https://cldup.com/HAaZ8e3tFa.jpg
 imageSize: contain
 imageHeight: 500px
@@ -9,10 +9,9 @@ date: "2018-08-13T00:00:00.000Z"
 path: "/journal/10-linux-commands-that-will-save-your-time"
 ---
 
-When a task takes more time than I expected, I find myself wondering if I'm not aware of the Linux command that could save my time there. This was a common case
-when I was new in Linux world, and I remember spending hours
-trying to solve problems using wrong tools. In this blog post, I'll share the Linux commands that saved a lot of time
-when I get complicated tasks done.
+In this blog post, I'll share the Linux commands that saved a lot of time when I get complicated tasks done.
+This is a personal list, I basically [selected them from my digital notebook](https://github.com/azer/notebook/blob/master/linux/useful-commands.md).
+Hopefully it's useful and if you see anything to improve please [send a pull request](https://github.com/azer/homepage)!
 
 <div class="toc">
 
@@ -43,13 +42,11 @@ $ mount --bind ~/my-new-website /var/www
 It's could resemble `ln`, but it's quite different. The above command
 basically binds a folder in your home dir to `/var/www` which nginx has
 full access, so your time spent on configuring Nginx user permissions is
-saved for calling parents, taking walk in a nearby park!
-
-Thanks `mount` !
+saved for calling parents, taking walk in a nearby park :)
 
 # <a name="nl"></a> 9. nl
 
-`nl` adds line numbers to beginning of lines.
+`nl` adds line numbers to beginning of lines. It skips empty lines by default, unlike `cat -n` or `less -N`;
 
 
 ```bash
@@ -60,12 +57,11 @@ Thanks `mount` !
 3  print "I like typing this."
 ```
 
-Notice that it doesn't count empty lines by default. You can optionally apply more conditions such as counting lines matching regular expressions. This is the main difference of `nl` and
-`cat -n` and `less -N`.
+You can optionally apply more conditions such as counting lines matching regular expressions.
 
 # <a name="ufw"></a> 8. ufw
 
-Uncomplicated Firawall (ufw) makes firewall configuration easier than exitting Vim. For example, you can allow a specific port to be accessible by any IP;
+Uncomplicated Firewall (ufw) makes firewall configuration easier than exitting Vim. For example, you can allow a specific port to be accessible by any IP;
 
 ```bash
   $  ufw allow 22
@@ -100,6 +96,23 @@ As the name suggests, it sorts the content of given file(s). Let's create an emp
 4 Qux
 5 Foo
 ```
+
+<div class="zigzag"></div>
+<div class="newsletter inline">
+  <h1 class="rainbow">Finding this post useful?</h1>
+  <h2>You should sign up my newsletter. I occasionally ping the subscribers about this kind of stuff.</h2>
+  <form action="//roadbeats.us14.list-manage.com/subscribe/post?u=9fe3d3623b0c1f52fa42d45f3&amp;id=bdb32a67af" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+          <div id="mc_embed_signup_scroll">
+	          <input type="email" name="EMAIL" class="email" id="mce-EMAIL" placeholder="your@email.com" required />
+            <div class="hidden" aria-hidden="true">
+              <input type="text" name="b_9fe3d3623b0c1f52fa42d45f3_bdb32a67af" tabindex="-1" value="" />
+            </div>
+            <div>
+              <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" />
+            </div>
+          </div>
+  </form>
+</div>
 
 # <a name="column"></a> 6. column
 
@@ -152,10 +165,10 @@ qux
 We can output it without the duplicates, adding counts to the beginning of line;
 
 ```bash
-  $  cat file.txt | uniq -c
+  $  sort file.txt | uniq -c
+1 bar
 3 foo
 2 qux
-1 bar
 ```
 
 # <a name="awk"></a> 3. awk
@@ -187,7 +200,7 @@ In the example above, we asked awk to select & print 1st and 4th columns with `'
 We can apply some conditions, too. Let's list the disks that are bigger than 250gb:
 
 ```bash
-  $  lsblk -bl | awk '$4 > 268435456000  {print ;}'
+  $  lsblk -bl | awk '$4 > 268435456000  {p about `sloprint ;}'
 NAME      MAJ:MIN RM         SIZE RO TYPE MOUNTPOINT
 nvme0n1   259:0    0 512110190592  0 disk
 nvme0n1p2 259:2    0 511572967424  0 part /
@@ -207,7 +220,7 @@ Here is an example; we downloaded a high resolution wallpaper and want to scale 
 ```
 
 Let's do something more complicated than just resizing; we'll add a transparent & black overlay on top of the wallpaper,
-and write a Goethe quote in the middle of the wallpaper, to make it look cooler.
+and write a Goethe quote in the middle, just to make it look cool.
 
 ```
   $  convert ~/wallpaper.jpg \
@@ -265,6 +278,16 @@ output mouse location:
   $   xdotool getmouselocation --shell
 X=2096
 Y=1353
+```
+
+## slop
+
+Someone who saw this article on HN [recommended](https://news.ycombinator.com/item?id=17759002) using [slop](https://github.com/naelstrof/slop) instead of `xdotool`,
+and I really liked it. `slop` basically lets you select a region in your screen and outputs the region. Really cool;
+
+```
+  $   slop
+492x343+846+493
 ```
 
 Hopefully this post had some commands that you found useful. You can share your feedback with me by [e-mail](mailto:azer@roadbeats.com),
