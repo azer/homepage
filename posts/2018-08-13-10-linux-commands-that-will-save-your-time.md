@@ -9,9 +9,7 @@ date: "2018-08-13T00:00:00.000Z"
 path: "/journal/10-linux-commands-that-will-save-your-time"
 ---
 
-In this blog post, I'll share the Linux commands that saved a lot of time when I get complicated tasks done.
-This is a personal list, I basically [selected them from my digital notebook](https://github.com/azer/notebook/blob/master/linux/useful-commands.md).
-Hopefully it's useful and if you see anything to improve please [send a pull request](https://github.com/azer/homepage)!
+In this blog post, I'll share the Linux commands that saved a lot of my time when getting complicated tasks done. This is a personal list &mdash; I basically [selected them from my digital notebook](https://github.com/azer/notebook/blob/master/linux/useful-commands.md).  Hopefully it's useful for you as well. If you see anything that needs improvement please [send a pull request](https://github.com/azer/homepage)!
 
 <div class="toc">
 
@@ -32,53 +30,52 @@ Hopefully it's useful and if you see anything to improve please [send a pull req
 
 # <a name="mount"></a> 10. mount
 
-Are you one of those spending hours to configure Nginx to serve static website
-from your home folder ? You haven't met `mount` yet, then;
+Are you one of those spending hours configuring NGINX to serve static websites
+from your home folder? If you haven't met `mount` yet, then:
 
 ```bash
 $ mount --bind ~/my-new-website /var/www
 ```
 
-It's could resemble `ln`, but it's quite different. The above command
-basically binds a folder in your home dir to `/var/www` which nginx has
-full access, so your time spent on configuring Nginx user permissions is
+It could resemble `ln`, but it's quite different. The above command
+basically binds a folder in your home directory to `/var/www`, which NGINX has
+full access to, so the time spent on configuring NGINX user permissions is
 saved for calling parents, taking walk in a nearby park :)
 
 # <a name="nl"></a> 9. nl
 
-`nl` adds line numbers to beginning of lines. It skips empty lines by default, unlike `cat -n` or `less -N`;
+`nl` adds line numbers to the beginning of lines. It skips empty lines by default, unlike `cat -n` or `less -N`:
 
 
 ```bash
-  $  nl foobar.py
+$ nl foobar.py
 1  print "Hello World!"
-
 2  print "Hello Again"
 3  print "I like typing this."
 ```
 
-You can optionally apply more conditions such as counting lines matching regular expressions.
+You can optionally apply more conditions, such as counting lines matching regular expressions.
 
 # <a name="ufw"></a> 8. ufw
 
-Uncomplicated Firewall (ufw) makes firewall configuration easier than exitting Vim. For example, you can allow a specific port to be accessible by any IP;
+Uncomplicated Firewall (ufw) makes firewall configuration easier than exiting Vim. For example, you can allow a specific port to be accessible by any IP:
 
 ```bash
-  $  ufw allow 22
+$ ufw allow 22
 ```
 
-If you want to allow only specific IPs:
+Or, if you want to allow only specific IPs:
 
 ```bash
-  $  ufw allow from $trustedIP to any port 22
+$ ufw allow from $trustedIP to any port 22
 ```
 
 # <a name="sort"></a> 7. sort
 
-As the name suggests, it sorts the content of given file(s). Let's create an empty file with some numbers:
+As the name suggests, this command sorts the content of a given file or files. Let's create an empty file with some numbers:
 
 ```bash
-  $  cat > foobar.txt
+$ cat > foobar.txt
 5 Foo
 3 Bar
 4 Qux
@@ -86,10 +83,10 @@ As the name suggests, it sorts the content of given file(s). Let's create an emp
 1 Span
 ```
 
-`sort` will sort the input by the begining of line by default;
+`sort` will, by default, sort the input by the number found at the beginning of every line:
 
 ```bash
-  $  sort foobar.txt
+$ sort foobar.txt
 1 Span
 2 Quux
 3 Bar
@@ -116,11 +113,10 @@ As the name suggests, it sorts the content of given file(s). Let's create an emp
 
 # <a name="column"></a> 6. column
 
-`column` is great for making command-line output less messy. Let's say your bash script has `help`
-option, and it looks like as following:
+`column` is great for making command-line output less messy. Let's say your bash script has a `help` option, and it looks like this:
 
 ```
-  $  cat help.txt
+  $ cat help.txt
 start: Start development mode.
 stop: Stop development mode.
 compile: Compile the binary.
@@ -129,7 +125,7 @@ compile: Compile the binary.
 It's hard to read that! We can add some spacing with `column`:
 
 ```bash
-  $  column -t -s ':' help.txt
+  $ column -t -s ':' help.txt
 start     Start development mode.
 stop      Stop development mode.
 compile   Compile the binary.
@@ -137,23 +133,21 @@ compile   Compile the binary.
 
 # <a name="yes"></a> 5. yes
 
-`yes` basically automatically approves all confirmations. This is quite useful
-when you're automating some tasks that involves running commands that requires confirmation,
-such as installations.
+`yes` automatically approves all confirmations. This is quite useful
+when you're automating some tasks that involve running commands that require confirmation, such as installations.
 
-Here is an example;
+Here is an example:
 
 ```bash
-  $  yes | pacman -S wtf
+  $ yes | pacman -S wtf
 ```
 
 # <a name="uniq"></a> 4. uniq
 
-Filters duplicate lines as its name suggests.  Let's create a file with duplicate lines first;
-
+Filters duplicate lines, as its name suggests. Let's create a file with duplicate lines first:
 
 ```bash
-  $  cat > file.txt
+$ cat > file.txt
 foo
 bar
 foo
@@ -162,10 +156,10 @@ foo
 qux
 ```
 
-We can output it without the duplicates, adding counts to the beginning of line;
+We can output the file without the duplicates, adding counts to the beginning of each line:
 
 ```bash
-  $  sort file.txt | uniq -c
+$ sort file.txt | uniq -c
 1 bar
 3 foo
 2 qux
@@ -173,9 +167,7 @@ We can output it without the duplicates, adding counts to the beginning of line;
 
 # <a name="awk"></a> 3. awk
 
-Awk is a data manipulation language, and it's probably one of the most powerful command-line
-tools ever. In this post I'll only cover basic use cases of it, for example, let's say
-we want to get the list of disks in our system;
+Awk is a data manipulation language, and it's probably one of the most powerful command-line tools ever. In this post I'll only cover some basic use cases for it. For example, let's say we want to get the list of disks in our system:
 
 ```bash
   $  lsblk -l
@@ -185,51 +177,49 @@ nvme0n1p1 259:1    0   511M  0 part /boot
 nvme0n1p2 259:2    0 476.5G  0 part /
 ```
 
-This looks too verbose to my eyes. I only want to see the name of the disk, and the size. `awk` can help me:
+This looks too verbose to my eyes. I only want to see the name and the size of the disks. `awk` can help me:
 
 ```bash
-  $  lsblk -l | awk '{print $1,$4}'
+$ lsblk -l | awk '{print $1,$4}'
 NAME       SIZE
 nvme0n1    477G
 nvme0n1p1  511M
 nvme0n1p2  476.5G
 ```
 
-In the example above, we asked awk to select & print 1st and 4th columns with `'{print $1,$4}'`.
+In the example above, we asked `awk` to select and print the 1st and the 4th column with `'{print $1,$4}'`.
 
-We can apply some conditions, too. Let's list the disks that are bigger than 250gb:
+We can apply some conditions, too. Let's list the disks that are bigger than 250 GB:
 
 ```bash
-  $  lsblk -bl | awk '$4 > 268435456000  {p about `sloprint ;}'
+$ lsblk -bl | awk '$4 > 268435456000  {p about `sloprint ;}'
 NAME      MAJ:MIN RM         SIZE RO TYPE MOUNTPOINT
 nvme0n1   259:0    0 512110190592  0 disk
 nvme0n1p2 259:2    0 511572967424  0 part /
 ```
 
-This time we filtered 4th column in the output by checking if the value is bigger than 250gb, with `'$4 > 268435456000  {print ;}'`.
+This time we filtered the 4th column in the output by checking if the value is bigger than 250 GB with `'$4 > 268435456000  {print ;}'`.
 
 # <a name="convert"></a> 2. convert
 
-`convert` is a powerful command-line image manipulation utility. You can get simple tasks such as converting between formats
-done easily, but it does more than that.
+`convert` is a powerful command-line image manipulation utility. You can get simple tasks done easily, like converting between formats, but this utility does more than that.
 
-Here is an example; we downloaded a high resolution wallpaper and want to scale it to 2000px, keeping its original proportions.
+Here is an example: We downloaded a high-resolution wallpaper and want to scale it down to 2000 px, keeping its original proportions.
 
 ```bash
-  $  convert -scale 2000 ~/wallpaper.jpg  /tmp/wallpaper.png
+$ convert -scale 2000 ~/wallpaper.jpg  /tmp/wallpaper.png
 ```
 
-Let's do something more complicated than just resizing; we'll add a transparent & black overlay on top of the wallpaper,
-and write a Goethe quote in the middle, just to make it look cool.
+Let's do something more complicated than just resizing: We'll add a black, transparent overlay on top of the wallpaper and write a Goethe's quote in the middle of it, just to make it look cool.
 
 ```
-  $  convert ~/wallpaper.jpg \
-            -scale 1500 \
-            -fill black -colorize 50% \
-            -font System-San-Francisco-Display \
-            -fill "#ffffff33" \
-            -gravity center -pointsize 30 -annotate +0-200 'A man sees in the world what he carries in his heart. — Goethe' \
-            result.jpg
+$ convert ~/wallpaper.jpg \
+       -scale 1500 \
+       -fill black -colorize 50% \
+       -font System-San-Francisco-Display \
+       -fill "#ffffff33" \
+       -gravity center -pointsize 30 -annotate +0-200 'A man sees in the world what he carries in his heart. — Goethe' \
+       result.jpg
 ```
 
 Here is the result:
@@ -238,17 +228,15 @@ Here is the result:
 
 # <a name="ffmpeg"></a>  1. ffmpeg
 
-I remember spending hours looking for a simple audio or video editing tool when I was not using Linux. `ffmpeg` is one amazing
-command that can be used for editing both sound and video files.
+I remember spending hours looking for a simple audio or video editing tool when I was not using Linux. `ffmpeg` is one amazing command that can be used for editing both audio and video files.
 
 For example, you could trim an mp3 file with it:
 
 ```bash
-  $  ffmpeg -i input.mp3 -ss 00:00:20 -to 00:00:40 -c copy output.mp3
+$ ffmpeg -i input.mp3 -ss 00:00:20 -to 00:00:40 -c copy output.mp3
 ```
 
-Above command will simply create a new mp3 file from between 20 (`--ss`) and 40 (`--t`) seconds. You could apply the same command
-into a video file, too:
+The above command will simply create a new mp3 file between 20 (`--ss`) and 40 (`--t`) seconds. You could apply the same command to a video file, too:
 
 ```bash
   $  ffmpeg -i input.mp4 -ss 00:00:30 -t 00:00:11 output.mp4
@@ -257,7 +245,7 @@ into a video file, too:
 `ffmpeg` can record video, too. If you wanted to record your screen to share with others, here is the command to do that;
 
 ```bash
-  $  ffmpeg -video_size 1200x600 -f x11grab -i :0.0 output.mp4
+$ ffmpeg -video_size 1200x600 -f x11grab -i :0.0 output.mp4
 ```
 
 Let's explain the parameters above:
@@ -265,32 +253,29 @@ Let's explain the parameters above:
 * `-f x11grab` selects the encoder. This is required.
 * `-i :0.0`  selets the X server $DISPLAY, this is also required.
 
-Optionally, we can choose a specific x/y value instead of the left/top of the screen;
+Optionally, we can choose a specific x/y value instead of the left/top of the screen:
 
 ```bash
   $  ffmpeg -video_size 1200x600 -f x11grab -i :0.0+250,150 output.mp4
 ```
 
-How would you know the coordinate of where you want to point left/top of the video though ? `xdotool` has an option to
-output mouse location:
+How would you know the coordinates of where you want to point the left and top of the video though? `xdotool` has an option to output mouse location:
 
 ```bash
-  $   xdotool getmouselocation --shell
+$ xdotool getmouselocation --shell
 X=2096
 Y=1353
 ```
 
 ## slop
 
-Someone who saw this article on HN [recommended](https://news.ycombinator.com/item?id=17759002) using [slop](https://github.com/naelstrof/slop) instead of `xdotool`,
-and I really liked it. `slop` basically lets you select a region in your screen and outputs the region. Really cool;
+Someone who saw this article on HN [recommended](https://news.ycombinator.com/item?id=17759002) using [slop](https://github.com/naelstrof/slop) instead of `xdotool`, and I really liked it. `slop` basically lets you select a region in your screen, then outputs that region. Really cool:
 
 ```
-  $   slop
+$ slop
 492x343+846+493
 ```
 
-Hopefully this post had some commands that you found useful. You can share your feedback with me by [e-mail](mailto:azer@roadbeats.com),
-or [send a pull request](https://github.com/azer/homepage) if you think there could be some improvements!
+Hopefully this post had some commands that you found useful. You can share your feedback with me by [e-mail](mailto:azer@roadbeats.com), or [send a pull request](https://github.com/azer/homepage) if you think there could be some improvements!
 
 Cheers.
