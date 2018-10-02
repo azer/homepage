@@ -11,6 +11,8 @@ path: "/journal/10-linux-commands-that-will-save-your-time"
 
 In this blog post, I'll share the Linux commands that saved a lot of my time when getting complicated tasks done. This is a personal list &mdash; I basically [selected them from my digital notebook](https://github.com/azer/notebook/blob/master/linux/useful-commands.md).  Hopefully it's useful for you as well. If you see anything that needs improvement please [send a pull request](https://github.com/azer/homepage)!
 
+*P.S. Thanks [Mattia](http://mrzool.cc/) making corrections in this post.*
+
 <div class="toc">
 
 # Index of Contents
