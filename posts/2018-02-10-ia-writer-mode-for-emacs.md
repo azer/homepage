@@ -11,11 +11,11 @@ path: "/journal/ia-writer-mode-for-emacs"
 ![](https://cldup.com/i5wC48wnpx.gif)
 <span class="img-alt">Emacs, as an iA Writer competitor this time :)</span>
 
-Recently I wanted to configure Emacs to be a nice text editor that helps me focus on what I'm writing. Before switching back to Linux, I used iA writer quite often in my Macbook Air. It's great as an editor, but saves to iCloud, and it doesn't work in Linux.
+Before switching back to Linux, I had used [iA writer](https://ia.net/writer) quite often in my Macbook Air. It's an excellent product that does one thing: helping you focus on what you think. I enjoyed it a lot, although it'd save my documents to iCloud (or Dropbox), and it doesn't work in Linux.
 
-Instead of depending on the iCloud mess, I just use Git to maintain my private and [public notebooks](https://github.com/azer/notebook) where I write down and organize my markdown documents. Anything important that I can't remember, I just put it there. And I use Emacs for editing them.
+In Linux, Emacs is my home for writing. I put all my notes in two Git repositories; one private, and one [public notebook](https://github.com/azer/notebook). Anything important that I can't remember is a Markdown file. It's like my mind's hard drive.
 
-Here is the outline of the changes that got Emacs to look like it was born to be an iA Writer competitor:
+Recently, I wanted to change my Emacs configuration just for Markdown files, so I can have similar experience with iA Writer. Here is the outline of the changes that got Emacs to look like it was born to be an iA Writer competitor:
 
 * Define a mode-hook for `markdown-mode`, so our changes will only apply to markdown documents.
 * Use different font family and size in markdown-mode.
@@ -36,7 +36,15 @@ We'll define a function that will be triggered whenever we want to enable it. He
 
 # Custom Fonts
 
-It makes more sense to use different font family for taking notes. In my system, the nicest sans font was "Dejavu Sans Mono" (Run `fc-list : family` to list available fonts in Linux):
+It makes more sense to use different font family and font size for taking notes. We can use the same font with iA Writer as they [open sourced their font](https://github.com/iaolo/iA-Fonts).
+
+Personally, I preferred a simple "Sans" font that existed in my system. If you're a Linux user, you can list the available fonts by running:
+
+```bash
+$ fc-list : family
+```
+
+Once you selected the font, you can set custom font family and size like in the following example:"
 
 ```lisp
 (defun writing-mode ()
@@ -45,7 +53,7 @@ It makes more sense to use different font family for taking notes. In my system,
   (buffer-face-mode))
 ```
 
-As you've noticed, I also set the font height to 150. I prefer higher font size just for the markdown mode.
+You might probably want to check if your changes was applied. Open a random Markdown document, enable `writing-mode` and run `describe-char` command to see what font is being used in the document.
 
 # Centering
 
