@@ -27,6 +27,7 @@ In this blog post, I'll share the Linux commands that saved a lot of my time whe
 * [3. awk](#awk)
 * [2. convert](#convert)
 * [1. ffmpeg](#ffmpeg)
+* [Bonus: slop](#slop)
 
 </div>
 
@@ -269,14 +270,29 @@ X=2096
 Y=1353
 ```
 
-## slop
+This is not handy enough though. Check out `slop` below.
 
-Someone who saw this article on HN [recommended](https://news.ycombinator.com/item?id=17759002) using [slop](https://github.com/naelstrof/slop) instead of `xdotool`, and I really liked it. `slop` basically lets you select a region in your screen, then outputs that region. Really cool:
+# <a name="slop"></a> slop
+
+Someone who saw this article on HN recommended using [slop](https://github.com/naelstrof/slop) instead of `xdotool`, and I really liked it. `slop` basically lets you select a region in your screen, then outputs that region. Really cool:
 
 ```
 $ slop
 492x343+846+493
 ```
+
+This is great. I created my custom screen recording command that first lets me select the part of the screen I want to record, and saves the result to `~/screenshots/{date-time}.mp4` in my system.
+
+Here is the script:
+
+```bash
+#!/bin/bash
+slop=$(slop -f "%x %y %w %h %g %i") || exit 1
+read -r X Y W H G ID < <(echo $slop)
+ffmpeg -f x11grab -s "$W"x"$H" -i :0.0+$X,$Y -f alsa -i pulse ~/screenshots/`date +%Y-%m-%d.%H:%M:%S`.mp4
+```
+
+The only limitation is, you need to interrupt the script to stop the recording. Check out [maim](https://github.com/naelstrof/maim) if you're interested in a screenshot command based on slop.
 
 Hopefully this post had some commands that you found useful. You can share your feedback with me by [e-mail](mailto:azer@roadbeats.com), or [send a pull request](https://github.com/azer/homepage) if you think there could be some improvements!
 
