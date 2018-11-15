@@ -143,7 +143,7 @@
 .blog-post pre code {
   display: block;
   overflow: auto;
-  background: #FDF6E4;
+  background: #f7f7f7;
 }
 
 .blog-post .post blockquote {
@@ -341,11 +341,11 @@
   grid-auto-rows: 1fr;
   justify-items: stretch;
   align-items: stretch;
-  background: #FDF6E4;
+  background: #f7f7f7;
 }
 
 .blog-post .code-comp .gatsby-highlight:nth-child(2) {
-  border-left: 1px solid #e6dfcd;
+  border-left: 1px solid #fff;
 }
 
 .blog-post .code-comp pre {

@@ -28,6 +28,7 @@
 }
 
 .newsletter .button {
+  display: inline-block;
   margin-top: 12px;
   background: #999;
   border: 0;

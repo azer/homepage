@@ -255,7 +255,7 @@ the higher level commands.
               <input type="text" name="b_9fe3d3623b0c1f52fa42d45f3_bdb32a67af" tabindex="-1" value="" />
             </div>
             <div>
-              <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" />
+             <div class="button" onClick="document.body.querySelector('form.newsletter').submit()">Subscribe</div>
             </div>
           </div>
   </form>
