@@ -1,0 +1,17 @@
+.patreon-button {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.patreon-button:hover {
+  opacity: 0.9;
+}
+
+.patreon-button a {
+  display: block;
+  width: 173px;
+  height: 33px;
+  margin: 0 auto;
+  background: url(https://cldup.com/4OB4FVWMaR.png) no-repeat;
+  border: 0 !important;
+}

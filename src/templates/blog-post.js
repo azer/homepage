@@ -1,8 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component } from "react"
 import SimpleLayout from "../components/simple-layout"
-import Newsletter from '../components/newsletter'
-import Link from 'gatsby-link'
-import ShareButtons from '../components/share-buttons'
+import Newsletter from "../components/newsletter"
+import Link from "gatsby-link"
+import ShareButtons from "../components/share-buttons"
+import PatreonButton from "../components/patreon-button"
 import "./blog-post.css"
 
 import "prismjs/themes/prism-solarizedlight.css"
@@ -13,19 +14,25 @@ export default class BlogPostTemplate extends Component {
     const siteTitle = this.props.data.site.siteMetadata.title
 
     return (
-      <SimpleLayout name="blog-post"
-                    location={this.props.location}
-                    type="article"
-                    title={`${post.frontmatter.title} - ${siteTitle}'s Journal`}
-                    url={`http://azer.bike${post.frontmatter.path}`}
-                    desc={post.frontmatter.desc}
-                    image={post.frontmatter.image}>
+      <SimpleLayout
+        name="blog-post"
+        location={this.props.location}
+        type="article"
+        title={`${post.frontmatter.title} - ${siteTitle}'s Journal`}
+        url={`http://azer.bike${post.frontmatter.path}`}
+        desc={post.frontmatter.desc}
+        image={post.frontmatter.image}
+      >
         {this.renderTitle()}
         {this.renderImage()}
         <div className="post" dangerouslySetInnerHTML={{ __html: post.html }} />
-        <ShareButtons title={post.frontmatter.title} path={post.frontmatter.path} />
+        <PatreonButton />
+        <ShareButtons
+          title={post.frontmatter.title}
+          path={post.frontmatter.path}
+        />
         <div className="inline-newsletter">
-          <div className="zigzag"></div>
+          <div className="zigzag" />
           <Newsletter title="Did you like this article? Subscribe for new posts:" />
         </div>
       </SimpleLayout>
@@ -40,19 +47,27 @@ export default class BlogPostTemplate extends Component {
     }
 
     return [
-      (<h1>{post.title}</h1>),
-      (<h2>{post.desc ? <span>{post.desc}</span> : null} <span className="date">{post.date}</span> </h2>)
+      <h1>{post.title}</h1>,
+      <h2>
+        {post.desc ? <span>{post.desc}</span> : null}{" "}
+        <span className="date">{post.date}</span>{" "}
+      </h2>
     ]
   }
 
   renderPresentationTitle() {
     const post = this.props.data.markdownRemark.frontmatter
 
+    console.log("-->", post)
+
     return (
       <div className="presentation-title">
         <section>
           <h1>{post.title}</h1>
-          <h2><span className="date">Last Update: {post.date}</span> </h2>
+          <h2>
+            <span className="date">Last Update: {post.date}</span>{" "}
+          </h2>
+          {post.patreonButtonUnderTitle ? <PatreonButton /> : null}
         </section>
       </div>
     )
@@ -62,7 +77,8 @@ export default class BlogPostTemplate extends Component {
     const post = this.props.data.markdownRemark.frontmatter
 
     if (post.presentation) return null
-    if (!post.image || post.hideImage || !post.image.trim()) return <div className="post-image-space"></div>
+    if (!post.image || post.hideImage || !post.image.trim())
+      return <div className="post-image-space" />
 
     const css = {
       backgroundImage: `url(${post.image})`
@@ -85,8 +101,13 @@ export default class BlogPostTemplate extends Component {
     }
 
     return (
-      <div className={"post-image " + (post.imageCaption ? "has-caption" : "")} style={css}>
-        {post.imageCaption ? <div className="post-image-caption">{post.imageCaption}</div> : null}
+      <div
+        className={"post-image " + (post.imageCaption ? "has-caption" : "")}
+        style={css}
+      >
+        {post.imageCaption ? (
+          <div className="post-image-caption">{post.imageCaption}</div>
+        ) : null}
       </div>
     )
   }
@@ -112,6 +133,7 @@ export const pageQuery = graphql`
         imageMaxWidth
         hideImage
         presentation
+        patreonButtonUnderTitle
         path
         date(formatString: "MMMM DD, YYYY")
       }

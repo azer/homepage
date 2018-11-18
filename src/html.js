@@ -26,6 +26,7 @@ module.exports = class HTML extends React.Component {
         <head>
           <meta charSet="utf-8" />
           <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -42,6 +43,10 @@ module.exports = class HTML extends React.Component {
           />
           {this.props.postBodyComponents}
         </body>
+        <script
+          async
+          src="https://c6.patreon.com/becomePatronButton.bundle.js"
+        />
       </html>
     )
   }

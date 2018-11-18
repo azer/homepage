@@ -348,6 +348,10 @@
   border-left: 1px solid #fff;
 }
 
+.blog-post .gatsby-highlight pre {
+  background: #f7f7f7 !important;
+}
+
 .blog-post .code-comp pre {
   border-radius: 0;
 }
