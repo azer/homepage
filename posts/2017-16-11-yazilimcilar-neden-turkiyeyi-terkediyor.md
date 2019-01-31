@@ -3,7 +3,7 @@ title: "Yazılımcılar Neden Türkiye'yi Terkediyor?"
 desc: "Bilişim Sektöründe Yaşanan Büyük Beyin Göçü Üzerine..."
 image: "https://c1.staticflickr.com/5/4514/37232996410_641fe502d8_b.jpg"
 imageHeight: 400px
-imageSize: contain
+imageSize: cover
 imageCaption: "Uçmaya hazır özgür bir martı."
 date: "2017-11-16T16:00:00.000Z"
 path: "/journal/yazilimcilar-neden-turkiyeyi-terkediyor"
