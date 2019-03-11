@@ -44,7 +44,7 @@ işini titizlikle yapsa da insani ilişkilerden daha önemli tutmayanlar.
 
 Uzun bir cevap oldu, biraz toparlamak gerekirse eğer; elbette çok çalışmalı ve hedeflerine ulaşmak için
 gayret göstermelisin. Lakin bu insani yönünden vazgeçmeni gerektirmez elbette. Zamanı iyi yönetmek, hedef seçip
-strateji belirlemek işin anahtarı. Bu konuda yazdığım diğer yazıya [gözatabilirsin](http://azer.bike/journal/gelecegin-yazilimcilari-icin-hayatta-kalma-rehberi#cok-calismak).
+strateji belirlemek işin anahtarı. Bu konuda yazdığım diğer yazıya [gözatabilirsin](https://kodfabrik.com/journal/gelecegin-yazilimcilari-icin-hayatta-kalma-rehberi#cok-calismak).
 
 
 ## 2. İş bulma sıkıntısı var mı? Kalifiye olursam bulurum elbet ama genel olarak böyle bir sıkıntı var mı, büyük mü ve önümüzdeki yıllarda bu durum nasıl değişir?

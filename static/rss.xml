@@ -2,73 +2,73 @@
     <channel>
         <title><![CDATA[Azer Koculu's Journal]]></title>
         <description><![CDATA[I build software, also shoot photos.]]></description>
-        <link>http://azer.bike</link>
+        <link>https://kodfabrik.com</link>
         <image>
             <url>https://cldup.com/go95bqT7sK.jpg</url>
             <title>Azer Koculu&apos;s Journal</title>
-            <link>http://azer.bike</link>
+            <link>https://kodfabrik.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 13 Feb 2019 16:10:31 GMT</lastBuildDate>
-        <atom:link href="http://azer.bike/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Mon, 11 Mar 2019 19:51:10 GMT</lastBuildDate>
+        <atom:link href="https://kodfabrik.com/rss.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Low Battery Monitor for Linux (i3)]]></title>
-            <link>http://azer.bike/journal/low-battery-monitor-for-linux-i3</link>
-            <guid isPermaLink="true">http://azer.bike/journal/low-battery-monitor-for-linux-i3</guid>
+            <link>https://kodfabrik.com/journal/low-battery-monitor-for-linux-i3</link>
+            <guid isPermaLink="true">https://kodfabrik.com/journal/low-battery-monitor-for-linux-i3</guid>
             <pubDate>Fri, 30 Nov 2018 23:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[iA Writer Mode for Emacs]]></title>
-            <link>http://azer.bike/journal/ia-writer-mode-for-emacs</link>
-            <guid isPermaLink="true">http://azer.bike/journal/ia-writer-mode-for-emacs</guid>
+            <link>https://kodfabrik.com/journal/ia-writer-mode-for-emacs</link>
+            <guid isPermaLink="true">https://kodfabrik.com/journal/ia-writer-mode-for-emacs</guid>
             <pubDate>Mon, 01 Oct 2018 22:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[10 Linux Commands That Will Save Your Time]]></title>
-            <link>http://azer.bike/journal/10-linux-commands-that-will-save-your-time</link>
-            <guid isPermaLink="true">http://azer.bike/journal/10-linux-commands-that-will-save-your-time</guid>
+            <link>https://kodfabrik.com/journal/10-linux-commands-that-will-save-your-time</link>
+            <guid isPermaLink="true">https://kodfabrik.com/journal/10-linux-commands-that-will-save-your-time</guid>
             <pubDate>Sun, 12 Aug 2018 22:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[A Good Makefile for Go]]></title>
-            <link>http://azer.bike/journal/a-good-makefile-for-go</link>
-            <guid isPermaLink="true">http://azer.bike/journal/a-good-makefile-for-go</guid>
+            <link>https://kodfabrik.com/journal/a-good-makefile-for-go</link>
+            <guid isPermaLink="true">https://kodfabrik.com/journal/a-good-makefile-for-go</guid>
             <pubDate>Wed, 08 Aug 2018 22:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Batuhan'ın Sorularına Yanıtlar]]></title>
-            <link>http://azer.bike/journal/batuhan-in-sorularina-yanitlar</link>
-            <guid isPermaLink="true">http://azer.bike/journal/batuhan-in-sorularina-yanitlar</guid>
+            <link>https://kodfabrik.com/journal/batuhan-in-sorularina-yanitlar</link>
+            <guid isPermaLink="true">https://kodfabrik.com/journal/batuhan-in-sorularina-yanitlar</guid>
             <pubDate>Tue, 05 Jun 2018 22:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[The Hitchhiker's Guide to Elm]]></title>
-            <link>http://azer.bike/journal/elm</link>
-            <guid isPermaLink="true">http://azer.bike/journal/elm</guid>
+            <link>https://kodfabrik.com/journal/elm</link>
+            <guid isPermaLink="true">https://kodfabrik.com/journal/elm</guid>
             <pubDate>Sun, 20 May 2018 22:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Inspirational Quotes in My Notebook]]></title>
-            <link>http://azer.bike/journal/inspirational-quotes-in-my-notebook</link>
-            <guid isPermaLink="true">http://azer.bike/journal/inspirational-quotes-in-my-notebook</guid>
+            <link>https://kodfabrik.com/journal/inspirational-quotes-in-my-notebook</link>
+            <guid isPermaLink="true">https://kodfabrik.com/journal/inspirational-quotes-in-my-notebook</guid>
             <pubDate>Wed, 28 Feb 2018 23:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Introduction to Stellar for Go Developers]]></title>
-            <link>http://azer.bike/journal/introduction-to-stellar-for-go-developers</link>
-            <guid isPermaLink="true">http://azer.bike/journal/introduction-to-stellar-for-go-developers</guid>
+            <link>https://kodfabrik.com/journal/introduction-to-stellar-for-go-developers</link>
+            <guid isPermaLink="true">https://kodfabrik.com/journal/introduction-to-stellar-for-go-developers</guid>
             <pubDate>Tue, 13 Feb 2018 23:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Geleceğin Yazılımcıları İçin Hayatta Kalma Rehberi]]></title>
-            <link>http://azer.bike/journal/gelecegin-yazilimcilari-icin-hayatta-kalma-rehberi</link>
-            <guid isPermaLink="true">http://azer.bike/journal/gelecegin-yazilimcilari-icin-hayatta-kalma-rehberi</guid>
+            <link>https://kodfabrik.com/journal/gelecegin-yazilimcilari-icin-hayatta-kalma-rehberi</link>
+            <guid isPermaLink="true">https://kodfabrik.com/journal/gelecegin-yazilimcilari-icin-hayatta-kalma-rehberi</guid>
             <pubDate>Thu, 01 Feb 2018 23:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2017'de Okuduğum Kitaplar]]></title>
-            <link>http://azer.bike/journal/2017-de-okudugum-kitaplar</link>
-            <guid isPermaLink="true">http://azer.bike/journal/2017-de-okudugum-kitaplar</guid>
+            <link>https://kodfabrik.com/journal/2017-de-okudugum-kitaplar</link>
+            <guid isPermaLink="true">https://kodfabrik.com/journal/2017-de-okudugum-kitaplar</guid>
             <pubDate>Sun, 31 Dec 2017 23:00:00 GMT</pubDate>
         </item>
     </channel>

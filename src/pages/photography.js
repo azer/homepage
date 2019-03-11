@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
-import SimpleLayout from '../components/simple-layout'
-import Link from 'gatsby-link'
-import Helmet from 'react-helmet'
-import Newsletter from '../components/newsletter'
-import debounce from 'debounce-fn'
+import React, { Component } from "react"
+import SimpleLayout from "../components/simple-layout"
+import Link from "gatsby-link"
+import Helmet from "react-helmet"
+import Newsletter from "../components/newsletter"
+import debounce from "debounce-fn"
 import "./photography.css"
 
 export default class Photography extends Component {
@@ -13,8 +13,8 @@ export default class Photography extends Component {
   }
 
   componentWillMount() {
-    if (typeof window !== 'undefined') {
-      window.addEventListener('resize', this.onResize)
+    if (typeof window !== "undefined") {
+      window.addEventListener("resize", this.onResize)
     }
 
     this.setState({
@@ -25,8 +25,8 @@ export default class Photography extends Component {
   }
 
   componentWillUnmount() {
-    if (typeof window !== 'undefined') {
-      window.removeEventListener('resize', this.onResize)
+    if (typeof window !== "undefined") {
+      window.removeEventListener("resize", this.onResize)
     }
   }
 
@@ -42,7 +42,7 @@ export default class Photography extends Component {
     }
 
     const len = photos.length
-    let i = -1;
+    let i = -1
     while (++i < len) {
       let column = columns[0]
 
@@ -61,7 +61,7 @@ export default class Photography extends Component {
   }
 
   findColumnCount() {
-    if (typeof window === 'undefined') return 3
+    if (typeof window === "undefined") return 3
 
     const width = window.innerWidth
 
@@ -71,12 +71,12 @@ export default class Photography extends Component {
   }
 
   findThumbnailSize() {
-    if (typeof window === 'undefined') return 'small'
+    if (typeof window === "undefined") return "small"
 
     const width = window.innerWidth
 
-    if (width < 500) return 'small'
-    return 'medium'
+    if (width < 500) return "small"
+    return "medium"
   }
 
   onResize() {
@@ -91,23 +91,23 @@ export default class Photography extends Component {
     const title = `Photography - ${this.props.data.site.siteMetadata.title}`
 
     return (
-      <SimpleLayout name="photography"
-                    location={this.props.location}
-                    type="photos"
-                    title={title}
-                    desc="Selection of some photos I shot."
-                    url="http://azer.bike/photography"
-                    image="https://cldup.com/qCL_0FsLkP.jpg">
-
+      <SimpleLayout
+        name="photography"
+        location={this.props.location}
+        type="photos"
+        title={title}
+        desc="Selection of some photos I shot."
+        url="https://kodfabrik.com/photography"
+        image="https://cldup.com/qCL_0FsLkP.jpg"
+      >
         <h1>Photography</h1>
         <h2>
-          Bird bites and bug holes on apples excites me. I've been seeking incomplete and imperfect beauty. Real and romantic relationships.
+          Bird bites and bug holes on apples excites me. I've been seeking
+          incomplete and imperfect beauty. Real and romantic relationships.
         </h2>
-        <div className="photos">
-          {this.renderGrid()}
-        </div>
+        <div className="photos">{this.renderGrid()}</div>
         <div className="inline-newsletter">
-          <div className="zigzag"></div>
+          <div className="zigzag" />
           <Newsletter title="This is what I got for now. Join my newsletter to hear when there is new photos." />
         </div>
       </SimpleLayout>
@@ -118,14 +118,14 @@ export default class Photography extends Component {
     return (
       <div className="grid">
         {this.state.columns.map(c => this.renderColumn(c))}
-        <div className="clear"></div>
+        <div className="clear" />
       </div>
     )
   }
 
   renderColumn(column) {
     const css = {
-      width: (100 / this.state.columns.length) + '%'
+      width: 100 / this.state.columns.length + "%"
     }
 
     return (

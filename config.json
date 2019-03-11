@@ -1,12 +1,12 @@
 {
   "title": "Azer Koçulu",
   "description": "I build software, also shoot photos.",
-  "url": "http://azer.bike",
+  "url": "https://kodfabrik.com",
   "journal": {
     "title": "Azer Koculu's Journal",
     "image_url": "https://cldup.com/go95bqT7sK.jpg",
-    "site_url": "http://azer.bike/journal",
-    "feed_url": "http://azer.bike/rss.xml",
+    "site_url": "https://kodfabrik.com/journal",
+    "feed_url": "https://kodfabrik.com/rss.xml",
     "feed_size": 10
   },
   "photos": {

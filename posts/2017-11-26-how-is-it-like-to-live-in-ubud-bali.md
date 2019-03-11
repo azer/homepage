@@ -18,7 +18,7 @@ for a short period.
 
 
 I'm a software engineer (from Turkey), and [my wife is a photographer](http://novatogatorop.com) (from Indonesia).
-I mainly work on my recent venture [Kozmos](https://getkozmos.com), and sometimes [work remotely](http://azer.bike/software) to support myself financially.
+I mainly work on my recent venture [Kozmos](https://getkozmos.com), and sometimes [work remotely](https://kodfabrik.com/software) to support myself financially.
 Anywhere with internet connection is good enough for me. But my wife Nova needs a community interested in art to succeed in her job.
 
 <div class="left">

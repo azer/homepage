@@ -126,4 +126,4 @@ A very simple and nice way to interact with the user on command-line. For exampl
 </div>
 
 It exists on both Linux and OSX systems, and supports many other kind of dialogs; message boxes, menus, confirms, progress bars...
-The installation wizard I coded for [Happy Hacking Linux](http://azer.bike/happy-hacking-linux) is made with this amazing command!
+The installation wizard I coded for [Happy Hacking Linux](https://kodfabrik.com/happy-hacking-linux) is made with this amazing command!

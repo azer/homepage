@@ -19,7 +19,7 @@ export default class BlogPostTemplate extends Component {
         location={this.props.location}
         type="article"
         title={`${post.frontmatter.title} - ${siteTitle}'s Journal`}
-        url={`http://azer.bike${post.frontmatter.path}`}
+        url={`https://kodfabrik.com${post.frontmatter.path}`}
         desc={post.frontmatter.desc}
         image={post.frontmatter.image}
       >

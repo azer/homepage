@@ -14,22 +14,27 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     const blogPost = path.resolve("./src/templates/blog-post.js")
     const photoComp = path.resolve("./src/templates/photo.js")
 
-    resolve(graphql(`
-      {
-        allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 1000) {
-          edges {
-            node {
-              frontmatter {
-                aliasPath
-                path
-                title
-                desc
-                date(formatString: "DD MMMM, YYYY")
+    resolve(
+      graphql(`
+        {
+          allMarkdownRemark(
+            sort: { fields: [frontmatter___date], order: DESC }
+            limit: 1000
+          ) {
+            edges {
+              node {
+                frontmatter {
+                  aliasPath
+                  path
+                  title
+                  desc
+                  date(formatString: "DD MMMM, YYYY")
+                }
               }
             }
           }
         }
-      }`).then(result => {
+      `).then(result => {
         if (result.errors) {
           console.log(result.errors)
           reject(result.errors)
@@ -56,7 +61,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
               }
             })
           }
-
         })
 
         photos.forEach(photo => {
@@ -75,8 +79,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
   })
 }
 
-
-function saveFeed (items) {
+function saveFeed(items) {
   const feed = new RSS({
     title: config.journal.title,
     description: config.description,
@@ -85,13 +88,14 @@ function saveFeed (items) {
     image_url: config.journal.image_url
   })
 
-    items.forEach(i => feed.item({
-    title: i.title,
-    description: i.description,
-    url: "http://azer.bike" + i.path,
-    date: i.date
-  }))
+  items.forEach(i =>
+    feed.item({
+      title: i.title,
+      description: i.description,
+      url: "https://kodfabrik.com" + i.path,
+      date: i.date
+    })
+  )
 
-  fs.writeFile('./static/rss.xml', feed.xml({ indent: true }))
-
+  fs.writeFile("./static/rss.xml", feed.xml({ indent: true }))
 }
