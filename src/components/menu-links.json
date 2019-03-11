@@ -1,6 +1,6 @@
 [
-  { "to": "/journal", "emoji": "📖", "title": "Journal" },
-  { "to": "/software", "emoji": "💻", "title": "Software" },
-  { "to": "/photography", "emoji": "📷", "title": "Photography" },
-  { "to": "mailto:azer@roadbeats.com", "emoji": "💌", "title": "E-Mail" }
+  { "to": "/journal", "title": "Journal" },
+  { "to": "/software", "title": "Software" },
+  { "to": "/photography", "title": "Photography" },
+  { "to": "/newsletter", "title": "Newsletter" }
 ]

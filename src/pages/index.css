@@ -1,4 +1,65 @@
-.index .columns {
+.index .bio {
+  font-size: 2rem;
+  line-height: 3.1rem;
+  max-width: 870px;
+  margin: 0 auto;
+  color: #222;
+  padding: 2rem 0 5rem 180px;
+}
+
+.index .bio .profile-pic {
+  width: 150px;
+  height: 150px;
+  left: 0;
+  background: url(https://c1.staticflickr.com/5/4353/37319896181_52a796bcc7.jpg) no-repeat center bottom;
+  background-size: 160px;
+}
+
+.index .highlights-wrapper {
+  margin-bottom: 3rem;
+}
+
+.index .highlighted-post {
+  padding-top: 5rem;
+}
+
+.index .highlighted-post header {
+  z-index: 99999;
+  padding: 1.7rem 0;
+}
+
+.index .highlighted-post:hover header {
+  background: #eee;
+}
+
+.index .highlighted-post h2 {
+  margin: 0 auto;
+}
+
+.index .highlighted-post .image {
+  height: 20rem;
+}
+
+.index .highlighted-post .image div {
+  background-size: contain;
+}
+
+.index .recent {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.index .recent .post {
+  /* display: grid;
+  grid-template-columns: 150px auto;
+  grid-column-gap: 30px;
+  justify-items: stretch;
+  align-items: stretch; */
+  margin-bottom: 20px;
+}
+
+
+/* .index .columns {
   display: grid;
   width: 100%;
   grid-template-columns: 65% 35%;
@@ -93,3 +154,4 @@
     line-height: 26px;
   }
 }
+*/

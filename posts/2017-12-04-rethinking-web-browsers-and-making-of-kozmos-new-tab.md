@@ -7,6 +7,10 @@ imageHeight: 500px
 date: "2017-12-03T16:00:00.000Z"
 path: "/journal/rethinking-web-browsers-and-bookmarking"
 aliasPath: "/journal/rethinking-web-browsers-and-making-of-kozmos-new-tab"
+highlighted: true
+highlightImage: https://images.unsplash.com/photo-1529148482759-b35b25c5f217?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80
+highlightImagePosition: center center
+highlightImageSize: cover
 ---
 
 I've made number of web browsers in last 10 years. The oldest one was called "[Delicious Surf](https://github.com/azer/delicious-surf)";

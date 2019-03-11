@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import Link from 'gatsby-link'
-import links from './menu-links.json'
+import React, { Component } from "react"
+import Link from "gatsby-link"
+import links from "./menu-links.json"
 import "./menu.css"
 
 const emojiStyle = {
@@ -11,57 +11,66 @@ const emojiStyle = {
 export default class Menu extends Component {
   render() {
     return (
-      <div className="menu">
-        <div className="links">
-          {this.props.footer ? this.renderLogo('Homepage') : null}
-          {links.map((l, i) => this.renderLink(l, i))}
+      <header className="menu x-sans f4 fw4">
+        <div className="inner pb4 relative x-viewport">
+          <a className="absolute x-inherit no-underline gray" href="/">
+            Azer Koçulu
+          </a>
+          <a
+            className="support-link absolute right-0 x-inherit no-underline gray br-pill bg-near-white hover-bg-light-gray hover-near-black"
+            href="/support"
+          >
+            Patrons
+          </a>
+          <div className="links tc">
+            {this.props.footer
+              ? this.renderLink({ to: "/", title: "Homepage" })
+              : null}
+            {links.map((l, i) => this.renderLink(l, i))}
+          </div>
+          <div className="x-clear" />
         </div>
-      </div>
+      </header>
     )
   }
 
   renderLink(l, i) {
     const location = this.props.location && this.props.location.pathname
 
-    if (l.className === 'footer-link' && !this.props.footer) return
+    if (l.className === "footer-link" && !this.props.footer) return
 
-    const className = location === l.to ? `${l.className || ""} selected` : l.className
-    const render = /^\w+:/.test(l.to) ? this.renderGlobalLink : this.renderLocalLink
+    const render = /^\w+:/.test(l.to)
+      ? this.renderGlobalLink
+      : this.renderLocalLink
 
-    return ([
-      render(l.to, l.title, l.emoji, className),
-      i == 1 && !this.props.footer && location !== '/' ? this.renderLogo() : null
-    ])
+    return [render.call(this, l.to, l.title, location === l.to)]
   }
 
-  renderLocalLink(to, title, emoji, className) {
+  renderLocalLink(to, title, selected) {
     return (
-      <Link className={className} to={to}>
-        <span className="emoji">
-          {emoji}
-        </span>
+      <Link className={this.renderLinkClass(selected)} to={to}>
         {title}
       </Link>
     )
   }
 
-  renderGlobalLink(to, title, emoji, className) {
+  renderGlobalLink(to, title, selected) {
     return (
-      <a className={className} href={to}>
-        <span className="emoji">
-          {emoji}
-        </span>
+      <a className={this.renderLinkClass(selected)} href={to}>
         {title}
       </a>
     )
   }
 
-  renderLogo(caption) {
-    return (
-      <a className="logo" href="/">
-        <img src="https://c1.staticflickr.com/5/4353/37319896181_52a796bcc7.jpg" />
-        {caption || "Azer Koçulu"}
-      </a>
-    )
+  renderLinkClass(selected) {
+    const classes = ["x-inherit", "mh3", "no-underline"]
+
+    if (selected) {
+      classes.push("near-black", "x-default-cursor")
+    } else {
+      classes.push("hover-near-black", "gray", "x-inherit")
+    }
+
+    return classes.join(" ")
   }
 }

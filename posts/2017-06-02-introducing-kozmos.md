@@ -1,9 +1,12 @@
 ---
 title: Introducing Kozmos
 desc: A new bookmarking platform made for everyone.
-image: https://cldup.com/JneyS20LWo.png
+image: https://cldup.com/XIF3n5bO30.png
 date: "2017-06-02T07:00:00.000Z"
 path: "/journal/introducing-kozmos/"
+highlighted: false
+highlightImagePosition: center center
+highlightImageSize: 400px
 ---
 
 Last October, I’ve built an experimental web browser called Kaktüs. My main goal was to redesign tabbing in a minimalistic way.

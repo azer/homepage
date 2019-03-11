@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import Menu from './menu'
-import SocialIcons from './social-icons'
+import React, { Component } from "react"
+import Menu from "./menu"
+import SocialIcons from "./social-icons"
 import Newsletter from "./newsletter"
 
 import "./footer.css"
@@ -16,13 +16,13 @@ export default class Footer extends Component {
           </div>
           <div className="footer-right">
             <div className="quote">
-              Where there is ruin, there is hope for a treasure. <br /> — Jalaladdin Rumi
+              Where there is ruin, there is hope for a treasure. <br /> —
+              Jalaladdin Rumi
             </div>
             <SocialIcons />
           </div>
-          <div className="clear"></div>
+          <div className="x-clear" />
         </div>
-
       </div>
     )
   }

@@ -1,12 +1,13 @@
 ---
-title: "10 Linux Commands That Will Save Your Time"
-desc: "Selection of Linux commands known for saving time"
+title: "Time-saver Linux Commands"
+desc: ""
 image: https://cldup.com/HAaZ8e3tFa.jpg
 imageSize: contain
 imageHeight: 500px
 imageCaption: "Chuck Close in his studio during the 70s"
 date: "2018-08-13T00:00:00.000Z"
 path: "/journal/10-linux-commands-that-will-save-your-time"
+highlighted: true
 ---
 
 In this blog post, I'll share the Linux commands that saved a lot of my time when getting complicated tasks done. This is a personal list &mdash; I basically [selected them from my digital notebook](https://github.com/azer/notebook/blob/master/linux/useful-commands.md).  Hopefully it's useful for you as well. If you see anything that needs improvement please [send a pull request](https://github.com/azer/homepage)!
