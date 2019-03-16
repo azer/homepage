@@ -13,7 +13,7 @@ module.exports = {
         path: `${__dirname}/posts/`
       }
     },
-    'gatsby-plugin-react-helmet',
+    "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-transformer-remark",
       options: {
@@ -21,7 +21,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
-              classPrefix: 'language-'
+              classPrefix: "language-"
             }
           }
         ]
@@ -34,6 +34,5 @@ module.exports = {
         trackingId: config.analytics
       }
     }
-
   ]
 }

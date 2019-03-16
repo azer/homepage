@@ -1,12 +1,13 @@
 ---
-title: "10 Linux Commands That Will Save Your Time"
-desc: "Selection of Linux commands known for saving time"
+title: "Linux Commands For Productivity"
+desc: "A list of Linux commands that helps getting things done faster"
 image: https://cldup.com/HAaZ8e3tFa.jpg
 imageSize: contain
 imageHeight: 500px
 imageCaption: "Chuck Close in his studio during the 70s"
 date: "2018-08-13T00:00:00.000Z"
 path: "/journal/10-linux-commands-that-will-save-your-time"
+highlighted: true
 ---
 
 In this blog post, I'll share the Linux commands that saved a lot of my time when getting complicated tasks done. This is a personal list &mdash; I basically [selected them from my digital notebook](https://github.com/azer/notebook/blob/master/linux/useful-commands.md).  Hopefully it's useful for you as well. If you see anything that needs improvement please [send a pull request](https://github.com/azer/homepage)!
@@ -96,23 +97,6 @@ $ sort foobar.txt
 4 Qux
 5 Foo
 ```
-
-<div class="zigzag"></div>
-<div class="newsletter inline">
-  <h1 class="rainbow">Finding this post useful?</h1>
-  <h2>You should sign up my newsletter. I occasionally ping the subscribers about this kind of stuff.</h2>
-  <form action="//roadbeats.us14.list-manage.com/subscribe/post?u=9fe3d3623b0c1f52fa42d45f3&amp;id=bdb32a67af" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-          <div id="mc_embed_signup_scroll">
-	          <input type="email" name="EMAIL" class="email" id="mce-EMAIL" placeholder="your@email.com" required />
-            <div class="hidden" aria-hidden="true">
-              <input type="text" name="b_9fe3d3623b0c1f52fa42d45f3_bdb32a67af" tabindex="-1" value="" />
-            </div>
-            <div>
-              <div class="button" onClick="document.body.querySelector('form.newsletter').submit()">Subscribe</div>
-            </div>
-          </div>
-  </form>
-</div>
 
 # <a name="column"></a> 6. column
 

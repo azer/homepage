@@ -1,52 +1,81 @@
-import React, { Component } from 'react'
-import Link from 'gatsby-link'
-import Intro from '../components/intro'
-import Helmet from 'react-helmet'
-import CenteredLayout from '../components/centered-layout'
-import Newsletter from "../components/newsletter"
+import React, { Component } from "react"
+import Link from "gatsby-link"
+import Intro from "../components/intro"
+import Helmet from "react-helmet"
+import SimpleLayout from "../components/simple-layout"
+import Button from "../components/Button"
+import Textbox from "../components/Textbox"
+import Newsletter from "../components/Newsletter"
+import PageHeader from "../components/page-header"
 
 import "./index.css"
 
 export default class Homepage extends Component {
+  highlightedPosts() {
+    return this.props.data.allMarkdownRemark.edges.filter(e => {
+      return e.node.frontmatter.highlighted
+    })
+  }
+
+  recentPosts() {
+    return this.props.data.allMarkdownRemark.edges.slice(0, 5)
+  }
+
   render() {
     return (
-      <CenteredLayout name="index"
-                      location={this.props.location}
-                      title={this.props.data.site.siteMetadata.title}
-                      desc="My name is Azer Koçulu. I build software, also shoot photos."
-                      type="website"
-                      image="https://cldup.com/go95bqT7sK.jpg">
-        <div className="columns">
-          {this.renderIntro()}
-          {this.renderPhoto()}
+      <SimpleLayout
+        name="index"
+        location={this.props.location}
+        title={this.props.data.site.siteMetadata.title}
+        desc="My name is Azer Koçulu. I build software, also shoot photos."
+        type="website"
+        image="https://cldup.com/go95bqT7sK.jpg"
+      >
+        <PageHeader image="https://c1.staticflickr.com/5/4353/37319896181_52a796bcc7.jpg">
+          <strong>Azer Koçulu</strong> is a Software Engineer based in Berlin.
+          Lover of fast, minimalist experiences. Maker of Kozmos and Happy
+          Hacking Linux.
+        </PageHeader>
+        <div className="pt4 highlights-wrapper">
+          <h1 className="x-sans fw3 tc pv0 mid-gray">Journal Highlights</h1>
+          <section className="x-grid-4 mt4 highlights">
+            {this.highlightedPosts().map((post, ind) =>
+              this.renderHighlightedPost(post, ind)
+            )}
+          </section>
         </div>
-     </CenteredLayout>
+        <Newsletter />
+      </SimpleLayout>
     )
   }
 
-  renderIntro() {
-    return (
-      <div className="left column">
-        <h1 className="title">
-          I build software.
-        </h1>
-        <h2>
-        My name is <strong>Azer Koçulu</strong>. I recently founded <a href="http://getkozmos.com">Kozmos</a>, a better bookmarking service for everyone.
-        </h2>
-        <Intro />
-        <div className="inline-newsletter">
-          <div className="zigzag"></div>
-          <Newsletter />
-        </div>
-      </div>
-    )
-  }
+  renderHighlightedPost(post, color) {
+    const img = {
+      backgroundImage: `url(${post.node.frontmatter.highlightImage ||
+        post.node.frontmatter.image})`,
+      backgroundPosition: `${post.node.frontmatter.highlightImagePosition ||
+        "center center"}`,
+      backgroundSize: `${post.node.frontmatter.highlightImageSize || "cover"}`
+    }
 
-  renderPhoto() {
     return (
-      <div className="right column">
-        <img className="profile-picture" src="https://c1.staticflickr.com/5/4353/37319896181_52a796bcc7.jpg" />
-      </div>
+      <a
+        href={post.node.frontmatter.path}
+        className="highlighted-post x-noborder relative"
+      >
+        <header className="absolute top-0 tc bg-near-white w-100">
+          <h4 className="x-mono silver mt0 mb1">
+            {new Date(post.node.frontmatter.date).getFullYear()}
+          </h4>
+
+          <h2 className="f5 lh-copy ph3 mid-gray w-95">
+            {post.node.frontmatter.title}
+          </h2>
+        </header>
+        <div className="w-100 x-color-overlay image">
+          <div className="w-100 h-100 x-grayscale" style={img} />
+        </div>
+      </a>
     )
   }
 }
@@ -65,9 +94,14 @@ export const query = graphql`
           frontmatter {
             path
             date(formatString: "DD MMMM, YYYY")
+            highlighted
+            highlightImage
+            highlightImagePosition
+            highlightImageSize
           }
           frontmatter {
             title
+            image
           }
         }
       }

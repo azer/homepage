@@ -1,4 +1,5 @@
-@import url("./fonts-pirate.css");
+@import url("./fonts.css");
+@import url("./zigzag.css");
 
 html, body, #___gatsby {
   width: 100%;
@@ -22,47 +23,126 @@ html, body, #___gatsby {
   -webkit-font-smoothing: antialiased;
 }
 
-.clear {
+a {
+  text-decoration: none;
+}
+
+.x-viewport {
+  width: 70%;
+  max-width: 1140px;
+  margin: 8rem auto 8rem auto;
+}
+
+.x-fullwidth {
+  width: 90%;
+  max-width: 90%;
+}
+
+.x-default-cursor {
+  cursor: default;
+}
+
+.x-inherit {
+  font: inherit;
+}
+
+.x-clear {
   clear: both;
 }
 
-.container {
-  width: 100%;
-  min-height: 100%;
+.x-grid-2, .x-grid-4, .x-grid-3 {
+  display: grid;
+  grid-column-gap: 2rem;
+  justify-items: stretch;
+  align-items: stretch;
 }
-.zigzag {
-  margin: 7.5% 0;
-  background: #fff;
+
+.x-grid-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.x-grid-3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.x-grid-4 {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.x-noborder {
+  border-bottom: 0 !important;
+}
+
+.x-grayscale {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+.x-color-overlay {
   position: relative;
-  height: 16px;
-  z-index: 1;
 }
-.zigzag:before, .zigzag:after {
-  content: "";
-  display: block;
+
+.x-color-overlay::before {
+  content: '';
   position: absolute;
   left: 0;
+  top: 0;
   right: 0;
+  bottom: 0;
+  opacity: 1;
+  mix-blend-mode: multiply;
+  z-index: 9999;
 }
-.zigzag:before {
-  height: 12px;
-  top: 110%;
-  background: -webkit-linear-gradient(225deg, #d6d6d6 8px, transparent 0) 0 8px, -webkit-linear-gradient(315deg, #d6d6d6 8px, transparent 0) 0 8px;
-  background: linear-gradient(-135deg, #d6d6d6 8px, transparent 0) 0 8px, linear-gradient(135deg, #d6d6d6 8px, transparent 0) 0 8px;
-  background-position: top left;
-  background-repeat: repeat-x;
-  background-size: 16px 16px;
+
+.x-auto {
+  margin-left: auto;
+  margin-right: auto;
 }
-.zigzag:after {
-  height: 16px;
-  top: 100%;
-  background: -webkit-linear-gradient(225deg, #fff 8px, transparent 0) 0 8px, -webkit-linear-gradient(315deg, #fff 8px, transparent 0) 0 8px;
-  background: linear-gradient(-135deg, #fff 8px, transparent 0) 0 8px, linear-gradient(135deg, #fff 8px, transparent 0) 0 8px;
-  background-position: top left;
-  background-repeat: repeat-x;
-  background-size: 16px 16px;
+
+.highlights a:nth-child(1) .x-color-overlay::before {
+  background: #B54A48;
+}
+
+.highlights a:nth-child(2) .x-color-overlay::before {
+  background: #8959A8; /* #BEAA48; */
+}
+
+.highlights a:nth-child(3) .x-color-overlay::before {
+  background: #43A852;
+}
+
+.highlights a:nth-child(4) .x-color-overlay::before {
+  background:  #1BAABF; /* #6FC9B6 */
 }
 
 @keyframes blinker {
   50% { opacity: 0.3; }
+}
+
+@media (max-width: 1200px) {
+  .x-viewport {
+    width: 90%;
+  }
+
+  .x-grid-4 {
+    grid-column-gap: 0.5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .x-grid-3 {
+    grid-template-columns: 1fr;
+    grid-row-gap: 0.5rem;
+  }
+
+  .x-grid-4 {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 0.5rem;
+    grid-row-gap: 0.5rem;
+  }
+
+  .x-viewport {
+    width: 90%;
+    margin: 4rem auto 4rem auto;
+  }
 }

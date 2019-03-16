@@ -1,29 +1,31 @@
-import React, { Component } from 'react'
-import Menu from './menu'
-import SocialIcons from './social-icons'
-import Newsletter from "./newsletter"
+import React, { Component } from "react"
+import SocialIcons from "./social-icons"
 
 import "./footer.css"
 
 export default class Footer extends Component {
   render() {
     return (
-      <div className="footer">
-        <div className="inner">
-          {this.props.newsletter ? <Newsletter /> : null}
-          <div className="footer-left">
-            <Menu location={this.props.location} footer />
-          </div>
-          <div className="footer-right">
-            <div className="quote">
-              Where there is ruin, there is hope for a treasure. <br /> — Jalaladdin Rumi
-            </div>
-            <SocialIcons />
-          </div>
-          <div className="clear"></div>
+      <footer className="pv5 bg-near-whited x-sans f4 mid-gray bg-near-white footer">
+        <div className="x-viewport">
+          Made with love in Berlin
+          <i />
+          <a href="/rss.xml">RSS</a>
+          <i />
+          <a href="mailto:azer@roadbeats.com">E-mail</a>
+          <i />
+          <a href="https://github.com/azer">Github</a>
+          <i />
+          <a href="https://instagram.com/afrikaradyo">Instagram</a>
+          <i />
+          <a href="https://www.youtube.com/channel/UCPZsk0_jd3GuKjeIPilL4qA/videos">
+            Youtube
+          </a>
+          <a href="#" className="top">
+            ↑
+          </a>
         </div>
-
-      </div>
+      </footer>
     )
   }
 }

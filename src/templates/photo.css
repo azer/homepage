@@ -2,21 +2,16 @@
   height: 100%;
 }
 
-.slideshow .content {
-  width: 90%;
-  height: calc(100% - 100px);
-  margin-top: 85px;
-  margin-bottom: 50px;
+.slideshow > .x-viewport {
+  position: relative;
+  height: calc(100vh - 10rem);
 }
 
 .slideshow .loading {
   width: 100%;
   height: calc(100% - 50px);
-  font: 500 16px "PT Mono", sans-serif;
-  color: #111;
   position: relative;
   letter-spacing: 1px;
-  background: #f2f2f2;
 }
 
 .slideshow .loading.has-thumbnail {
@@ -25,10 +20,12 @@
 
 .slideshow .loading span {
   text-transform: uppercase;
-  padding: 20px 30px;
   color: #333;
-  z-index: 9999;
+  z-index: 9999999;
   animation: blinker 0.5s linear infinite;
+  position: absolute;
+  top: calc(50% - 8px);
+  left: calc(50% - 34px);
 }
 
 .slideshow .loading.has-thumbnail span {
@@ -142,7 +139,7 @@
 .slideshow a.close-button {
   position: absolute;
   top: 23px;
-  right: 65px;
+  right: 0;
   font: 28px Arial, "Open Sans", sans-serif;
   color: #aaa;
   border: 0;

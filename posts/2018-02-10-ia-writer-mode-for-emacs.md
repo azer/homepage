@@ -1,7 +1,7 @@
 ---
 title: "iA Writer Mode for Emacs"
 desc: "Making Emacs look and feel like iA Writer when editing documents"
-image: https://c2.staticflickr.com/2/1935/43239104260_4a26ceb627_b.jpg
+image: https://cldup.com/i5wC48wnpx.gif
 imageHeight: 500px
 hideImage: true
 date: "2018-10-02T16:00:00.000Z"

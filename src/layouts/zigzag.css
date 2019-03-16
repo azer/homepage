@@ -1,0 +1,35 @@
+.zigzag {
+  margin: 7.5% 0;
+  background: #fff;
+  position: relative;
+  height: 16px;
+  z-index: 1;
+}
+
+.zigzag:before, .zigzag:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.zigzag:before {
+  height: 12px;
+  top: 110%;
+  background: -webkit-linear-gradient(225deg, #d6d6d6 8px, transparent 0) 0 8px, -webkit-linear-gradient(315deg, #d6d6d6 8px, transparent 0) 0 8px;
+  background: linear-gradient(-135deg, #d6d6d6 8px, transparent 0) 0 8px, linear-gradient(135deg, #d6d6d6 8px, transparent 0) 0 8px;
+  background-position: top left;
+  background-repeat: repeat-x;
+  background-size: 16px 16px;
+}
+
+.zigzag:after {
+  height: 16px;
+  top: 100%;
+  background: -webkit-linear-gradient(225deg, #fff 8px, transparent 0) 0 8px, -webkit-linear-gradient(315deg, #fff 8px, transparent 0) 0 8px;
+  background: linear-gradient(-135deg, #fff 8px, transparent 0) 0 8px, linear-gradient(135deg, #fff 8px, transparent 0) 0 8px;
+  background-position: top left;
+  background-repeat: repeat-x;
+  background-size: 16px 16px;
+}

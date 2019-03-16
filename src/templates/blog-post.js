@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import SimpleLayout from "../components/simple-layout"
-import Newsletter from "../components/newsletter"
+import Newsletter from "../components/Newsletter"
 import Link from "gatsby-link"
 import ShareButtons from "../components/share-buttons"
 import PatreonButton from "../components/patreon-button"
@@ -25,16 +25,11 @@ export default class BlogPostTemplate extends Component {
       >
         {this.renderTitle()}
         {this.renderImage()}
-        <div className="post" dangerouslySetInnerHTML={{ __html: post.html }} />
-        <PatreonButton />
-        <ShareButtons
-          title={post.frontmatter.title}
-          path={post.frontmatter.path}
+        <div
+          className="post x-serif"
+          dangerouslySetInnerHTML={{ __html: post.html }}
         />
-        <div className="inline-newsletter">
-          <div className="zigzag" />
-          <Newsletter title="Did you like this article? Subscribe for new posts:" />
-        </div>
+        <Newsletter title="Did you like this article? Subscribe for new posts:" />
       </SimpleLayout>
     )
   }
@@ -47,27 +42,23 @@ export default class BlogPostTemplate extends Component {
     }
 
     return [
-      <h1>{post.title}</h1>,
-      <h2>
-        {post.desc ? <span>{post.desc}</span> : null}{" "}
-        <span className="date">{post.date}</span>{" "}
-      </h2>
+      <h1 className="x-headline center fw7 tc f1 near-black mb3">
+        {post.title}
+      </h1>,
+      <h2 className="x-sans center fw4 tc f4 mid-gray mv2">
+        {post.desc ? <span>{post.desc}</span> : null}
+      </h2>,
+      <h2 className="x-sans center fw4 tc f4 mid-gray mv0">{post.date}</h2>
     ]
   }
 
   renderPresentationTitle() {
     const post = this.props.data.markdownRemark.frontmatter
 
-    console.log("-->", post)
-
     return (
       <div className="presentation-title">
         <section>
-          <h1>{post.title}</h1>
-          <h2>
-            <span className="date">Last Update: {post.date}</span>{" "}
-          </h2>
-          {post.patreonButtonUnderTitle ? <PatreonButton /> : null}
+          <h1 className="x-headline f-subheadline fw6">{post.title}</h1>
         </section>
       </div>
     )

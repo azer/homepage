@@ -1,10 +1,11 @@
 ---
-title: A Pin Factory, and Linux
+title: A Pin Factory
 desc: Productivity in Old Times and Modern Times
 image: https://cldup.com/XPNLoghSjK.jpg
 hideImage: true
 date: "2017-01-23T08:00:00.000Z"
 path: "/journal/pin-factory/"
+highlighted: true
 ---
 
 ![](https://cldup.com/XPNLoghSjK.jpg)
@@ -22,7 +23,7 @@ Your factory has to compete to survive; how would you produce more pins ? You ca
 Now think about yourself as a hacker, how your employer tweaks the productivity in your "factory" ? I worked for bunch of startups in Silicon Valley,
 and observed that almost all businesses use Apple products,
  which aren't known for good focus, speed or productivity (anymore).
- 
+
  Despite Apple and Microsoft products are quite buggy and often interrupt our work, we still use
  them as the culture in tech startups shifted from succeeding by building great tools to: workaholism.
 

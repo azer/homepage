@@ -244,23 +244,6 @@ How does it work though ? See the next section where we actually add the Go comm
 the higher level commands.
 
 
-<div class="zigzag"></div>
-<div class="newsletter inline">
-  <h1 class="rainbow">Finding this post useful?</h1>
-  <h2>You should sign up my newsletter. I occasionally ping the subscribers about this kind of stuff.</h2>
-  <form action="//roadbeats.us14.list-manage.com/subscribe/post?u=9fe3d3623b0c1f52fa42d45f3&amp;id=bdb32a67af" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-          <div id="mc_embed_signup_scroll">
-	          <input type="email" name="EMAIL" class="email" id="mce-EMAIL" placeholder="your@email.com" required />
-            <div class="hidden" aria-hidden="true">
-              <input type="text" name="b_9fe3d3623b0c1f52fa42d45f3_bdb32a67af" tabindex="-1" value="" />
-            </div>
-            <div>
-             <div class="button" onClick="document.body.querySelector('form.newsletter').submit()">Subscribe</div>
-            </div>
-          </div>
-  </form>
-</div>
-
 ## <a name="go-commands"></a> Go Commands
 
 As we want to set the GOPATH to the project directory to simplify dependency management which is still not solved officially in Go ecosystem,

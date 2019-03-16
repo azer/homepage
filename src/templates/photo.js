@@ -105,7 +105,6 @@ export default class Slideshow extends Component {
       this.props.data.site.siteMetadata.title
     }`
     const url = `https://kodfabrik.com${photo.path}`
-
     return (
       <SimpleLayout
         name="slideshow"
@@ -120,6 +119,7 @@ export default class Slideshow extends Component {
         <Link to="/photography" className="close-button">
           &times;
         </Link>
+
         {this.state.loading ? this.renderLoading() : this.renderPhoto()}
         <div className="head">
           <div className="caption">{photo.title}</div>
@@ -162,7 +162,7 @@ export default class Slideshow extends Component {
 
     return (
       <div
-        className={`loading center ${
+        className={`x-mono near-black loading center ${
           this.state.thumbnailLoaded ? "has-thumbnail" : ""
         }`}
       >

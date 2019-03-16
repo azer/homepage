@@ -1,0 +1,29 @@
+:root {
+  --sans: "Calibre", -apple-system, BlinkMacSystemFont,
+          'avenir next', avenir,
+          'helvetica neue', helvetica,
+          ubuntu,
+          roboto, noto,
+          'segoe ui', arial,
+          sans-serif;
+
+  --serif: "Tiempos", georgia, times, serif;
+  --mono: "PT Mono", Consolas, monaco, monospace;
+  --headline: "Tiemposheadline", "Tiempos", georgia, times, serif;
+}
+
+.x-sans {
+  font-family: var(--sans);
+}
+
+.x-serif {
+  font-family: var(--serif);
+}
+
+.x-headline {
+  font-family: var(--headline);
+}
+
+.x-mono {
+  font-family: var(--mono);
+}
