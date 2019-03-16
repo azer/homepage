@@ -4,7 +4,7 @@
   max-width: 870px;
   margin: 0 auto;
   color: #222;
-  padding: 2rem 0 5rem 180px;
+  padding-left: 180px;
 }
 
 .index .bio .profile-pic {
@@ -15,16 +15,12 @@
   background-size: 160px;
 }
 
-.index .highlights-wrapper {
-  margin-bottom: 3rem;
-}
-
 .index .highlighted-post {
   padding-top: 5rem;
 }
 
 .index .highlighted-post header {
-  z-index: 99999;
+  z-index: 4;
   padding: 1.7rem 0;
 }
 
@@ -37,6 +33,7 @@
 }
 
 .index .highlighted-post .image {
+  z-index: 3;
   height: 20rem;
 }
 

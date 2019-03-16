@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import SimpleLayout from '../components/simple-layout'
-import Link, { navigateTo } from 'gatsby-link'
-import Helmet from 'react-helmet'
+import React, { Component } from "react"
+import SimpleLayout from "../components/simple-layout"
+import Link, { navigateTo } from "gatsby-link"
+import Helmet from "react-helmet"
 import img from "img"
 import "./photo.css"
 
@@ -12,9 +12,9 @@ export default class Slideshow extends Component {
   }
 
   componentWillMount() {
-    if (typeof document !== 'undefined') {
-      window.removeEventListener('keyup', this.onKeyPress)
-      window.addEventListener('keyup', this.onKeyPress, false)
+    if (typeof document !== "undefined") {
+      window.removeEventListener("keyup", this.onKeyPress)
+      window.addEventListener("keyup", this.onKeyPress, false)
     }
 
     this.select()
@@ -25,7 +25,7 @@ export default class Slideshow extends Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener('keyup', this.onKeyPress)
+    window.removeEventListener("keyup", this.onKeyPress)
   }
 
   load(photo) {
@@ -37,7 +37,7 @@ export default class Slideshow extends Component {
       error: null
     })
 
-    if (typeof window === 'undefined') return
+    if (typeof window === "undefined") return
 
     img(photo.sizes.small.url, err => {
       if (err || done) return
@@ -74,13 +74,13 @@ export default class Slideshow extends Component {
     let i = all.length
     while (i--) {
       if (all[i].node.path === selected.path) {
-        break;
+        break
       }
     }
 
     this.setState({
-      previous: all[i === 0 ? all.length - 1 : i-1].node.path,
-      next: all[(i+1) % all.length].node.path,
+      previous: all[i === 0 ? all.length - 1 : i - 1].node.path,
+      next: all[(i + 1) % all.length].node.path,
       photo: selected
     })
 
@@ -88,40 +88,45 @@ export default class Slideshow extends Component {
   }
 
   size() {
-    if (typeof window === 'undefined') return 'medium'
+    if (typeof window === "undefined") return "medium"
 
     const width = window.innerWidth
 
-    if (width < 800) return 'medium'
-    if (width < 1100) return 'large'
-    if (width < 1700) return 'xlarge'
+    if (width < 800) return "medium"
+    if (width < 1100) return "large"
+    if (width < 1700) return "xlarge"
 
-    return 'xxlarge'
+    return "xxlarge"
   }
 
   render() {
     const photo = this.props.data.photosJson
-    const title = `${photo.title} - Photography - ${this.props.data.site.siteMetadata.title}`
+    const title = `${photo.title} - Photography - ${
+      this.props.data.site.siteMetadata.title
+    }`
     const url = `http://azer.bike${photo.path}`
 
     return (
-      <SimpleLayout name="slideshow"
-                      location={this.props.location}
-                      title={title}
-                      desc="Selection of some photos I shot."
-                      type="photo"
-                      url={url}
-                      image={photo.sizes.xlarge.url}
-                      newsletter>
+      <SimpleLayout
+        name="slideshow"
+        location={this.props.location}
+        title={title}
+        desc="Selection of some photos I shot."
+        type="photo"
+        url={url}
+        image={photo.sizes.xlarge.url}
+        newsletter
+      >
+        <Link to="/photography" className="close-button">
+          &times;
+        </Link>
 
-        <Link to="/photography" className="close-button">&times;</Link>
-        {this.state.loading ? this.renderLoading() : this.renderPhoto() }
+        {this.state.loading ? this.renderLoading() : this.renderPhoto()}
         <div className="head">
           <div className="caption">{photo.title}</div>
           {this.renderButtons()}
-          <div className="clear"></div>
+          <div className="clear" />
         </div>
-
       </SimpleLayout>
     )
   }
@@ -131,20 +136,21 @@ export default class Slideshow extends Component {
       backgroundImage: `url(${this.state.photo.sizes[this.size()].url})`
     }
 
-    return (
-      <div className="photo" style={css}>
-      </div>
-    )
+    return <div className="photo" style={css} />
   }
 
   renderButtons() {
     return (
       <div className="buttons">
         <Link to={this.state.previous} className="prev-button button">
-          <svg width="24px" height="11px"><polygon points="18.4,0.5 17.6,1.2 21.5,5 0.5,5 0.5,6 21.5,6 17.6,9.8 18.4,10.5 23.4,5.5 "></polygon></svg>
+          <svg width="24px" height="11px">
+            <polygon points="18.4,0.5 17.6,1.2 21.5,5 0.5,5 0.5,6 21.5,6 17.6,9.8 18.4,10.5 23.4,5.5 " />
+          </svg>
         </Link>
         <Link to={this.state.next} className="next-button button">
-          <svg width="24px" height="11px"><polygon points="18.4,0.5 17.6,1.2 21.5,5 0.5,5 0.5,6 21.5,6 17.6,9.8 18.4,10.5 23.4,5.5 "></polygon></svg>
+          <svg width="24px" height="11px">
+            <polygon points="18.4,0.5 17.6,1.2 21.5,5 0.5,5 0.5,6 21.5,6 17.6,9.8 18.4,10.5 23.4,5.5 " />
+          </svg>
         </Link>
       </div>
     )
@@ -156,8 +162,14 @@ export default class Slideshow extends Component {
     }
 
     return (
-      <div className={`loading center ${this.state.thumbnailLoaded ? "has-thumbnail" : ""}`}>
-        {this.state.thumbnailLoaded ? <div className="thumbnail" style={thumbnailCSS}></div> : null}
+      <div
+        className={`x-mono near-black loading center ${
+          this.state.thumbnailLoaded ? "has-thumbnail" : ""
+        }`}
+      >
+        {this.state.thumbnailLoaded ? (
+          <div className="thumbnail" style={thumbnailCSS} />
+        ) : null}
         <span>Loading</span>
       </div>
     )

@@ -1,8 +1,10 @@
 import React, { Component } from "react"
 import SimpleLayout from "../components/simple-layout"
 import Helmet from "react-helmet"
-import Newsletter from "../components/newsletter"
+import Newsletter from "../components/Newsletter"
+import PageHeader from "../components/page-header"
 import projects from "../projects.json"
+import Title from "../components/page-title"
 import "./software.css"
 
 export default class Software extends Component {
@@ -17,19 +19,31 @@ export default class Software extends Component {
         location={this.props.location}
         type="website"
         title={title}
-        desc="List of my personal projects."
+        desc="Kodfabrik Software"
         image="https://c1.staticflickr.com/5/4464/37192502570_f88f06f162_z.jpg"
       >
-        <h1>
-          Software
-          <br />
-          Projects
-        </h1>
-        <h2>I enjoy building high-performance, user-friendly applications.</h2>
+        <PageHeader
+          image="https://66.media.tumblr.com/4202cff356bea5f618ea60e819ec45ab/tumblr_n55gs2ZGTi1tb0c1mo1_500.jpg"
+          //image="https://66.media.tumblr.com/9957322c3ffecf4416655d9278e80b23/tumblr_ncc9fvGvsN1tb0c1mo1_500.jpg"
+          // image="https://66.media.tumblr.com/ce851407a811648b62ea0cc1223d9474/tumblr_pmwckcfwME1tb0c1mo1_500.gif"
+        >
+          It all began with a spreadsheets app, fast and user-friendly one. That
+          took me to a new city, new ideas, and new people.
+        </PageHeader>
+
+        {this.renderProjects()}
+        <Newsletter />
+      </SimpleLayout>
+    )
+  }
+
+  renderProjects() {
+    return (
+      <main className="projects pv4 x-sans">
+        <Title>Software Projects</Title>
 
         <div className="recent">
           <h3>Actively working on</h3>
-
           {projects.recent.map(p => this.renderRecentProject(p))}
         </div>
 
@@ -42,12 +56,13 @@ export default class Software extends Component {
               Azer is a phenomenal problem solver, and a great asset on any
               engineering team. He worked with us on a very high risk project,
               and it's now in production for all of our users.
-              <strong>
-                Conrad Irwin
-                <br />
-                CTO of Superhuman
-              </strong>
+              <br />
+              <br />
+              Conrad Irwin
+              <br />
+              CTO of Superhuman
             </p>
+
             <div className="x-clear" />
           </div>
         </div>
@@ -84,12 +99,7 @@ export default class Software extends Component {
 
           {projects.old.map(p => this.renderRecentProject(p))}
         </div>
-
-        <div className="inline-newsletter">
-          <div className="zigzag" />
-          <Newsletter title="That's about it. You can subscribe my personal newsletter to hear updates on my projects." />
-        </div>
-      </SimpleLayout>
+      </main>
     )
   }
 

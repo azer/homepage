@@ -43,12 +43,13 @@ export default class SimpleLayout extends Component {
         <BurgerMenu location={this.props.location} />
         <Menu location={this.props.location} />
         <div
-          className={`content x-viewport ${
+          className={`x-viewport x-auto pt4 ${
             this.props.fullwidth ? "x-fullwidth" : ""
           }`}
         >
           {this.props.children}
         </div>
+        <Footer />
       </div>
     )
   }

@@ -1,31 +1,4 @@
 @import url("./fonts/calibre.css");
 @import url("./fonts/tiempos.css");
 @import url("./fonts/pt-mono.css");
-
-.x-sans {
-  font-family: "Calibre", -apple-system, BlinkMacSystemFont,
-               'avenir next', avenir,
-               'helvetica neue', helvetica,
-               ubuntu,
-               roboto, noto,
-               'segoe ui', arial,
-               sans-serif;
-}
-
-.x-serif {
-  font-family: "Tiempos", georgia,
-               times,
-               serif;
-}
-
-.x-headline {
-  font-family: "Tiemposheadline", "Tiempos", georgia,
-               times,
-               serif;
-}
-
-.x-mono {
-  font-family: "PT Mono", Consolas,
-               monaco,
-               monospace;
-}
+@import url("./font-definitions.css");

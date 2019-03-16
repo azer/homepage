@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import Link from 'gatsby-link'
-import SocialIcons from './social-icons'
-import links from './menu-links.json'
+import React, { Component } from "react"
+import Link from "gatsby-link"
+import SocialIcons from "./social-icons"
+import links from "./menu-links.json"
 import "./burger-menu.css"
 
 const emojiStyle = {
@@ -17,24 +17,23 @@ export default class BurgerMenu extends Component {
   }
 
   render() {
-    const classes = ['burger-menu']
-    if (this.state && this.state.open) classes.push('open')
+    const classes = ["burger-menu", "x-sans"]
+    if (this.state && this.state.open) classes.push("open")
 
     return (
-      <div className={classes.join(' ')}>
-        <div className="hamburger" onClick={() => this.toggle()}></div>
-          <div className="header">
-            <h1>
-              <img src="https://c1.staticflickr.com/5/4353/37319896181_52a796bcc7.jpg" />
-              <a href="/">Azer Koçulu</a>
-            </h1>
-          </div>
+      <div className={classes.join(" ")}>
+        <div className="hamburger" onClick={() => this.toggle()} />
+        <div className="header">
+          <h1>
+            <a href="/">Azer Koçulu</a>
+          </h1>
+        </div>
 
         <div className="burger-content">
-          <h2>Menu</h2>
+          <h2 className="x-mono">Menu</h2>
           {links.map(l => this.renderLink(l))}
 
-          <h2 className="social-media">links</h2>
+          <h2 className="social-media x-mono">links</h2>
           <SocialIcons />
         </div>
       </div>
@@ -42,10 +41,10 @@ export default class BurgerMenu extends Component {
   }
 
   renderLink(l) {
-    if (l.className === 'footer-link') return
+    if (l.className === "footer-link") return
 
     return (
-      <a className="button" href={l.to}>
+      <a className="button x-sans" href={l.to}>
         {l.title}
       </a>
     )

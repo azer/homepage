@@ -3,7 +3,10 @@ import Link from "gatsby-link"
 import Intro from "../components/intro"
 import Helmet from "react-helmet"
 import SimpleLayout from "../components/simple-layout"
-import Newsletter from "../components/newsletter"
+import Button from "../components/Button"
+import Textbox from "../components/Textbox"
+import Newsletter from "../components/Newsletter"
+import PageHeader from "../components/page-header"
 
 import "./index.css"
 
@@ -28,13 +31,12 @@ export default class Homepage extends Component {
         type="website"
         image="https://cldup.com/go95bqT7sK.jpg"
       >
-        <div className="bio x-serif relative">
-          <div className="absolute profile-pic br-100 w4" src="" />
+        <PageHeader image="https://c1.staticflickr.com/5/4353/37319896181_52a796bcc7.jpg">
           <strong>Azer Koçulu</strong> is a Software Engineer based in Berlin.
-          Lover of fast, minimalist experiences. Maker of Kozmos, Elephant and
-          more.
-        </div>
-        <div className="bt pv4 b--light-gray highlights-wrapper">
+          Lover of fast, minimalist experiences. Maker of Kozmos and Happy
+          Hacking Linux.
+        </PageHeader>
+        <div className="pt4 highlights-wrapper">
           <h1 className="x-sans fw3 tc pv0 mid-gray">Journal Highlights</h1>
           <section className="x-grid-4 mt4 highlights">
             {this.highlightedPosts().map((post, ind) =>
@@ -42,14 +44,7 @@ export default class Homepage extends Component {
             )}
           </section>
         </div>
-        <div className="bt pt5 b--light-gray">
-          <h1 className="x-sans fw3 tc pv0 mid-gray">Recent Posts</h1>
-          <section className="recent">
-            {this.recentPosts().map((post, ind) =>
-              this.renderRecentPost(post, ind)
-            )}
-          </section>
-        </div>
+        <Newsletter />
       </SimpleLayout>
     )
   }
@@ -81,17 +76,6 @@ export default class Homepage extends Component {
           <div className="w-100 h-100 x-grayscale" style={img} />
         </div>
       </a>
-    )
-  }
-
-  renderRecentPost(post) {
-    return (
-      <div className="post x-sans dark-gray f4 lh-copy">
-        <div className="title">
-          {post.node.frontmatter.title}
-          <div className="date gray">{post.node.frontmatter.date}</div>
-        </div>
-      </div>
     )
   }
 }

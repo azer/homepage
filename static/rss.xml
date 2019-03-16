@@ -9,7 +9,7 @@
             <link>http://azer.bike</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 11 Mar 2019 19:42:29 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 16 Mar 2019 01:37:48 GMT</lastBuildDate>
         <atom:link href="http://azer.bike/rss.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Low Battery Monitor for Linux (i3)]]></title>
@@ -24,7 +24,7 @@
             <pubDate>Mon, 01 Oct 2018 22:00:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Time-saver Linux Commands]]></title>
+            <title><![CDATA[Linux Commands For Productivity]]></title>
             <link>http://azer.bike/journal/10-linux-commands-that-will-save-your-time</link>
             <guid isPermaLink="true">http://azer.bike/journal/10-linux-commands-that-will-save-your-time</guid>
             <pubDate>Sun, 12 Aug 2018 22:00:00 GMT</pubDate>

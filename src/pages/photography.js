@@ -2,7 +2,9 @@ import React, { Component } from "react"
 import SimpleLayout from "../components/simple-layout"
 import Link from "gatsby-link"
 import Helmet from "react-helmet"
-import Newsletter from "../components/newsletter"
+import Newsletter from "../components/Newsletter"
+import PageHeader from "../components/page-header"
+import Title from "../components/page-title"
 import debounce from "debounce-fn"
 import "./photography.css"
 
@@ -66,8 +68,7 @@ export default class Photography extends Component {
     const width = window.innerWidth
 
     if (width < 900) return 2
-    if (width < 1700) return 3
-    return 4
+    return 3
   }
 
   findThumbnailSize() {
@@ -99,46 +100,45 @@ export default class Photography extends Component {
         desc="Selection of some photos I shot."
         url="http://azer.bike/photography"
         image="https://cldup.com/qCL_0FsLkP.jpg"
-        fullwidth
       >
-        <h1>Photography</h1>
-        <h2>
+        <PageHeader image="https://66.media.tumblr.com/a804e1890a6ffd343f2f4ffe6729a333/tumblr_mjk2xfELh61qccnhoo1_540.jpg">
           Bird bites and bug holes on apples excites me. I've been seeking
           incomplete and imperfect beauty. Real and romantic relationships.
-        </h2>
+        </PageHeader>
         <div className="photos">{this.renderGrid()}</div>
-        <div className="inline-newsletter">
-          <div className="zigzag" />
-          <Newsletter title="This is what I got for now. Join my newsletter to hear when there is new photos." />
-        </div>
+        <Newsletter />
       </SimpleLayout>
     )
   }
 
   renderGrid() {
+    const photos = this.props.data.allPhotosJson.edges
+    const columns = [[], []]
+
+    const len = photos.length
+    let i = -1
+
+    while (++i < len) {
+      columns[i % columns.length].push(photos[i].node)
+    }
+
     return (
       <div className="grid">
-        {this.state.columns.map(c => this.renderColumn(c))}
+        {columns.map(c => this.renderColumn(c))}
         <div className="x-clear" />
       </div>
     )
   }
 
   renderColumn(column) {
-    const css = {
-      width: 100 / this.state.columns.length + "%"
-    }
-
     return (
-      <div className="column" style={css}>
-        {column.photos.map(p => this.renderThumbnail(p))}
-      </div>
+      <div className="column">{column.map(p => this.renderThumbnail(p))}</div>
     )
   }
 
   renderThumbnail(p) {
     return (
-      <div className="thumbnail">
+      <div className="thumbnail x-sans">
         <Link className="caption center" to={p.path}>
           <h1>{p.title}</h1>
         </Link>
