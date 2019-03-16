@@ -44,7 +44,14 @@ export default class Menu extends Component {
       ? this.renderGlobalLink
       : this.renderLocalLink
 
-    return [render.call(this, l.to, l.title, location === l.to)]
+    return [
+      render.call(
+        this,
+        l.to,
+        l.title,
+        location === l.to || location === l.to + "/"
+      )
+    ]
   }
 
   renderLocalLink(to, title, selected) {
