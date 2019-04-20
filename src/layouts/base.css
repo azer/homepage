@@ -43,6 +43,10 @@ a {
   max-width: 90%;
 }
 
+.x-fill-screen {
+  height: calc(100vh - 300px);
+}
+
 .x-default-cursor {
   cursor: default;
 }
