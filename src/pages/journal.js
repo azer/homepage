@@ -26,8 +26,9 @@ export default class Journal extends Component {
         image="https://cldup.com/go95bqT7sK.jpg"
       >
         <PageHeader image="https://cldup.com/D2xxKswINR.png">
-          Notes on building software in modern times. Searching for healthier
-          digital culture. Design, Linux, Emacs and infrequent travels.
+          Notes on building software in modern times. Searching for the
+          challenges I don't know yet. Design, Linux, Emacs and infrequent
+          travels.
         </PageHeader>
 
         {this.renderRecentlyPosted(
