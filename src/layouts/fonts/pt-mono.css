@@ -3,5 +3,5 @@
   font-family: 'PT Mono';
   font-style: normal;
   font-weight: 400;
-  src: local('PT Mono'), local('PTMono-Regular'), url('./fonts/files/pt-mono-v4-latin-regular.woff') format('woff');
+  src: local('PT Mono'), local('PTMono-Regular'), url('./files/pt-mono-v4-latin-regular.woff') format('woff');
 }

@@ -1,27 +1,27 @@
 @font-face {
   font-family: "Calibre";
-  src: url("./fonts/files/CalibreWeb-Light.woff") format("woff");
+  src: url("./files/CalibreWeb-Light.woff") format("woff");
   font-style: normal;
   font-weight: 300;
 }
 
 @font-face {
   font-family: "Calibre";
-  src: url("./fonts/files/CalibreWeb-LightItalic.woff") format("woff");
+  src: url("./files/CalibreWeb-LightItalic.woff") format("woff");
   font-style: italic;
   font-weight: 300;
 }
 
 @font-face {
   font-family: "Calibre";
-  src: url("./fonts/files/CalibreWeb-Regular.woff") format("woff");
+  src: url("./files/CalibreWeb-Regular.woff") format("woff");
   font-style: normal;
   font-weight: 400;
 }
 
 @font-face {
   font-family: "Calibre";
-  src: url("./fonts/files/CalibreWeb-RegularItalic.woff") format("woff");
+  src: url("./files/CalibreWeb-RegularItalic.woff") format("woff");
   font-style: italic;
   font-weight: 400;
 }
@@ -29,14 +29,14 @@
 
 @font-face {
   font-family: "Calibre";
-  src: url("./fonts/files/CalibreWeb-Medium.woff") format("woff");
+  src: url("./files/CalibreWeb-Medium.woff") format("woff");
   font-style: normal;
   font-weight: 500;
 }
 
 @font-face {
   font-family: "Calibre";
-  src: url("./fonts/files/CalibreWeb-MediumItalic.woff") format("woff");
+  src: url("./files/CalibreWeb-MediumItalic.woff") format("woff");
   font-style: italic;
   font-weight: 500;
 }

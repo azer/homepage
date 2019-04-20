@@ -1,5 +1,10 @@
-@import url("./fonts.css");
-@import url("./zigzag.css");
+/* @import url("./fonts.css");
+@import url("./fonts/calibre.css");
+@import url("./fonts/tiempos.css");
+@import url("./fonts/pt-mono.css");
+@import url("./font-definitions.css");
+
+@import url("./zigzag.css");*/
 
 html, body, #___gatsby {
   width: 100%;
