@@ -13,6 +13,13 @@ export default class SimpleLayout extends Component {
       <div className={classes.join(" ")}>
         <Helmet title={this.props.title}>
           <meta name="description" content={this.props.desc} />
+          <meta name="wallet:currency" content="eth" />
+          <meta name="wallet:address" content="0xa7Cc46D14E5c4Fa84F77fcCce98F36D1040B207D" />
+          <meta name="wallet:title" content="Azer Koçulu" />
+          <meta name="wallet:description" content="I love building software, shooting photographs and writing."/>
+          <meta name="wallet:image" content="https://cldup.com/A-XFtZUANM.jpg" />
+          <meta name="wallet:recommended_amount" content="0.1" />
+          <meta property="og:title" content={this.props.title} />
           <meta property="og:type" content={this.props.type} />
           <meta property="og:title" content={this.props.title} />
           <meta
@@ -34,7 +41,7 @@ export default class SimpleLayout extends Component {
           <link
             rel="icon"
             type="image/png"
-            href="https://c1.staticflickr.com/5/4353/37319896181_52a796bcc7_s.jpg"
+            href="https://cldup.com/A-XFtZUANM.jpg"
           />
           <link
             rel="alternate"

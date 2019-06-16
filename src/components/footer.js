@@ -16,7 +16,7 @@ export default class Footer extends Component {
           <i />
           <a href="https://github.com/azer">Github</a>
           <i />
-          <a href="https://instagram.com/afrikaradyo">Instagram</a>
+          <a href="https://goodreads.com/azer">GoodReads</a>
           <i />
           <a href="https://www.youtube.com/channel/UCPZsk0_jd3GuKjeIPilL4qA/videos">
             Youtube

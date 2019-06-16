@@ -29,9 +29,9 @@ export default class Homepage extends Component {
         title={this.props.data.site.siteMetadata.title}
         desc="My name is Azer Koçulu. I build software, also shoot photos."
         type="website"
-        image="https://cldup.com/go95bqT7sK.jpg"
+        image="https://cldup.com/A-XFtZUANM.jpg"
       >
-        <PageHeader image="https://c1.staticflickr.com/5/4353/37319896181_52a796bcc7.jpg">
+        <PageHeader image="https://cldup.com/A-XFtZUANM.jpg">
           <strong>Azer Koçulu</strong> is a Software Engineer based in Berlin.
           Lover of fast, minimalist experiences. Maker of Kozmos and Happy
           Hacking Linux.
