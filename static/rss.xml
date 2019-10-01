@@ -9,8 +9,14 @@
             <link>https://kodfabrik.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 31 May 2019 23:33:36 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 26 Jun 2019 21:26:58 GMT</lastBuildDate>
         <atom:link href="https://kodfabrik.com/rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Decentralized Tipping for Websites]]></title>
+            <link>https://kodfabrik.com/journal/decentralized-tipping-for-websites</link>
+            <guid isPermaLink="true">https://kodfabrik.com/journal/decentralized-tipping-for-websites</guid>
+            <pubDate>Mon, 04 Nov 2019 23:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Low Battery Monitor for Linux (i3)]]></title>
             <link>https://kodfabrik.com/journal/low-battery-monitor-for-linux-i3</link>
@@ -64,12 +70,6 @@
             <link>https://kodfabrik.com/journal/gelecegin-yazilimcilari-icin-hayatta-kalma-rehberi</link>
             <guid isPermaLink="true">https://kodfabrik.com/journal/gelecegin-yazilimcilari-icin-hayatta-kalma-rehberi</guid>
             <pubDate>Thu, 01 Feb 2018 23:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2017'de Okuduğum Kitaplar]]></title>
-            <link>https://kodfabrik.com/journal/2017-de-okudugum-kitaplar</link>
-            <guid isPermaLink="true">https://kodfabrik.com/journal/2017-de-okudugum-kitaplar</guid>
-            <pubDate>Sun, 31 Dec 2017 23:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
