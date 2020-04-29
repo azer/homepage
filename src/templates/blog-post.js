@@ -48,7 +48,7 @@ export default class BlogPostTemplate extends Component {
       <h2 className="x-sans center fw4 tc f4 mid-gray mv2">
         {post.desc ? <span>{post.desc}</span> : null}
       </h2>,
-      <h2 className="x-sans center fw4 tc f4 mid-gray mv0">{post.date}</h2>
+      <h2 className="x-sans center fw4 tc f4 silver mv0">{post.date}</h2>
     ]
   }
 

@@ -1,4 +1,4 @@
-@import url("../layouts/font-definitions.css");
+@import url("../components/Layout/font-definitions.css");
 
 
 
@@ -31,7 +31,7 @@
 
 .blog-post .post a {
   text-decoration: none;
-  color: #333;
+  color: #111;
   border-bottom: 1px dotted #888;
 }
 
@@ -85,7 +85,7 @@
   padding: 5px 0;
   line-height: 1.9;
   font-weight: 400;
-  color: #333;
+  color: #111;
 }
 
 .blog-post .post ul {
@@ -209,7 +209,7 @@
 .blog-post .post .img-alt {
   display: block;
   text-align: center;
-  font: 12px var(--sans);
+  font: 16px var(--sans);
   margin-top: -15px;
   margin-bottom: 20px;
   color: #666;
@@ -387,7 +387,7 @@
   text-decoration: none;
   text-transform: uppercase;
   border: 0;
-  color: #333;
+  color: #111;
 }
 
 .blog-post .chapter-menu .links a:first-child:after {

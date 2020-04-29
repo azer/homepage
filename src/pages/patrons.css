@@ -1,0 +1,22 @@
+.patrons-list {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #222;
+}
+
+.patrons-list ul li {
+  line-height: 1.7rem;
+  list-style: upper-roman;
+  color: #666;
+}
+
+.patrons-list ul li label {
+  color: #222;
+  font-weight: 500;
+}
+
+.patrons-list .c-button {
+  margin: 2rem 1rem;
+  display: block;
+  width: 165px;
+}

@@ -6,6 +6,7 @@ module.exports = {
     description: config.description
   },
   plugins: [
+    "gatsby-plugin-react-helmet",
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -13,7 +14,6 @@ module.exports = {
         path: `${__dirname}/posts/`
       }
     },
-    "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-transformer-remark",
       options: {

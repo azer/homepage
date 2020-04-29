@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import Menu from "../components/menu"
+import Menu from "../menu"
 import "./base.css"
 import "./fonts/calibre.css"
 import "./fonts/tiempos.css"
@@ -8,7 +8,7 @@ import "./font-definitions.css"
 import "./zigzag.css"
 
 const Container = ({ children }) => {
-  return children()
+  return children
 }
 
 export default Container

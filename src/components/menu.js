@@ -18,8 +18,7 @@ export default class Menu extends Component {
           </a>
           <a
             className="support-link absolute right-0 x-inherit no-underline gray br-pill bg-near-white hover-bg-light-gray hover-near-black"
-            target="_blank"
-            href="https://patreon.com/azerkoculu"
+            href="/patrons"
           >
             Patrons
           </a>
@@ -39,6 +38,7 @@ export default class Menu extends Component {
     const location = this.props.location && this.props.location.pathname
 
     if (l.className === "footer-link" && !this.props.footer) return
+    if (l.onlymobile) return
 
     const render = /^\w+:/.test(l.to)
       ? this.renderGlobalLink

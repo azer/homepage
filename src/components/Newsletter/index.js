@@ -21,7 +21,7 @@ export default class Newsletter extends Component {
       "https://buttondown.email/api/emails/embed-subscribe/azer"
     )
 
-    this.form.submit()
+    setTimeout(() => this.form.submit(), 100)
   }
 
   render() {
@@ -33,12 +33,7 @@ export default class Newsletter extends Component {
           travel, and books.
         </h2>
         <div className="mw6 x-auto pa2">
-          <form
-            ref={el => (this.form = el)}
-            method="post"
-            target="popupwindow"
-            onsubmit="window.open('https://buttondown.email/azer', 'popupwindow')"
-          >
+          <form ref={el => (this.form = el)} method="post" target="popupwindow">
             <input type="hidden" value="1" name="embed" />
             <input type="hidden" value={this.state.email} name="email" />
             <Textbox

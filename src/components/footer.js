@@ -8,7 +8,7 @@ export default class Footer extends Component {
     return (
       <footer className="pv5 bg-near-whited x-sans f4 mid-gray bg-near-white footer">
         <div className="x-viewport">
-          Made with love in Berlin
+          Made in Berlin
           <i />
           <a href="/rss.xml">RSS</a>
           <i />
