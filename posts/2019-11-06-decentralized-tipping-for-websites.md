@@ -5,7 +5,6 @@ image: https://cldup.com/FG7_GZmjFu.png
 hideImage: true
 date: "2019-11-05T23:00:00.000Z"
 path: "/journal/decentralized-tipping-for-websites"
-aliasPath: "/tipping-wallet"
 ---
 
 Readers of my blog, or people who use my projects send me tips. It happens randomly, for example, someone sent me $20 for Happy Hacking Linux project, or another sent me $5 for just a blog post. I get an e-mail from Paypal, feel surprised, then look at my TODO list. At the end of it, there is "Unlock your Paypal account". Each time I look at my hopeless end of TODO list, and just hope to get there one day, so I can finally access the tips I've got via Paypal.
