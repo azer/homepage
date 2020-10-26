@@ -1,14 +1,14 @@
-import React, { Component } from "react"
-import Link from "gatsby-link"
-import Intro from "../components/intro"
-import Helmet from "react-helmet"
-import SimpleLayout from "../components/simple-layout"
-import Button from "../components/Button"
-import Textbox from "../components/Textbox"
-import Newsletter from "../components/Newsletter"
-import PageHeader from "../components/page-header"
+import React, { Component } from 'react'
+import Link from 'gatsby-link'
+import Intro from '../components/intro'
+import Helmet from 'react-helmet'
+import SimpleLayout from '../components/simple-layout'
+import Button from '../components/Button'
+import Textbox from '../components/Textbox'
+import Newsletter from '../components/Newsletter'
+import PageHeader from '../components/page-header'
 
-import "./index.css"
+import './index.css'
 
 export default class Homepage extends Component {
   highlightedPosts() {
@@ -33,15 +33,15 @@ export default class Homepage extends Component {
       >
         <PageHeader image="https://cldup.com/A-XFtZUANM.jpg">
           <strong>Azer Koçulu</strong> is a Software Engineer based in Berlin.
-          Lover of fast, minimalist experiences. Maker of Kozmos and Happy
-          Hacking Linux.
+          Lover of fast, minimalist experiences. Chief Technology Officer at
+          HiPeople.
         </PageHeader>
         <div className="pt4 highlights-wrapper">
           <h1 className="x-sans fw3 tc pv0 mid-gray">Journal Highlights</h1>
           <section className="x-grid-4 mt4 highlights">
-            {this.highlightedPosts().map((post, ind) =>
-              this.renderHighlightedPost(post, ind)
-            )}
+            {this.highlightedPosts()
+              .slice(0, 4)
+              .map((post, ind) => this.renderHighlightedPost(post, ind))}
           </section>
         </div>
         <Newsletter />
@@ -54,8 +54,8 @@ export default class Homepage extends Component {
       backgroundImage: `url(${post.node.frontmatter.highlightImage ||
         post.node.frontmatter.image})`,
       backgroundPosition: `${post.node.frontmatter.highlightImagePosition ||
-        "center center"}`,
-      backgroundSize: `${post.node.frontmatter.highlightImageSize || "cover"}`
+        'center center'}`,
+      backgroundSize: `${post.node.frontmatter.highlightImageSize || 'cover'}`
     }
 
     return (

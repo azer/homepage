@@ -1,8 +1,8 @@
 ---
-title: "The Reading Method I Adopted This Year"
+title: "Books & Slow Reading"
 desc: ""
-image: https://cldup.com/VDJAnBcvxt.jpeg
-imageCaption:
+image: https://cldup.com/k9pxD1WJvL.jpg
+imageCaption: Hand-made book compiled from highlighted lines from other books
 imageHeight: 450px
 hideImage: true
 date: "2019-12-21T23:00:00.000Z"
@@ -13,16 +13,21 @@ highlightImagePosition: center 15%
 highlightImageSize: 400px
 ---
 
-Roman Philosopher Seneca the Younger advised his peers to limit the number of books and read them thoroughly and repeatedly, instead of accumulating too many books. A thousand and five centuries later, German polymath Leibniz was concerned about the impact of printing technology and emphasis on quantity, instead of quality. He claimed that humanity would return to barbarism because of the horrible mass of books that keeps on growing.
+Seneca the Younger, a Roman philosopher who lived 2000 years ago, advised his peers to limit the number of books and read them thoroughly and repeatedly. A thousand and five centuries later, German polymath Leibniz was concerned about the impact of printing technology and emphasis on quantity, claimed that humanity would return to barbarism because of the horrible mass of books that keeps on growing.
 
-Every once a while I find myself holding a book in my hands and craving to change myself from the inside out. This mood can drive one to double down on quality or quantity. To be honest, reading a book once and putting it back to the bookshelf never gave enough satisfaction especially in the non-fiction books. For example, Sapiens is a great book full of knowledge in number of subjects, I read its hard copy a few years ago during a train trip, highlighting lots of lines and taking notes. A few years after today, I only remember some key takeaways. There is a big gap between what I learnt during my read, and what I remember today.
+Every once a while I find myself holding a book in my hands and craving to change myself from the inside out. This mood can drive one to double down on quality or quantity. To be honest, reading a book once and putting it back to the bookshelf never gave enough satisfaction especially in the non-fiction books. For example, Sapiens is a great book full of knowledge in number of subjects, I read its hard copy a few years ago during a train trip, highlighting lots of lines and taking notes. A few years later, I only remember some key takeaways from that reading. There is a big gap between what I learned during my read, and what I remember today.
 
-To truly internalize a great book like Sapiens, I think it's worth to re-read it a few times. An efficient way is to scan through the highlights to save time. This is exactly the sweet spot where digital and hard copy compliments eachother. Letting myself evolve my reading practice this year, I adopted a new reading method that I can suggest also others. By now, I have my highlights from number of books I read this year available in both markdown and PDF formats, both printed (at my home in A4 paper) and digitally available. I share them publicly on [Github](https://github.com/azer/notebook/tree/master/books), and also share the prints of the PDF files with friends and family members.
+To truly internalize a great book like Sapiens, I think it's worth to re-read it a few times. An efficient way is to scan through the highlights to save time. Even better way, I found out this year, could be to create documents from the highlights, make these documents available under your fingers, and access them anytime needed.
 
-![](https://cldup.com/VDJAnBcvxt.jpeg)
-<span class="img-alt">Printed versions of the highlights from books I read</span>
+As a result, I ended up creating Markdown and PDF documents of my highlights from each book I read last year. If you're curios how they look, [they're available in Github](https://github.com/azer/notebook/tree/master/books) already. Even further, I realized that I could create my dream book from the highlighted lines of my favorite books, and compiled them in a hand-made book I made at home;
 
-Here is the practice I adopted this year to take control of my highlights, step by step;
+<div class="image-grid">
+<img src="https://cldup.com/k9pxD1WJvL.jpg" />
+<img src="https://cldup.com/qL-P1WTxZK.JPG" />
+s</div>
+<span class="img-alt">This book has only copy in the world :)</span>
+
+Here is the steps that I followed reading every book;
 
 * Buy the digital version first.
 * Mark all important lines highlighted in the e-book reading device.
@@ -32,8 +37,6 @@ Here is the practice I adopted this year to take control of my highlights, step 
 * Print the PDF and read go over your highlights.
 * Categorize and highlight key takeaways in your highlights.
 * Move the key takeaways into corresponding categories in your notebooks.
-
-Let's get into more details step by step.
 
 ## Hard copy versus e-books
 

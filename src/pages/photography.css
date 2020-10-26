@@ -7,22 +7,17 @@
 }
 
 .photography .grid {
-
-}
-
-.photography .grid .column {
-  float: left;
-  width: calc(50% - 0.5rem);
-}
-
-.photography .grid .column:first-child {
-  margin-right: 1rem;
+  grid-row-gap: 2rem;
 }
 
 .photography .grid .thumbnail {
   position: relative;
   display: block;
-  margin: 1rem 0 0 0;
+  /*margin: 1rem 0 0 0;*/
+}
+
+.photography .grid .thumbnail.highlight {
+    grid-column: 1 / 3;
 }
 
 .photography .thumbnail a {

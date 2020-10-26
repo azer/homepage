@@ -67,6 +67,12 @@
   text-align: center;
 }
 
+.blog-post .image-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+}
+
 /*.blog-post .post:after {
   content: "";
   width: 100px;

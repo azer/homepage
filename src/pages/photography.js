@@ -1,13 +1,13 @@
-import React, { Component } from "react"
-import SimpleLayout from "../components/simple-layout"
-import Link from "gatsby-link"
-import Helmet from "react-helmet"
+import React, { Component } from 'react'
+import SimpleLayout from '../components/simple-layout'
+import Link from 'gatsby-link'
+import Helmet from 'react-helmet'
 
-import Newsletter from "../components/Newsletter"
-import PageHeader from "../components/page-header"
-import Title from "../components/page-title"
-import debounce from "debounce-fn"
-import "./photography.css"
+import Newsletter from '../components/Newsletter'
+import PageHeader from '../components/page-header'
+import Title from '../components/page-title'
+import debounce from 'debounce-fn'
+import './photography.css'
 
 export default class Photography extends Component {
   constructor(props) {
@@ -16,8 +16,8 @@ export default class Photography extends Component {
   }
 
   componentWillMount() {
-    if (typeof window !== "undefined") {
-      window.addEventListener("resize", this.onResize)
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', this.onResize)
     }
 
     this.setState({
@@ -28,8 +28,8 @@ export default class Photography extends Component {
   }
 
   componentWillUnmount() {
-    if (typeof window !== "undefined") {
-      window.removeEventListener("resize", this.onResize)
+    if (typeof window !== 'undefined') {
+      window.removeEventListener('resize', this.onResize)
     }
   }
 
@@ -64,7 +64,7 @@ export default class Photography extends Component {
   }
 
   findColumnCount() {
-    if (typeof window === "undefined") return 3
+    if (typeof window === 'undefined') return 3
 
     const width = window.innerWidth
 
@@ -73,12 +73,12 @@ export default class Photography extends Component {
   }
 
   findThumbnailSize() {
-    if (typeof window === "undefined") return "small"
+    if (typeof window === 'undefined') return 'medium'
 
     const width = window.innerWidth
 
-    if (width < 500) return "small"
-    return "medium"
+    if (width < 500) return 'small'
+    return 'medium'
   }
 
   onResize() {
@@ -113,7 +113,7 @@ export default class Photography extends Component {
   }
 
   renderGrid() {
-    const photos = this.props.data.allPhotosJson.edges
+    /* const photos = this.props.data.allPhotosJson.edges
     const columns = [[], []]
 
     const len = photos.length
@@ -128,6 +128,15 @@ export default class Photography extends Component {
         {columns.map(c => this.renderColumn(c))}
         <div className="x-clear" />
       </div>
+      )*/
+
+    const photos = this.props.data.allPhotosJson.edges
+
+    return (
+      <div className="x-grid-2 x-centered grid">
+        {photos.map(p => this.renderThumbnail(p.node))}
+        <div className="x-clear" />
+      </div>
     )
   }
 
@@ -138,13 +147,15 @@ export default class Photography extends Component {
   }
 
   renderThumbnail(p) {
+    console.log(p.sizes)
+
     return (
-      <div className="thumbnail x-sans">
+      <div className={`thumbnail x-sans${p.highlight ? ' highlight' : ''}`}>
         <Link className="caption center" to={p.path}>
           <h1>{p.title}</h1>
         </Link>
         <Link to={p.path}>
-          <img src={p.sizes[this.state.thumbnailSize].url} />
+          <img src={p.sizes[p.highlight ? 'xlarge' : 'large'].url} />
         </Link>
       </div>
     )
@@ -164,12 +175,17 @@ export const query = graphql`
         node {
           path
           title
+          highlight
           sizes {
-            small {
+            large {
               url
               height
             }
             medium {
+              url
+              height
+            }
+            xlarge {
               url
               height
             }

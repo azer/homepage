@@ -108,6 +108,10 @@ a {
   margin-right: auto;
 }
 
+.x-centered {
+  align-items: center;
+}
+
 .highlights a:nth-child(1) .x-color-overlay::before {
   background: #B54A48;
 }

@@ -9,8 +9,32 @@
             <link>https://kodfabrik.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 26 Jun 2019 21:26:58 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 07 Sep 2020 21:51:38 GMT</lastBuildDate>
         <atom:link href="https://kodfabrik.com/rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[A Walk]]></title>
+            <link>https://kodfabrik.com/journal/walk</link>
+            <guid isPermaLink="true">https://kodfabrik.com/journal/walk</guid>
+            <pubDate>Mon, 15 Jun 2020 22:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Why am I shutting down Kozmos?]]></title>
+            <link>https://kodfabrik.com/journal/why-am-i-shutting-down-kozmos</link>
+            <guid isPermaLink="true">https://kodfabrik.com/journal/why-am-i-shutting-down-kozmos</guid>
+            <pubDate>Thu, 21 May 2020 22:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Books & Slow Reading]]></title>
+            <link>https://kodfabrik.com/journal/reading</link>
+            <guid isPermaLink="true">https://kodfabrik.com/journal/reading</guid>
+            <pubDate>Fri, 20 Dec 2019 23:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Speed Dial and Link Collections in New Tab]]></title>
+            <link>https://kodfabrik.com/journal/speed-dial-and-link-collections-in-new-tab</link>
+            <guid isPermaLink="true">https://kodfabrik.com/journal/speed-dial-and-link-collections-in-new-tab</guid>
+            <pubDate>Fri, 29 Nov 2019 23:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Decentralized Tipping for Websites]]></title>
             <link>https://kodfabrik.com/journal/decentralized-tipping-for-websites</link>
@@ -46,30 +70,6 @@
             <link>https://kodfabrik.com/journal/batuhan-in-sorularina-yanitlar</link>
             <guid isPermaLink="true">https://kodfabrik.com/journal/batuhan-in-sorularina-yanitlar</guid>
             <pubDate>Tue, 05 Jun 2018 22:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[The Hitchhiker's Guide to Elm]]></title>
-            <link>https://kodfabrik.com/journal/elm</link>
-            <guid isPermaLink="true">https://kodfabrik.com/journal/elm</guid>
-            <pubDate>Sun, 20 May 2018 22:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Inspirational Quotes in My Notebook]]></title>
-            <link>https://kodfabrik.com/journal/inspirational-quotes-in-my-notebook</link>
-            <guid isPermaLink="true">https://kodfabrik.com/journal/inspirational-quotes-in-my-notebook</guid>
-            <pubDate>Wed, 28 Feb 2018 23:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Introduction to Stellar for Go Developers]]></title>
-            <link>https://kodfabrik.com/journal/introduction-to-stellar-for-go-developers</link>
-            <guid isPermaLink="true">https://kodfabrik.com/journal/introduction-to-stellar-for-go-developers</guid>
-            <pubDate>Tue, 13 Feb 2018 23:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Geleceğin Yazılımcıları İçin Hayatta Kalma Rehberi]]></title>
-            <link>https://kodfabrik.com/journal/gelecegin-yazilimcilari-icin-hayatta-kalma-rehberi</link>
-            <guid isPermaLink="true">https://kodfabrik.com/journal/gelecegin-yazilimcilari-icin-hayatta-kalma-rehberi</guid>
-            <pubDate>Thu, 01 Feb 2018 23:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
