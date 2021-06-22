@@ -33,8 +33,8 @@ export default class Homepage extends Component {
       >
         <PageHeader image="https://cldup.com/bI32PuTskq.jpg">
           <strong>Azer Koçulu</strong> is a Software Engineer based in Berlin.
-          Lover of fast, minimalist experiences. Chief Technology Officer at
-          HiPeople.
+          Lover of fast, minimalist experiences. Software Engineer and Startup
+          Advisor.
         </PageHeader>
         <div className="pt4 highlights-wrapper">
           <h1 className="x-sans fw3 tc pv0 mid-gray">Journal Highlights</h1>
